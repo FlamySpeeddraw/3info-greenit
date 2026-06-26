@@ -2,8 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import * as d3 from "d3";
-import * as topojson from "topojson-client";
-import { Topology, Objects } from "topojson-specification";
 import { COLORS } from "@/app/color.const";
 
 const PRODUCTION_CENTERS = [
@@ -36,61 +34,57 @@ export function TransportMap() {
     const path = d3.geoPath().projection(projection);
     const g = svg.append("g");
 
-    d3.json<Topology<Objects>>("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json")
-      .then((topology) => {
-        if (!topology) return;
+    d3.json<GeoJSON.FeatureCollection>(
+      "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"
+    ).then((world) => {
+      if (!world) return;
 
-        const countries = topojson.feature(
-          topology,
-          topology.objects.countries
-        ) as GeoJSON.FeatureCollection;
+      g.selectAll("path")
+        .data(world.features)
+        .enter()
+        .append("path")
+        .attr("d", path as never)
+        .attr("fill", "#2d5a3f")
+        .attr("stroke", "#bbf7d0")
+        .attr("stroke-width", 0.5);
 
-        g.selectAll("path")
-          .data(countries.features)
-          .enter()
-          .append("path")
-          .attr("d", path as never)
-          .attr("fill", "#2d5a3f")
-          .attr("stroke", "#bbf7d0")
-          .attr("stroke-width", 0.5);
+      PRODUCTION_CENTERS.forEach((center) => {
+        const coords = projection([center.lng, center.lat]);
+        if (!coords) return;
+        const [x, y] = coords;
 
-        PRODUCTION_CENTERS.forEach((center) => {
-          const coords = projection([center.lng, center.lat]);
-          if (!coords) return;
-          const [x, y] = coords;
-
-          g.append("circle")
-            .attr("cx", x)
-            .attr("cy", y)
-            .attr("r", center.size)
-            .attr("fill", COLORS.brown.dark)
-            .attr("fill-opacity", 0.85)
-            .attr("stroke", COLORS.eco.white)
-            .attr("stroke-width", 1.5)
-            .style("cursor", "pointer")
-            .on("mouseover", function () {
-              d3.select(this).attr("fill", COLORS.brown.light);
-              svg.append("foreignObject")
-                .attr("id", "d3-tooltip")
-                .attr("x", x + 14)
-                .attr("y", y - 30)
-                .attr("width", 180)
-                .attr("height", 70)
-                .append("xhtml:div")
-                .style("background", COLORS.oled.black)
-                .style("color", COLORS.eco.white)
-                .style("padding", "8px 10px")
-                .style("border-radius", "8px")
-                .style("font-size", "12px")
-                .style("border", "1px solid #ffffff20")
-                .html(`<strong>${center.name}</strong><br/>${center.type}`);
-            })
-            .on("mouseout", function () {
-              d3.select(this).attr("fill", COLORS.brown.dark);
-              svg.select("#d3-tooltip").remove();
-            });
-        });
+        g.append("circle")
+          .attr("cx", x)
+          .attr("cy", y)
+          .attr("r", center.size)
+          .attr("fill", COLORS.brown.dark)
+          .attr("fill-opacity", 0.85)
+          .attr("stroke", COLORS.eco.white)
+          .attr("stroke-width", 1.5)
+          .style("cursor", "pointer")
+          .on("mouseover", function () {
+            d3.select(this).attr("fill", COLORS.brown.light);
+            svg.append("foreignObject")
+              .attr("id", "d3-tooltip")
+              .attr("x", x + 14)
+              .attr("y", y - 30)
+              .attr("width", 180)
+              .attr("height", 70)
+              .append("xhtml:div")
+              .style("background", COLORS.oled.black)
+              .style("color", COLORS.eco.white)
+              .style("padding", "8px 10px")
+              .style("border-radius", "8px")
+              .style("font-size", "12px")
+              .style("border", "1px solid #ffffff20")
+              .html(`<strong>${center.name}</strong><br/>${center.type}`);
+          })
+          .on("mouseout", function () {
+            d3.select(this).attr("fill", COLORS.brown.dark);
+            svg.select("#d3-tooltip").remove();
+          });
       });
+    });
   }, []);
 
   return (
