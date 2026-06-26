@@ -1,3 +1,4 @@
+import { Text, Heading } from "@radix-ui/themes";
 import { EmissionsBarChart } from "@/components/EmissionsBarChart";
 import { ENERGY_DATA } from "./energyData";
 
@@ -18,18 +19,27 @@ export default function ProductionPage() {
 
         {/* ── En-tête ─────────────────────────────────────────── */}
         <header className="mb-12">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-primary)] mb-3">
+          <Text
+            size="1"
+            weight="bold"
+            className="uppercase tracking-widest text-[var(--color-primary)] block mb-3"
+          >
             Infographie · Émissions de GES
-          </p>
-          <h1 className="text-3xl sm:text-4xl font-bold text-[var(--color-text)] leading-tight mb-4">
+          </Text>
+
+          <Heading size="8" as="h1" className="mb-4">
             Quelle filière énergétique <br className="hidden sm:block" />
             pour le climat ?
-          </h1>
-          <p className="text-[var(--color-text-muted)] text-base max-w-xl leading-relaxed">
+          </Heading>
+
+          <Text as="p" size="3" className="text-[var(--color-text-muted)] max-w-xl leading-relaxed">
             Toutes les sources d'énergie ne se valent pas. Comparez leur empreinte carbone
-            en <strong className="text-[var(--color-text)] font-semibold">gCO₂e par kWh produit</strong>,
-            en tenant compte de l'ensemble du cycle de vie — de la construction au démantèlement.
-          </p>
+            en{" "}
+            <Text as="span" weight="bold" className="text-[var(--color-text)]">
+              gCO₂e par kWh produit
+            </Text>
+            , en tenant compte de l'ensemble du cycle de vie — de la construction au démantèlement.
+          </Text>
         </header>
 
         {/* ── Graphique ──────────────────────────────────────── */}
@@ -38,22 +48,19 @@ export default function ProductionPage() {
           className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-6 sm:p-12 shadow-[var(--shadow-md)] mb-8"
         >
           <div className="mb-8">
-            <h2
-              id="chart-heading"
-              className="text-xl font-semibold text-[var(--color-text)] mb-1"
-            >
+            <Heading size="4" as="h2" id="chart-heading" className="mb-1">
               Facteur d'émission par filière
-            </h2>
-            <p className="text-sm text-[var(--color-text-muted)]">
+            </Heading>
+            <Text size="2" as="p" className="text-[var(--color-text-muted)]">
               En gCO₂e/kWh · Du plus au moins émetteur · Cliquez sur une barre pour le détail
-            </p>
+            </Text>
           </div>
 
           <EmissionsBarChart data={sortedData} />
         </section>
 
         {/* ── Clés de lecture ────────────────────────────────── */}
-        <section aria-label="Clés de lecture" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section aria-label="Clés de lecture" className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
             {
               icon: "🏭",
@@ -78,13 +85,20 @@ export default function ProductionPage() {
               key={item.title}
               className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-5 shadow-[var(--shadow-sm)]"
             >
-              <span className="text-3xl block mb-3" aria-hidden="true">{item.icon}</span>
-              <h3 className="font-semibold text-[var(--color-text)] text-sm mb-1">{item.title}</h3>
-              <p className="text-xs font-mono text-[var(--color-primary)] mb-2">{item.range}</p>
-              <p className="text-xs text-[var(--color-text-muted)] leading-relaxed">{item.text}</p>
+              <Text size="6" as="p" className="block mb-3" aria-hidden="true">
+                {item.icon}
+              </Text>
+              <Heading size="2" as="h3" className="mb-1">{item.title}</Heading>
+              <Text size="1" as="p" className="font-mono text-[var(--color-primary)] block mb-2">
+                {item.range}
+              </Text>
+              <Text size="2" as="p" className="text-[var(--color-text-muted)] leading-relaxed">
+                {item.text}
+              </Text>
             </div>
           ))}
         </section>
+
       </div>
     </main>
   );

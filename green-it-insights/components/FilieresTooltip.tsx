@@ -87,39 +87,37 @@ export function FilieresTooltip({ data, onClose }: FilieresTooltipProps) {
       </div>
 
       {/* KPIs */}
-      <dl className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
         <div className="bg-white/70 dark:bg-black/25 rounded-lg px-4 py-3">
-          <Text as="dt" size="1" weight="bold" className="uppercase tracking-wider text-[var(--color-text-muted)] mb-1 block">
+          <Text size="1" weight="bold" className="uppercase tracking-wider text-[var(--color-text-muted)] block mb-1">
             Facteur d'émission
           </Text>
-          <dd className={`text-2xl font-bold tabular-nums leading-none ${config.valueClass}`}>
+          <p className={`text-2xl font-bold tabular-nums leading-none ${config.valueClass}`}>
             {data.emissionFactor.toLocaleString("fr-FR")}
             <Text as="span" size="1" className="text-[var(--color-text-muted)] ml-1 font-normal">
               gCO₂e/kWh
             </Text>
-          </dd>
+          </p>
         </div>
 
         <div className="bg-white/70 dark:bg-black/25 rounded-lg px-4 py-3">
-          <Text as="dt" size="1" weight="bold" className="uppercase tracking-wider text-[var(--color-text-muted)] mb-1 block">
+          <Text size="1" className="uppercase tracking-wider text-[var(--color-text-muted)] block mb-1">
             Mix mondial
           </Text>
-          <dd className="text-2xl font-bold tabular-nums leading-none text-[var(--color-text)]">
+          <p className="text-2xl font-bold tabular-nums leading-none text-[var(--color-text)]">
             {data.globalShare}
-          </dd>
+          </p>
         </div>
 
         <div className="bg-white/70 dark:bg-black/25 rounded-lg px-4 py-3">
-          <Text as="dt" size="1" weight="bold" className="uppercase tracking-wider text-[var(--color-text-muted)] mb-1 block">
+          <Text size="1" className="uppercase tracking-wider text-[var(--color-text-muted)] block mb-1">
             Pays utilisateurs
           </Text>
-          <dd>
-            <Text size="2" weight="medium">
-              {data.exampleCountry}
-            </Text>
-          </dd>
+          <Text size="2" weight="medium" as="p">
+            {data.exampleCountry}
+          </Text>
         </div>
-      </dl>
+      </div>
 
       {/* Description */}
       <Text as="p" size="2" className="text-[var(--color-text-muted)] leading-relaxed">
