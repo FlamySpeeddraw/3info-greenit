@@ -6,6 +6,7 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
+  Tooltip,
   ResponsiveContainer,
   Cell,
   LabelList,
@@ -44,18 +45,28 @@ export function EmissionsBarChart({ data }: EmissionsBarChartProps) {
   useEffect(() => {
     const readColors = () => {
       const style = getComputedStyle(document.documentElement);
+      const probe = document.createElement("div");
+      probe.style.display = "none";
+      document.body.appendChild(probe);
+
+      const resolve = (varName: string, fallback: string): string => {
+        probe.style.color = style.getPropertyValue(varName).trim();
+        const resolved = getComputedStyle(probe).color;
+        return resolved && resolved !== "rgba(0, 0, 0, 0)" ? resolved : fallback;
+      };
+
       setColors({
-        textMuted: style.getPropertyValue("--color-text-muted").trim() || "#6b7280",
-        text:      style.getPropertyValue("--color-text").trim()       || "#111827",
-        divider:   style.getPropertyValue("--color-divider").trim()    || "#e5e7eb",
-        border:    style.getPropertyValue("--color-border").trim()     || "#d1d5db",
+        textMuted: resolve("--color-text-muted", "#9ca3af"),
+        text:      resolve("--color-text",       "#f3f4f6"),
+        divider:   resolve("--color-divider",    "#374151"),
+        border:    resolve("--color-border",     "#4b5563"),
       });
+
+      document.body.removeChild(probe);
     };
 
-    // Lecture initiale
     readColors();
 
-    // Écoute les changements de thème (data-theme sur <html>)
     const observer = new MutationObserver(readColors);
     observer.observe(document.documentElement, {
       attributes: true,
@@ -66,60 +77,77 @@ export function EmissionsBarChart({ data }: EmissionsBarChartProps) {
   }, []);
 
   return (
-    <div className="w-full space-y-6">
+    <div className="w-full space-y-8">
+      {/* Supprime le outline focus sur tous les éléments SVG enfants de Recharts */}
+      <style>{`
+        .recharts-wrapper,
+        .recharts-wrapper svg,
+        .recharts-wrapper *:focus,
+        .recharts-wrapper *:focus-visible {
+          outline: none !important;
+          box-shadow: none !important;
+        }
+      `}</style>
 
-      {/* Légende couleurs */}
-      <div className="flex flex-wrap gap-3 text-sm">
+      {/* Légende */}
+      <div className="flex flex-wrap gap-x-5 gap-y-2">
         {[
-          { color: "#c0392b", label: "Très carboné (≥ 600 gCO₂e/kWh)" },
-          { color: "#e67e22", label: "Modéré (200–600)" },
-          { color: "#f1c40f", label: "Faible (50–200)" },
-          { color: "#27ae60", label: "Bas-carbone (< 50)" },
+          { color: "#c0392b", label: "Très carboné  ≥ 600" },
+          { color: "#e67e22", label: "Modéré  200 – 600" },
+          { color: "#f1c40f", label: "Faible  50 – 200" },
+          { color: "#27ae60", label: "Bas-carbone  < 50" },
         ].map(({ color, label }) => (
-          <span key={label} className="flex items-center gap-1.5">
+          <span key={label} className="flex items-center gap-2 text-xs" style={{ color: colors.textMuted }}>
             <span
-              className="inline-block w-3 h-3 rounded-sm flex-shrink-0"
+              className="inline-block w-2.5 h-2.5 rounded-sm flex-shrink-0"
               style={{ backgroundColor: color }}
             />
-            <span style={{ color: colors.textMuted, fontSize: "0.875rem" }}>{label}</span>
+            {label} <span className="text-[10px]">gCO₂e/kWh</span>
           </span>
         ))}
       </div>
 
       {/* Graphique */}
-      <div className="w-full" style={{ height: `${data.length * 52 + 40}px` }}>
+      <div
+        className="w-full"
+        style={{ height: `${data.length * 54 + 40}px` }}
+        onMouseDown={(e) => e.preventDefault()}
+      >
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             layout="vertical"
             data={data}
-            margin={{ top: 0, right: 80, left: 0, bottom: 0 }}
-            barCategoryGap="28%"
+            margin={{ top: 0, right: 90, left: 0, bottom: 0 }}
+            barCategoryGap="30%"
           >
             <CartesianGrid
               horizontal={false}
-              strokeDasharray="4 4"
+              strokeDasharray="3 3"
               stroke={colors.divider}
             />
             <XAxis
               type="number"
-              unit=" gCO₂e"
-              tick={{ fontSize: 12, fill: colors.textMuted }}
+              unit=" g"
+              tick={{ fontSize: 11, fill: colors.textMuted }}
               tickLine={false}
               axisLine={{ stroke: colors.border }}
-              domain={[0, "dataMax + 50"]}
+              domain={[0, "dataMax + 80"]}
             />
             <YAxis
               type="category"
               dataKey="name"
-              width={150}
-              tick={{ fontSize: 13, fill: colors.text }}
+              width={155}
+              tick={{ fontSize: 13, fill: colors.text, fontWeight: 500 }}
               tickLine={false}
               axisLine={false}
             />
+            <Tooltip content={() => null} cursor={false} />
             <Bar
               dataKey="emissionFactor"
-              radius={[0, 4, 4, 0]}
-              cursor="pointer"
+              radius={[0, 5, 5, 0]}
+              style={{ cursor: "pointer" }}
+              activeBar={false}
+              isAnimationActive={false}
               onClick={(entry: FilieresData) =>
                 setSelected(selected?.id === entry.id ? null : entry)
               }
@@ -128,7 +156,7 @@ export function EmissionsBarChart({ data }: EmissionsBarChartProps) {
                 <Cell
                   key={entry.id}
                   fill={getBarColor(entry.emissionFactor)}
-                  opacity={selected && selected.id !== entry.id ? 0.4 : 1}
+                  opacity={selected && selected.id !== entry.id ? 0.35 : 1}
                   stroke={selected?.id === entry.id ? colors.text : "none"}
                   strokeWidth={selected?.id === entry.id ? 1.5 : 0}
                 />
@@ -137,14 +165,14 @@ export function EmissionsBarChart({ data }: EmissionsBarChartProps) {
                 dataKey="emissionFactor"
                 position="right"
                 formatter={(v: number) => `${v.toLocaleString("fr-FR")} g`}
-                style={{ fontSize: 12, fill: colors.textMuted }}
+                style={{ fontSize: 11, fill: colors.textMuted, fontVariantNumeric: "tabular-nums" }}
               />
             </Bar>
           </BarChart>
         </ResponsiveContainer>
       </div>
 
-      {/* Tooltip détail au clic */}
+      {/* Encart détail au clic */}
       {selected && (
         <FilieresTooltip
           data={selected}
