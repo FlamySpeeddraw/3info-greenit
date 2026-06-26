@@ -28,8 +28,9 @@ const ARTICLES = [
     category: "Histoire & Climat",
     badgeColor: "grass" as const,
     type: "Dossier",
-    title: "Le climat depuis les temps géologiques",
-    description: "De l'optimum thermique de l'Éocène aux glaciations quaternaires, observez comment les cycles naturels du carbone ont été supplantés par l'explosion industrielle et numérique récente en moins d'un siècle.",
+    title: "Évolution des gaz à effet de serre",
+    description: "De l'ère préindustrielle aux projections du GIEC, comprenez comment l'essor industriel et technologique a bouleversé la concentration de gaz à effet de serre et les équilibres climatiques.",
+    link: "/evolution-gaz-effet-serre",
   },
   {
     category: "Matériel & Mines",
@@ -37,6 +38,7 @@ const ARTICLES = [
     type: "Dossier",
     title: "Cartographie de la production IT",
     description: "De l'extraction des terres rares en Mongolie intérieure au raffinage et à l'assemblage dans la \"Silicon Valley\" asiatique (Taiwan, Shenzhen). Découvrez les coulisses géopolitiques et énergétiques de nos puces.",
+    link: "/ressourcesDevices",
   },
   {
     category: "Logistique",
@@ -44,13 +46,54 @@ const ARTICLES = [
     type: "Dossier",
     title: "Modes de transport et coût carbone",
     description: "Aérien, maritime, ferroviaire ou routier : analyse comparative des modes d'acheminement des terminaux électroniques. Comment le choix logistique impacte directement le bilan carbone final d'un appareil.",
+    link: "/materiels/transport",
+  },
+  {
+    category: "Énergie & IA",
+    badgeColor: "orange" as const,
+    type: "Dossier",
+    title: "Numérique & l'IA dans la consommation mondiale d'énergie",
+    description: "L'essor de l'intelligence artificielle générative et l'expansion des centres de données redéfinissent nos besoins en électricité. Décryptage des enjeux de consommation et des pistes de sobriété.",
+    link: "/energie/numerique-ia",
+  },
+  {
+    category: "Mix Énergétique",
+    badgeColor: "teal" as const,
+    type: "Dossier",
+    title: "Mix énergétique par pays",
+    description: "Analyse de la dépendance carbone de l'infrastructure numérique mondiale. Découvrez comment l'empreinte de vos calculs varie selon les sources d'énergie (charbon, solaire, nucléaire) des serveurs.",
+    link: "/mix",
+  },
+  {
+    category: "Usage & Impact",
+    badgeColor: "blue" as const,
+    type: "Dossier",
+    title: "Durée d'utilisation & mutualisation des matériels IT",
+    description: "Analyse de la consommation d'électricité lors de l'utilisation de nos ordinateurs, smartphones et serveurs. Comment l'intensité carbone de l'électricité locale dicte le bilan d'usage.",
+    link: "/materiels/utilisation",
+  },
+  {
+    category: "Fin de Vie",
+    badgeColor: "tomato" as const,
+    type: "Dossier",
+    title: "Fin de vie et recyclage des produits IT",
+    description: "Traitement des déchets électroniques (e-waste), recyclage des métaux précieux et impacts environnementaux des décharges technologiques dans les pays en développement.",
+    link: "/materiels/fin-de-vie",
+  },
+  {
+    category: "Production d'Énergie",
+    badgeColor: "amber" as const,
+    type: "Dossier",
+    title: "Types de production d'énergie et impact sur les GES",
+    description: "Analyse comparée des sources de production d'électricité : charbon, gaz, nucléaire, hydraulique, solaire et éolien. Quel est l'impact réel de chaque type d'énergie sur les émissions mondiales.",
+    link: "/energie/production",
   },
 ];
 
 export default function HomePage() {
   return (
     <div 
-      className="flex-1 min-h-screen bg-(--background) text-(--foreground) transition-colors duration-500 overflow-x-hidden"
+      className="flex-1 min-h-screen bg-eco-white dark:bg-oled-black text-green-dark dark:text-eco-white transition-colors duration-500 overflow-x-hidden"
     >
       {/* Client Header component with dynamic Theme Toggle */}
       <Header />
@@ -139,7 +182,7 @@ export default function HomePage() {
             </Text>
           </ScrollReveal>
 
-          <Grid columns={{ initial: "1", md: "3" }} gap="6">
+          <Grid columns={{ initial: "1", sm: "2", md: "3", lg: "4" }} gap="6">
             {ARTICLES.map((article) => (
               <ArticleCard 
                 key={article.title}
@@ -148,6 +191,7 @@ export default function HomePage() {
                 type={article.type}
                 title={article.title}
                 description={article.description}
+                link={article.link}
               />
             ))}
           </Grid>

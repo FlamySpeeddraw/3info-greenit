@@ -30,7 +30,7 @@ export default function RootLayout({
           style={{ colorScheme: "light dark" }}
           suppressHydrationWarning
       >
-      <body className="min-h-full flex flex-col bg-(--background) text-(--foreground)" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col bg-eco-white dark:bg-oled-black text-green-dark dark:text-eco-white" suppressHydrationWarning>
       <ThemeProvider>
         {children}
       </ThemeProvider>
