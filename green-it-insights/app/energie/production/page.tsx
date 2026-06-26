@@ -14,7 +14,7 @@ export default function ProductionPage() {
 
   return (
     <main className="min-h-screen bg-[var(--color-bg)] py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
 
         {/* ── Breadcrumb ─────────────────────────────────────── */}
         <nav aria-label="Fil d'Ariane" className="mb-8">
@@ -56,7 +56,7 @@ export default function ProductionPage() {
         {/* ── Graphique ──────────────────────────────────────── */}
         <section
           aria-labelledby="chart-heading"
-          className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-6 sm:p-10 shadow-[var(--shadow-md)] mb-8"
+          className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-6 sm:p-12 shadow-[var(--shadow-md)] mb-8"
         >
           <div className="mb-8">
             <h2
@@ -106,39 +106,6 @@ export default function ProductionPage() {
             </div>
           ))}
         </section>
-
-        {/* ── Sources ────────────────────────────────────────── */}
-        <footer className="border-t border-[var(--color-divider)] pt-6 pb-4">
-          <p className="text-xs font-semibold uppercase tracking-wide text-[var(--color-text-faint)] mb-3">
-            Sources
-          </p>
-          <ul className="space-y-1.5 text-sm text-[var(--color-text-muted)]">
-            <li>
-              <span className="font-medium text-[var(--color-text)]">ADEME — Base Carbone®</span>
-              {" · "}
-              <a
-                href="https://www.bilans-ges.ademe.fr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--color-primary)] hover:underline"
-              >
-                bilans-ges.ademe.fr
-              </a>
-            </li>
-            <li>
-              <span className="font-medium text-[var(--color-text)]">Ministère de la Transition Écologique</span>
-              {" · "}
-              <a
-                href="https://notre-environnement.gouv.fr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--color-primary)] hover:underline"
-              >
-                notre-environnement.gouv.fr
-              </a>
-            </li>
-          </ul>
-        </footer>
 
       </div>
     </main>

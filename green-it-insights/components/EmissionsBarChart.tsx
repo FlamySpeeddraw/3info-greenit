@@ -76,9 +76,13 @@ export function EmissionsBarChart({ data }: EmissionsBarChartProps) {
     return () => observer.disconnect();
   }, []);
 
+  const handleBarClick = (barData: unknown) => {
+    const entry = barData as FilieresData;
+    setSelected(selected?.id === entry.id ? null : entry);
+  };
+
   return (
     <div className="w-full space-y-8">
-      {/* Supprime le outline focus sur tous les éléments SVG enfants de Recharts */}
       <style>{`
         .recharts-wrapper,
         .recharts-wrapper svg,
@@ -110,7 +114,7 @@ export function EmissionsBarChart({ data }: EmissionsBarChartProps) {
       {/* Graphique */}
       <div
         className="w-full"
-        style={{ height: `${data.length * 54 + 40}px` }}
+        style={{ height: `${data.length * 62 + 40}px` }}
         onMouseDown={(e) => e.preventDefault()}
       >
         <ResponsiveContainer width="100%" height="100%">
@@ -136,7 +140,7 @@ export function EmissionsBarChart({ data }: EmissionsBarChartProps) {
             <YAxis
               type="category"
               dataKey="name"
-              width={155}
+              width={170}
               tick={{ fontSize: 13, fill: colors.text, fontWeight: 500 }}
               tickLine={false}
               axisLine={false}
@@ -148,9 +152,7 @@ export function EmissionsBarChart({ data }: EmissionsBarChartProps) {
               style={{ cursor: "pointer" }}
               activeBar={false}
               isAnimationActive={false}
-              onClick={(entry: FilieresData) =>
-                setSelected(selected?.id === entry.id ? null : entry)
-              }
+              onClick={handleBarClick}
             >
               {data.map((entry) => (
                 <Cell
