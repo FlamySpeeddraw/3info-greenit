@@ -18,11 +18,11 @@ import {
 
 
 const data = [
-  { name: "Industrie", value: 37 },
-  { name: "Résidentiel", value: 30 },
-  { name: "Transport", value: 26 },
-  { name: "Numérique", value: 4 },
-  { name: "Agriculture", value: 3 },
+  { name: "Industrie", value: 37, description: "Acier, ciment, fabrication électronique" },
+  { name: "Résidentiel", value: 30, description:"Chauffage, climatisation, éclairage" },
+  { name: "Transport", value: 26, description:"Camions, avions, bateaux, trains" },
+  { name: "Numérique", value: 4,  description: "Datacenters, smartphones, ordinateurs, IA" },
+  { name: "Agriculture", value: 3, description: "Irrigation, tracteurs, équipements agricoles" },
 ];
 
 
@@ -63,6 +63,8 @@ export default function ConsommationSecteurChart() {
                 cy="50%"
                 innerRadius={70}
                 outerRadius={120}
+                paddingAngle={2}
+                label={({name, value}) => `${name} ${value}%`}
               >
 
                 {data.map((item, index) => (
@@ -74,7 +76,12 @@ export default function ConsommationSecteurChart() {
 
               </Pie>
 
-              <Tooltip />
+              <Tooltip
+  formatter={(value, name, props) => [
+    `${value}%`,
+    props.payload.description
+  ]}
+/>
 
               <Legend />
 

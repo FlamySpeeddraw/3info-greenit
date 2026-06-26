@@ -2,6 +2,7 @@ import { Heading, Text, Badge, Container, Box } from "@radix-ui/themes";
 import ConsommationSecteurChart from "../../components/consommation-energie-secteur/ConsommationSecteurChart";
 import EvolutionNumeriqueChart from "@/components/consommation-energie-secteur/EvolutionNumeriqueChart";
 import EvolutionNumeriqueDetails from "@/components/consommation-energie-secteur/EvolutionNumeriqueDetails";
+import SecteurExplications from "@/components/consommation-energie-secteur/SecteurExplications";
 
 export default function ConsommationEnergiePage() {
   return (
@@ -17,12 +18,18 @@ export default function ConsommationEnergiePage() {
         </Box>
 
         <Box mt="8">
+          <SecteurExplications />
+        </Box>
+
+        <Box mt="8">
           <EvolutionNumeriqueChart />
         </Box>
 
         <Box mt="8">
             <EvolutionNumeriqueDetails />
         </Box>
+
+        
 
       </main>
     </Container>
