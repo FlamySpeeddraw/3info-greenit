@@ -25,12 +25,17 @@ Nous avons sélectionné une palette organique de trois couleurs fondamentales, 
 | **Blanc Éco** | `#FBFBF9` | `eco-white` | Arrière-plan par défaut en mode clair. | Un blanc cassé chaud qui réduit la fatigue oculaire et consomme légèrement moins de rétroéclairage qu'un blanc pur (`#FFFFFF`). |
 | **Noir Organique** | `#080E0A` | `oled-black` | Arrière-plan par défaut en mode sombre. | Un vert-noir ultra-sombre. Sur écran OLED, les pixels noirs sont éteints, réduisant la consommation de l'écran de **40%**. |
 
-### Variables CSS (`app/globals.css`)
-Les couleurs sont disponibles sous forme de variables CSS et de classes Tailwind v4 :
-*   `var(--color-green-dark)` ou `bg-green-dark`
-*   `var(--color-brown-dark)` ou `bg-brown-dark`
-*   `var(--color-eco-white)` ou `bg-eco-white`
-*   `var(--color-oled-black)` ou `bg-oled-black`
+### Variables CSS & TypeScript (`app/globals.css` / `app/color.const.ts`)
+Les couleurs sont disponibles sous forme de variables CSS/classes Tailwind v4, mais aussi sous forme de constantes TypeScript importables :
+
+*   **Tailwind/CSS :** `var(--color-green-dark)` ou `bg-green-dark`
+*   **TypeScript :** `import { COLORS } from "@/app/color.const"` (ex: `COLORS.green.dark`)
+
+#### Couleurs principales :
+*   `var(--color-green-dark)` / `COLORS.green.dark` / `bg-green-dark`
+*   `var(--color-brown-dark)` / `COLORS.brown.dark` / `bg-brown-dark`
+*   `var(--color-eco-white)` / `COLORS.eco.white` / `bg-eco-white`
+*   `var(--color-oled-black)` / `COLORS.oled.black` / `bg-oled-black`
 
 ## 3. Typographie & Cohérence Visuelle
 

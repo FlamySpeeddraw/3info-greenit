@@ -1,65 +1,185 @@
-import Image from "next/image";
+import React from "react";
+import { Container, Box, Heading, Text, Flex, Grid, Badge, Button } from "@radix-ui/themes";
+import { BarChartIcon } from "@radix-ui/react-icons";
+import { Header } from "@/components/Header";
+import { MetricCard } from "@/components/MetricCard";
+import { ArticleCard } from "@/components/ArticleCard";
+import { DeviceSimulator } from "@/components/DeviceSimulator";
+import { NewsletterSection } from "@/components/NewsletterSection";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
-export default function Home() {
+const METRICS = [
+  {
+    value: "+1.5°C Limite",
+    description: "Le seuil critique de réchauffement planétaire défini par l'accord de Paris face aux émissions anthropiques accumulées dans l'atmosphère.",
+  },
+  {
+    value: "Asie de l'Est",
+    description: "Zone géographique concentrant plus de 80% de la production mondiale de puces électroniques, alimentée par un mix électrique carboné.",
+  },
+  {
+    value: "x80 en Aérien",
+    description: "Le fret aérien de matériel IT émet environ 80 fois plus de CO2 par km parcouru que le transport par cargo maritime.",
+  },
+];
+
+const ARTICLES = [
+  {
+    category: "Histoire & Climat",
+    badgeColor: "grass" as const,
+    type: "Dossier",
+    title: "Le climat depuis les temps géologiques",
+    description: "De l'optimum thermique de l'Éocène aux glaciations quaternaires, observez comment les cycles naturels du carbone ont été supplantés par l'explosion industrielle et numérique récente en moins d'un siècle.",
+  },
+  {
+    category: "Matériel & Mines",
+    badgeColor: "brown" as const,
+    type: "Dossier",
+    title: "Cartographie de la production IT",
+    description: "De l'extraction des terres rares en Mongolie intérieure au raffinage et à l'assemblage dans la \"Silicon Valley\" asiatique (Taiwan, Shenzhen). Découvrez les coulisses géopolitiques et énergétiques de nos puces.",
+  },
+  {
+    category: "Logistique",
+    badgeColor: "yellow" as const,
+    type: "Dossier",
+    title: "Modes de transport et coût carbone",
+    description: "Aérien, maritime, ferroviaire ou routier : analyse comparative des modes d'acheminement des terminaux électroniques. Comment le choix logistique impacte directement le bilan carbone final d'un appareil.",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div 
+      className="flex-1 min-h-screen bg-(--background) text-(--foreground) transition-colors duration-500 overflow-x-hidden"
+    >
+      {/* Client Header component with dynamic Theme Toggle */}
+      <Header />
+
+      <Container size="4" className="px-4 py-12 sm:py-20">
+        {/* HERO SECTION */}
+        <section className="mb-20 text-center sm:text-left">
+          <Grid columns={{ initial: "1", md: "12" }} gap="6" align="center">
+            <Box className="md:col-span-8 space-y-6">
+              <Badge size="2" color="grass" variant="soft" className="uppercase tracking-wider font-semibold">
+                Média de sensibilisation écologique
+              </Badge>
+              <Heading 
+                size="9" 
+                weight="bold" 
+                className="tracking-tight leading-none font-sans text-green-dark dark:text-eco-white"
+              >
+                Comprendre l'impact carbone du numérique.
+              </Heading>
+              <Text size="4" className="block max-w-2xl font-light opacity-90 leading-relaxed text-green-dark dark:text-eco-white">
+                Des temps géologiques à la mondialisation logistique, décryptez l'évolution des émissions de gaz à effet de serre et l'empreinte cachée de la production de nos équipements technologiques.
+              </Text>
+              <Flex gap="4" justify={{ initial: "center", sm: "start" }} wrap="wrap" className="pt-2">
+                <a href="#articles" className="no-underline">
+                  <Button size="3" variant="solid" color="grass" className="cursor-pointer font-medium px-6 py-3">
+                    Consulter les dossiers
+                  </Button>
+                </a>
+                <a href="#simulator" className="no-underline">
+                  <Button size="3" variant="outline" color="grass" className="cursor-pointer font-medium px-6 py-3">
+                    Estimer mon empreinte
+                  </Button>
+                </a>
+              </Flex>
+            </Box>
+            <Box className="md:col-span-4 hidden md:block">
+              {/* Visual Eco-Badge using theme-tailored classes */}
+              <div 
+                className="p-8 rounded-3xl border flex flex-col justify-center items-center text-center space-y-4 bg-eco-gray dark:bg-oled-gray border-brown-dark/10 dark:border-eco-white/5"
+              >
+                <div className="w-16 h-16 rounded-full bg-green-accent/25 flex items-center justify-center text-green-accent">
+                  <BarChartIcon className="w-8 h-8 eco-pulse" />
+                </div>
+                <div>
+                  <Text size="1" color="gray" className="uppercase tracking-wider font-bold block mb-1">
+                    Cycle de vie IT
+                  </Text>
+                  <Heading size="7" className="text-green-accent dark:text-green-light">
+                    78% Fabrication
+                  </Heading>
+                </div>
+                <Text size="1" color="gray" className="max-w-[200px]">
+                  La majorité de la pollution numérique a lieu à l'usine, bien avant l'utilisation.
+                </Text>
+              </div>
+            </Box>
+          </Grid>
+        </section>
+
+        {/* KEY METRICS SECTION */}
+        <ScrollReveal>
+          <section className="mb-20">
+            <Grid columns={{ initial: "1", sm: "3" }} gap="6">
+              {METRICS.map((metric) => (
+                <MetricCard 
+                  key={metric.value} 
+                  value={metric.value} 
+                  description={metric.description} 
+                />
+              ))}
+            </Grid>
+          </section>
+        </ScrollReveal>
+
+        {/* RECENT ARTICLES / INSIGHTS SECTION */}
+        <section id="articles" className="mb-20 scroll-mt-24">
+          <ScrollReveal className="mb-8">
+            <Badge size="2" color="grass" className="mb-2 uppercase tracking-wider font-semibold">
+              Dossiers & Analyses
+            </Badge>
+            <Heading size="6" className="font-sans text-green-dark dark:text-eco-white">
+              L'empreinte écologique sous toutes ses facettes
+            </Heading>
+            <Text size="2" color="gray">
+              Des études basées sur les rapports du GIEC, de l'ADEME et du Shift Project.
+            </Text>
+          </ScrollReveal>
+
+          <Grid columns={{ initial: "1", md: "3" }} gap="6">
+            {ARTICLES.map((article) => (
+              <ArticleCard 
+                key={article.title}
+                category={article.category}
+                badgeColor={article.badgeColor}
+                type={article.type}
+                title={article.title}
+                description={article.description}
+              />
+            ))}
+          </Grid>
+        </section>
+
+        {/* INTERACTIVE SIMULATOR SECTION (Client component logic) */}
+        <section id="simulator" className="mb-20 scroll-mt-24">
+          <ScrollReveal className="mb-8">
+            <Badge size="2" color="brown" className="mb-2 uppercase tracking-wider font-semibold">
+              Simulateur Matériel
+            </Badge>
+            <Heading size="6" className="font-sans text-green-dark dark:text-eco-white">
+              Éco-Calculateur d'Équipement Numérique
+            </Heading>
+            <Text size="2" color="gray">
+              Estimez le coût carbone de fabrication et de transport de votre appareil, puis découvrez comment sa durée de vie amortit son impact annuel.
+            </Text>
+          </ScrollReveal>
+
+          <DeviceSimulator />
+        </section>
+
+        {/* NEWSLETTER SECTION (Client component form) */}
+        <NewsletterSection />
+
+        {/* Footer */}
+        <footer className="pt-8 border-t text-center border-brown-dark/10 dark:border-eco-white/5">
+          <Text size="1" color="gray">
+            Green IT Insights &copy; {new Date().getFullYear()} — Média éco-conçu. Moins de 0,1g CO2 par visite en mode sombre OLED.
+          </Text>
+        </footer>
+      </Container>
     </div>
   );
 }
