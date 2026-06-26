@@ -33,20 +33,6 @@ export default function ConsommationEnergiePage() {
 
         </Box>
 
-        <Box mt="8">
-          <SecteurExplications />
-        </Box>
-
-        <Box mt="8">
-          <EvolutionNumeriqueChart />
-        </Box>
-
-        <Box mt="8">
-            <EvolutionNumeriqueDetails />
-        </Box>
-
-        
-
       </main>
     </Container>
   );
