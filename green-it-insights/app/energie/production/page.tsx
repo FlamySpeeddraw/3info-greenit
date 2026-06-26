@@ -98,7 +98,6 @@ export default function ProductionPage() {
             </div>
           ))}
         </section>
-
       </div>
     </main>
   );
