@@ -58,5 +58,65 @@
     "name": "Inde",
     "carbonIntensity": 705,
     "mix": { "fossil": 75, "nuclear": 3, "renewable": 22 }
+  },
+  {
+    "id": "BRA",
+    "name": "Brésil",
+    "carbonIntensity": 65,
+    "mix": { "fossil": 15, "nuclear": 2, "renewable": 83 }
+  },
+  {
+    "id": "CAN",
+    "name": "Canada",
+    "carbonIntensity": 110,
+    "mix": { "fossil": 18, "nuclear": 15, "renewable": 67 }
+  },
+  {
+    "id": "AUS",
+    "name": "Australie",
+    "carbonIntensity": 390,
+    "mix": { "fossil": 60, "nuclear": 0, "renewable": 40 }
+  },
+  {
+    "id": "JPN",
+    "name": "Japon",
+    "carbonIntensity": 450,
+    "mix": { "fossil": 70, "nuclear": 8, "renewable": 22 }
+  },
+  {
+    "id": "ZAF",
+    "name": "Afrique du Sud",
+    "carbonIntensity": 680,
+    "mix": { "fossil": 85, "nuclear": 2, "renewable": 13 }
+  },
+  {
+    "id": "ESP",
+    "name": "Espagne",
+    "carbonIntensity": 150,
+    "mix": { "fossil": 30, "nuclear": 20, "renewable": 50 }
+  },
+  {
+    "id": "ITA",
+    "name": "Italie",
+    "carbonIntensity": 250,
+    "mix": { "fossil": 55, "nuclear": 0, "renewable": 45 }
+  },
+  {
+    "id": "SAU",
+    "name": "Arabie saoudite",
+    "carbonIntensity": 600,
+    "mix": { "fossil": 99, "nuclear": 0, "renewable": 1 }
+  },
+  {
+    "id": "RUS",
+    "name": "Russie",
+    "carbonIntensity": 320,
+    "mix": { "fossil": 63, "nuclear": 19, "renewable": 18 }
+  },
+  {
+    "id": "TUR",
+    "name": "Turquie",
+    "carbonIntensity": 350,
+    "mix": { "fossil": 55, "nuclear": 0, "renewable": 45 }
   }
 ]
