@@ -1,6 +1,6 @@
 import { Flex, Heading, Link, Section, Separator, Text } from "@radix-ui/themes";
 import type { ReactNode } from "react";
-import type { Source } from "../types";
+import type { Source } from "./types";
 
 /**
  * Liste de sources générique : titre, liens et note de bas fournis par
