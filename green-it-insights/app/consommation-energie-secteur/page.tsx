@@ -1,5 +1,5 @@
 import { Heading, Text, Badge, Container, Box } from "@radix-ui/themes";
-import ConsommationSecteurChart from "./components/ConsommationSecteurChart";
+import ConsommationSecteurChart from "../../components/consommation-energie-secteur/ConsommationSecteurChart";
 
 
 export default function ConsommationEnergiePage() {
