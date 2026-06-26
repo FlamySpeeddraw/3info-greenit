@@ -16,27 +16,6 @@ export default function ProductionPage() {
     <main className="min-h-screen bg-[var(--color-bg)] py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
 
-        {/* ── Breadcrumb ─────────────────────────────────────── */}
-        <nav aria-label="Fil d'Ariane" className="mb-8">
-          <ol className="flex items-center gap-2 text-sm text-[var(--color-text-muted)]">
-            <li>
-              <a href="/" className="hover:text-[var(--color-primary)] transition-colors">
-                Accueil
-              </a>
-            </li>
-            <li aria-hidden="true" className="text-[var(--color-text-faint)]">›</li>
-            <li>
-              <a href="/energie" className="hover:text-[var(--color-primary)] transition-colors">
-                Énergie
-              </a>
-            </li>
-            <li aria-hidden="true" className="text-[var(--color-text-faint)]">›</li>
-            <li aria-current="page" className="text-[var(--color-text)] font-medium">
-              Production
-            </li>
-          </ol>
-        </nav>
-
         {/* ── En-tête ─────────────────────────────────────────── */}
         <header className="mb-12">
           <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-primary)] mb-3">
