@@ -16,6 +16,10 @@ import {
 } from "@radix-ui/themes";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { Waffle } from "@/components/viz/Waffle";
+import { Donut } from "@/components/viz/Donut";
+import { TrendChart } from "@/components/viz/TrendChart";
+import { CompareBars } from "@/components/viz/CompareBars";
 
 export const metadata: Metadata = {
   title: "Le numérique & l'IA dans la consommation mondiale | Green IT Insights",
@@ -164,6 +168,13 @@ export default function NumeriqueIaPage() {
             <strong>4,4 % de l&apos;empreinte carbone nationale</strong> et consomme
             près de <strong>11 % de l&apos;électricité</strong> du pays.
           </Text>
+          <Waffle
+            filled={4}
+            total={100}
+            title="Ce que pèse le numérique : 4 cases sur 100"
+            caption="~4 % des émissions mondiales de GES — soit autant que l'aviation civile, et la part progresse plus vite que la moyenne."
+            ariaLabel="Le numérique représente environ 4 cases sur 100, soit 4 % des émissions mondiales de gaz à effet de serre, un niveau comparable à l'aviation civile."
+          />
           <Text as="p" size="3">
             Point contre-intuitif souvent ignoré : la majorité de cet impact ne
             vient pas de l&apos;usage mais de la <strong>fabrication</strong>.
@@ -173,6 +184,17 @@ export default function NumeriqueIaPage() {
             près de <strong>46 %</strong> de l&apos;empreinte liée à
             l&apos;infrastructure.
           </Text>
+          <Donut
+            title="D'où vient l'impact ? Surtout de la fabrication"
+            segments={[
+              { label: "Fabrication (~60 %)", value: 60, color: "var(--grass-9)" },
+              { label: "Usage (~40 %)", value: 40, color: "var(--brown-9)" },
+            ]}
+            centerLabel="60 %"
+            centerSub="fabrication"
+            caption="Extraction des métaux et assemblage : l'essentiel de l'empreinte est déjà « payé » avant le premier allumage."
+            ariaLabel="Répartition de l'empreinte carbone du numérique : environ 60 % proviennent de la fabrication des équipements, le reste de l'usage."
+          />
         </Section>
       </ScrollReveal>
 
@@ -196,6 +218,19 @@ export default function NumeriqueIaPage() {
             mondiale), en croissant environ <strong>quatre fois plus vite</strong>{" "}
             que la consommation électrique de tous les autres secteurs réunis.
           </Text>
+          <TrendChart
+            title="Consommation des data centers : 415 → 945 TWh"
+            points={[
+              { label: 2024, value: 415 },
+              { label: 2026, value: 565 },
+              { label: 2030, value: 945 },
+            ]}
+            yMax={1000}
+            yTicks={[0, 250, 500, 750, 1000]}
+            highlightLast
+            caption="En TWh. Projection AIE : la consommation croît ~4× plus vite que les autres secteurs."
+            ariaLabel="Consommation électrique mondiale des data centers : 415 TWh en 2024, environ 565 TWh en 2026, et près de 945 TWh projetés en 2030, soit plus du double en six ans."
+          />
         </Section>
       </ScrollReveal>
 
@@ -247,6 +282,42 @@ export default function NumeriqueIaPage() {
             d&apos;eau, et une requête IA peut consommer jusqu&apos;à{" "}
             <strong>10× plus d&apos;eau</strong> qu&apos;une recherche web classique.
           </Text>
+          <CompareBars
+            title="Une recherche Google vs une requête ChatGPT"
+            groups={[
+              {
+                heading: "⚡ Énergie par requête",
+                max: 0.3,
+                bars: [
+                  { label: "Recherche Google", display: "~0,3 Wh", value: 0.3 },
+                  {
+                    label: "Requête ChatGPT (GPT-4o)",
+                    display: "~0,3 Wh",
+                    value: 0.3,
+                  },
+                ],
+              },
+              {
+                heading: "💧 Eau pour le refroidissement",
+                max: 10,
+                bars: [
+                  {
+                    label: "Recherche Google",
+                    display: "référence (×1)",
+                    value: 1,
+                  },
+                  {
+                    label: "Requête ChatGPT",
+                    display: "jusqu'à ×10",
+                    value: 10,
+                    color: "var(--tomato-9)",
+                  },
+                ],
+              },
+            ]}
+            caption="À modèle standard, l'énergie est quasi identique : l'idée que l'IA « consomme 10× plus » concerne surtout l'eau de refroidissement, pas l'électricité par requête."
+            ariaLabel="Comparaison entre une recherche Google et une requête ChatGPT : énergie quasi identique (~0,3 Wh chacune), mais la requête IA consomme jusqu'à 10 fois plus d'eau pour le refroidissement."
+          />
         </Section>
       </ScrollReveal>
 
