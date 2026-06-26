@@ -17,24 +17,35 @@ gsap.registerPlugin(ScrollTrigger);
  *    reste lisible.
  *  - `prefers-reduced-motion` : l'animation est désactivée, le contenu
  *    s'affiche immédiatement.
- *  - L'animation se joue une seule fois et ne re-masque pas le contenu au
- *    défilement vers le haut.
+ *  - Un élément déjà visible au chargement n'est PAS masqué : pas de
+ *    clignotement (FOUC) sur les sections au-dessus de la ligne de flottaison,
+ *    et pas de contenu qui resterait caché faute de déclenchement.
+ *  - L'animation se joue une seule fois et ne re-masque pas au scroll arrière.
  */
 export function ScrollReveal({ children }: { children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia();
 
       mm.add("(prefers-reduced-motion: no-preference)", () => {
-        gsap.from(ref.current, {
+        const rect = el.getBoundingClientRect();
+        const alreadyVisible =
+          rect.top < window.innerHeight && rect.bottom > 0;
+        // Déjà à l'écran : on laisse visible (aucun masquage, aucun flash).
+        if (alreadyVisible) return;
+
+        gsap.from(el, {
           opacity: 0,
           y: 40,
           duration: 1.2,
           ease: "power3.out",
           scrollTrigger: {
-            trigger: ref.current,
+            trigger: el,
             start: "top 88%",
             toggleActions: "play none none none",
           },

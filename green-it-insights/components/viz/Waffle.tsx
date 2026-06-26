@@ -1,32 +1,38 @@
-import { Box, Text } from "@radix-ui/themes";
+import type { WaffleProps } from "./types";
+import { VizFigure } from "./VizFigure";
 
 /**
  * Waffle générique (grille de cases) pour matérialiser une proportion
- * « X sur total ». Réutilisable : il suffit de passer `filled` / `total`.
+ * « X sur total ». Réutilisable : il suffit de passer `filled` / `total`,
+ * ou bien un `percent` (0–100) pour déduire automatiquement les cases pleines.
+ *
+ * La géométrie (taille des cases, espacement, arrondi) est entièrement
+ * configurable via des props optionnelles, avec des valeurs par défaut
+ * rétro-compatibles avec l'usage historique.
  */
 
-export type WaffleProps = {
-  /** Texte alternatif accessible (obligatoire). */
-  ariaLabel: string;
-  /** Nombre de cases remplies. */
-  filled: number;
-  /** Nombre total de cases. Défaut 100. */
-  total?: number;
-  /** Cases par ligne. Défaut 10. */
-  columns?: number;
-  title?: string;
-  caption?: string;
-  color?: string;
-  emptyColor?: string;
-  maxWidth?: number;
+/**
+ * Props locales : on étend `WaffleProps` (non modifiable) avec de nouvelles
+ * options purement optionnelles. `filled` est rendu optionnel localement pour
+ * autoriser l'usage alternatif via `percent`, sans casser l'API existante.
+ */
+type Props = Omit<WaffleProps, "filled"> & {
+  /** Nombre de cases remplies. Optionnel si `percent` est fourni. */
+  filled?: number;
+  /** Proportion remplie en pourcentage (0–100). Ignoré si `filled` est fourni. */
+  percent?: number;
+  /** Côté d'une case en px. Défaut 14. */
+  cellSize?: number;
+  /** Espacement entre deux cases en px. Défaut 2. */
+  gap?: number;
+  /** Rayon des coins arrondis en px. Défaut 2. */
+  radius?: number;
 };
-
-const STEP = 16;
-const CELL = 14;
 
 export function Waffle({
   ariaLabel,
   filled,
+  percent,
   total = 100,
   columns = 10,
   title,
@@ -34,19 +40,24 @@ export function Waffle({
   color = "var(--grass-9)",
   emptyColor = "var(--gray-4)",
   maxWidth = 200,
-}: WaffleProps) {
+  cellSize = 14,
+  gap = 2,
+  radius = 2,
+}: Props) {
+  // Nombre de cases pleines : priorité à `filled`, sinon déduit de `percent`.
+  const filledCount =
+    filled ?? (percent != null ? Math.round((percent / 100) * total) : 0);
+  // Garde-fous : on borne la valeur dans l'intervalle [0, total].
+  const safeFilled = Math.max(0, Math.min(filledCount, total));
+
+  const step = cellSize + gap;
   const rows = Math.ceil(total / columns);
   const cells = Array.from({ length: total }, (_, i) => i);
-  const vbW = columns * STEP - (STEP - CELL);
-  const vbH = rows * STEP - (STEP - CELL);
+  const vbW = columns * step - gap;
+  const vbH = rows * step - gap;
 
   return (
-    <Box role="img" aria-label={ariaLabel} my="4">
-      {title && (
-        <Text size="3" weight="bold" as="div" mb="3">
-          {title}
-        </Text>
-      )}
+    <VizFigure ariaLabel={ariaLabel} title={title} caption={caption}>
       <svg
         viewBox={`0 0 ${vbW} ${vbH}`}
         width="100%"
@@ -59,21 +70,16 @@ export function Waffle({
           return (
             <rect
               key={i}
-              x={col * STEP}
-              y={row * STEP}
-              width={CELL}
-              height={CELL}
-              rx={2}
-              fill={i < filled ? color : emptyColor}
+              x={col * step}
+              y={row * step}
+              width={cellSize}
+              height={cellSize}
+              rx={radius}
+              fill={i < safeFilled ? color : emptyColor}
             />
           );
         })}
       </svg>
-      {caption && (
-        <Text size="1" color="gray" as="p" mt="2">
-          {caption}
-        </Text>
-      )}
-    </Box>
+    </VizFigure>
   );
 }
