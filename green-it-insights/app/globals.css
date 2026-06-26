@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "@radix-ui/themes/styles.css";
 
+@variant dark (&:where(.dark, .dark *));
+
 /* 
  * NOTE: The colors defined below are also available as TypeScript constants 
  * in app/color.const.ts for easy import in TS/JS files.
@@ -59,39 +61,37 @@
   --brown-12: #1F1715;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #080E0A;
-    --foreground: #EAEFEA;
+.dark {
+  --background: #080E0A;
+  --foreground: #EAEFEA;
 
-    /* Dark mode Radix overrides for grass scale (emerald/forest) */
-    --grass-1: #080e0a;
-    --grass-2: #0e1711;
-    --grass-3: #16261c;
-    --grass-4: #1d3627;
-    --grass-5: #254732;
-    --grass-6: #2d5a3f;
-    --grass-7: #37704e;
-    --grass-8: #43885e;
-    --grass-9: #2E6A49; /* Bright Green in dark mode */
-    --grass-10: #37704e;
-    --grass-11: #bbf7d0;
-    --grass-12: #e8fdf0;
+  /* Dark mode Radix overrides for grass scale (emerald/forest) */
+  --grass-1: #080e0a;
+  --grass-2: #0e1711;
+  --grass-3: #16261c;
+  --grass-4: #1d3627;
+  --grass-5: #254732;
+  --grass-6: #2d5a3f;
+  --grass-7: #37704e;
+  --grass-8: #43885e;
+  --grass-9: #2E6A49; /* Bright Green in dark mode */
+  --grass-10: #37704e;
+  --grass-11: #bbf7d0;
+  --grass-12: #e8fdf0;
 
-    /* Dark mode Radix overrides for brown scale */
-    --brown-1: #0e0c0b;
-    --brown-2: #171312;
-    --brown-3: #241d1c;
-    --brown-4: #332725;
-    --brown-5: #44322f;
-    --brown-6: #573e3a;
-    --brown-7: #6e4c47;
-    --brown-8: #875c55;
-    --brown-9: #8E6E66; /* Bright Brown in dark mode */
-    --brown-10: #9e7f77;
-    --brown-11: #fed7d7;
-    --brown-12: #fff5f5;
-  }
+  /* Dark mode Radix overrides for brown scale */
+  --brown-1: #0e0c0b;
+  --brown-2: #171312;
+  --brown-3: #241d1c;
+  --brown-4: #332725;
+  --brown-5: #44322f;
+  --brown-6: #573e3a;
+  --brown-7: #6e4c47;
+  --brown-8: #875c55;
+  --brown-9: #8E6E66; /* Bright Brown in dark mode */
+  --brown-10: #9e7f77;
+  --brown-11: #fed7d7;
+  --brown-12: #fff5f5;
 }
 
 body {
@@ -108,12 +108,10 @@ body {
   border: 1px solid rgba(61, 46, 43, 0.08);
 }
 
-@media (prefers-color-scheme: dark) {
-  .glassmorphism {
-    background: rgba(18, 26, 21, 0.7);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(254, 215, 215, 0.05);
-  }
+.dark .glassmorphism {
+  background: rgba(18, 26, 21, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(254, 215, 215, 0.05);
 }
 
 /* Eco-friendly pulse animation for active elements */
@@ -180,10 +178,8 @@ code, pre {
   padding: 0.125rem 0.25rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  code, pre {
-    background-color: var(--grass-2);
-    border-color: var(--grass-4);
-  }
+.dark code, .dark pre {
+  background-color: var(--grass-2);
+  border-color: var(--grass-4);
 }
 
