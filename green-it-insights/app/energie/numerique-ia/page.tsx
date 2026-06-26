@@ -17,10 +17,35 @@ import { TrendChart } from "@/components/viz/TrendChart";
 import { CompareBars } from "@/components/viz/CompareBars";
 import { keyFigures, sources } from "./data";
 
+const PAGE_TITLE =
+  "Le numérique & l'IA dans la consommation mondiale | Green IT Insights";
+const PAGE_DESCRIPTION =
+  "Quelle place le numérique et l'intelligence artificielle occupent-ils dans la consommation mondiale d'énergie ? Chiffres clés, data centers, impact de l'IA et sources.";
+
 export const metadata: Metadata = {
-  title: "Le numérique & l'IA dans la consommation mondiale | Green IT Insights",
-  description:
-    "Quelle place le numérique et l'intelligence artificielle occupent-ils dans la consommation mondiale d'énergie ? Chiffres clés, data centers, impact de l'IA et sources.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  keywords: [
+    "Green IT",
+    "numérique responsable",
+    "consommation énergie",
+    "data centers",
+    "intelligence artificielle",
+    "empreinte carbone",
+    "sobriété numérique",
+  ],
+  openGraph: {
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    type: "article",
+    locale: "fr_FR",
+    siteName: "Green IT Insights",
+  },
+  twitter: {
+    card: "summary",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+  },
 };
 
 /**

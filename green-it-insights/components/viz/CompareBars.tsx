@@ -16,19 +16,6 @@ const DEFAULT_BAR_SIZE = 14;
 const DEFAULT_MIN_BAR_PERCENT = 4;
 const DEFAULT_TRACK_COLOR = "var(--gray-4)";
 
-type Props = CompareBarsProps & {
-  /** Hauteur (px) de chaque barre. Défaut 14. */
-  barSize?: number;
-  /** Rayon (px) des coins. Défaut : barSize / 2 (pilule). */
-  barRadius?: number;
-  /** Largeur minimale (%) d'une barre non nulle, pour rester visible. Défaut 4. */
-  minBarPercent?: number;
-  /** Couleur de fond de la piste (zone vide). Défaut var(--gray-4). */
-  trackColor?: string;
-  /** Affiche `display` à l'intérieur de la barre plutôt qu'au-dessus à droite. */
-  valueInside?: boolean;
-};
-
 function BarRow({
   bar,
   max,
@@ -104,7 +91,7 @@ export function CompareBars({
   minBarPercent = DEFAULT_MIN_BAR_PERCENT,
   trackColor = DEFAULT_TRACK_COLOR,
   valueInside = false,
-}: Props) {
+}: CompareBarsProps) {
   // Rayon par défaut : moitié de la hauteur (forme pilule), comme avant (7).
   const resolvedRadius = barRadius ?? barSize / 2;
   return (

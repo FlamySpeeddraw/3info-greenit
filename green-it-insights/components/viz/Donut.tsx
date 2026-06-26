@@ -14,16 +14,9 @@ import { VizFigure } from "./VizFigure";
  *   au diamètre (défauts : 0.183 / 0.075).
  */
 
-type Props = DonutProps & {
-  /** Affiche la légende. Défaut : true. */
-  showLegend?: boolean;
-  /** Position de la légende relative au donut. Défaut : "right". */
-  legendPosition?: "right" | "bottom";
-  /** Ratio de la police du label central (× diamètre). Défaut : 0.183. */
-  labelFontRatio?: number;
-  /** Ratio de la police du sous-label central (× diamètre). Défaut : 0.075. */
-  subFontRatio?: number;
-};
+/** Ratios de position verticale du texte central (× diamètre). */
+const CENTER_LABEL_DY_RATIO = -0.015;
+const CENTER_SUB_DY_RATIO = 0.115;
 
 function LegendItem({ color, label }: { color: string; label: string }) {
   return (
@@ -55,7 +48,7 @@ export function Donut({
   legendPosition = "right",
   labelFontRatio = 0.183,
   subFontRatio = 0.075,
-}: Props) {
+}: DonutProps) {
   const r = (size - thickness) / 2;
   const c = 2 * Math.PI * r;
   const total = segments.reduce((sum, s) => sum + s.value, 0) || 1;
@@ -110,7 +103,7 @@ export function Donut({
           {centerLabel && (
             <text
               x={size / 2}
-              y={size / 2 - size * 0.015}
+              y={size / 2 + size * CENTER_LABEL_DY_RATIO}
               textAnchor="middle"
               fontSize={labelFont}
               fontWeight={700}
@@ -122,7 +115,7 @@ export function Donut({
           {centerSub && (
             <text
               x={size / 2}
-              y={size / 2 + size * 0.115}
+              y={size / 2 + size * CENTER_SUB_DY_RATIO}
               textAnchor="middle"
               fontSize={subFont}
               fill="var(--gray-9)"

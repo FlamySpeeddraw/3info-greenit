@@ -11,24 +11,6 @@ import { VizFigure } from "./VizFigure";
  * rétro-compatibles avec l'usage historique.
  */
 
-/**
- * Props locales : on étend `WaffleProps` (non modifiable) avec de nouvelles
- * options purement optionnelles. `filled` est rendu optionnel localement pour
- * autoriser l'usage alternatif via `percent`, sans casser l'API existante.
- */
-type Props = Omit<WaffleProps, "filled"> & {
-  /** Nombre de cases remplies. Optionnel si `percent` est fourni. */
-  filled?: number;
-  /** Proportion remplie en pourcentage (0–100). Ignoré si `filled` est fourni. */
-  percent?: number;
-  /** Côté d'une case en px. Défaut 14. */
-  cellSize?: number;
-  /** Espacement entre deux cases en px. Défaut 2. */
-  gap?: number;
-  /** Rayon des coins arrondis en px. Défaut 2. */
-  radius?: number;
-};
-
 export function Waffle({
   ariaLabel,
   filled,
@@ -43,7 +25,7 @@ export function Waffle({
   cellSize = 14,
   gap = 2,
   radius = 2,
-}: Props) {
+}: WaffleProps) {
   // Nombre de cases pleines : priorité à `filled`, sinon déduit de `percent`.
   const filledCount =
     filled ?? (percent != null ? Math.round((percent / 100) * total) : 0);

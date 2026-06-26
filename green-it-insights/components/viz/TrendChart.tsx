@@ -1,4 +1,4 @@
-import type { TrendChartProps } from "./types";
+import type { TrendChartProps, TrendPadding } from "./types";
 import { VizFigure } from "./VizFigure";
 
 /**
@@ -14,35 +14,9 @@ import { VizFigure } from "./VizFigure";
  * l'axe X).
  */
 
-/** Marges internes du dessin (zone de tracé = dimensions - marges). */
-type Padding = { left: number; right: number; top: number; bottom: number };
-
-type Props = TrendChartProps & {
-  /** Largeur du viewBox SVG. Défaut 420. */
-  width?: number;
-  /** Hauteur du viewBox SVG. Défaut 220. */
-  height?: number;
-  /** Marges internes ; override partiel possible. Défaut {44,20,24,30}. */
-  padding?: Partial<Padding>;
-  /** Affiche l'aire sous la courbe. Défaut true. */
-  showArea?: boolean;
-  /** Affiche les points (cercles). Défaut true. */
-  showDots?: boolean;
-  /** Affiche la valeur au-dessus de chaque point. Défaut true. */
-  showValues?: boolean;
-  /** Affiche les lignes de repère horizontales + l'axe Y. Défaut true. */
-  showGrid?: boolean;
-  /** Formate la valeur affichée au-dessus d'un point. Défaut : telle quelle. */
-  formatValue?: (value: number) => string | number;
-  /** Formate une graduation de l'axe Y. Défaut : arrondi. */
-  formatYTick?: (value: number) => string | number;
-  /** Formate un label de l'axe X. Défaut : tel quel. */
-  formatLabel?: (label: string | number) => string | number;
-};
-
 const DEFAULT_W = 420;
 const DEFAULT_H = 220;
-const DEFAULT_PAD: Padding = { left: 44, right: 20, top: 24, bottom: 30 };
+const DEFAULT_PAD: TrendPadding = { left: 44, right: 20, top: 24, bottom: 30 };
 
 export function TrendChart({
   ariaLabel,
@@ -65,10 +39,10 @@ export function TrendChart({
   formatValue = (v) => v,
   formatYTick = (v) => Math.round(v),
   formatLabel = (l) => l,
-}: Props) {
+}: TrendChartProps) {
   const W = width;
   const H = height;
-  const PAD: Padding = { ...DEFAULT_PAD, ...padding };
+  const PAD: TrendPadding = { ...DEFAULT_PAD, ...padding };
   const PLOT_W = W - PAD.left - PAD.right;
   const PLOT_H = H - PAD.top - PAD.bottom;
 
