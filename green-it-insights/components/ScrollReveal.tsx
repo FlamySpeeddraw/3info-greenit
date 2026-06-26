@@ -22,7 +22,13 @@ gsap.registerPlugin(ScrollTrigger);
  *    et pas de contenu qui resterait caché faute de déclenchement.
  *  - L'animation se joue une seule fois et ne re-masque pas au scroll arrière.
  */
-export function ScrollReveal({ children }: { children: ReactNode }) {
+export function ScrollReveal({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -56,5 +62,9 @@ export function ScrollReveal({ children }: { children: ReactNode }) {
     return () => ctx.revert();
   }, []);
 
-  return <div ref={ref}>{children}</div>;
+  return (
+    <div ref={ref} className={className}>
+      {children}
+    </div>
+  );
 }
