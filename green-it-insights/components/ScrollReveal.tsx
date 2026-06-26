@@ -1,53 +1,49 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { useEffect, useRef, type ReactNode } from "react";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Register ScrollTrigger plugin on client side
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+gsap.registerPlugin(ScrollTrigger);
 
-type ScrollRevealProps = {
-  children: React.ReactNode;
-  className?: string;
-};
-
-export function ScrollReveal({ children, className = "" }: ScrollRevealProps) {
+/**
+ * Composant d'apparition au défilement (charte §6).
+ *
+ * Anime uniquement `opacity` et `transform` (`y`) pour éviter tout reflow.
+ *
+ * Dégradation gracieuse (éco-conception / A11y) :
+ *  - Le contenu est visible par défaut (opacité 1). GSAP ne le masque que
+ *    lorsque le JS s'exécute → si le JS échoue ou est désactivé, le texte
+ *    reste lisible.
+ *  - `prefers-reduced-motion` : l'animation est désactivée, le contenu
+ *    s'affiche immédiatement.
+ *  - L'animation se joue une seule fois et ne re-masque pas le contenu au
+ *    défilement vers le haut.
+ */
+export function ScrollReveal({ children }: { children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
-
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        element,
-        {
+      const mm = gsap.matchMedia();
+
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        gsap.from(ref.current, {
           opacity: 0,
-          y: 30
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1.0,
+          y: 40,
+          duration: 1.2,
           ease: "power3.out",
           scrollTrigger: {
-            trigger: element,
-            start: "top 90%", // Trigger animation when top of element is 90% down the viewport
-            toggleActions: "play reverse play reverse",
+            trigger: ref.current,
+            start: "top 88%",
+            toggleActions: "play none none none",
           },
-        }
-      );
-    });
+        });
+      });
+    }, ref);
 
     return () => ctx.revert();
   }, []);
 
-  return (
-    <div ref={ref} className={className} style={{ opacity: 0 }}>
-      {children}
-    </div>
-  );
+  return <div ref={ref}>{children}</div>;
 }
