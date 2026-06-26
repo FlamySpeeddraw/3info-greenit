@@ -3,7 +3,7 @@ import ConsommationSecteurChart from "../../components/consommation-energie-sect
 import EvolutionNumeriqueChart from "@/components/consommation-energie-secteur/EvolutionNumeriqueChart";
 import EvolutionNumeriqueDetails from "@/components/consommation-energie-secteur/EvolutionNumeriqueDetails";
 import SecteurExplications from "@/components/consommation-energie-secteur/SecteurExplications";
-
+import { ScrollReveal } from "@/components/consommation-energie-secteur/ScrollReveal";
 export default function ConsommationEnergiePage() {
   return (
     <Container size="4">
@@ -14,22 +14,24 @@ export default function ConsommationEnergiePage() {
         </Heading>
 
         <Box mt="8">
-          <ConsommationSecteurChart />
-        </Box>
 
-        <Box mt="8">
-          <SecteurExplications />
-        </Box>
+          <ScrollReveal>
+            <ConsommationSecteurChart />
+          </ScrollReveal>
 
-        <Box mt="8">
-          <EvolutionNumeriqueChart />
-        </Box>
+          <ScrollReveal>
+            <SecteurExplications />
+          </ScrollReveal>
 
-        <Box mt="8">
+          <ScrollReveal>
+            <EvolutionNumeriqueChart />
+          </ScrollReveal>
+
+          <ScrollReveal>
             <EvolutionNumeriqueDetails />
-        </Box>
+          </ScrollReveal>
 
-        
+        </Box>
 
       </main>
     </Container>
