@@ -14,16 +14,14 @@ import {
 import { FilieresTooltip } from "./FilieresTooltip";
 import { useState, useEffect } from "react";
 import type { FilieresData } from "@/types/energie";
+import {
+  EMISSION_COLORS,
+  EMISSION_THRESHOLDS,
+  getEmissionColor,
+} from "./EmissionsConstants";
 
 interface EmissionsBarChartProps {
   data: FilieresData[];
-}
-
-function getBarColor(value: number): string {
-  if (value >= 600) return "#c0392b";
-  if (value >= 200) return "#e67e22";
-  if (value >= 50)  return "#f1c40f";
-  return "#27ae60";
 }
 
 interface ChartColors {
@@ -32,6 +30,25 @@ interface ChartColors {
   divider: string;
   border: string;
 }
+
+const LEGEND_ITEMS = [
+  {
+    color: EMISSION_COLORS.VERY_HIGH,
+    label: `Très carboné  ≥ ${EMISSION_THRESHOLDS.VERY_HIGH}`,
+  },
+  {
+    color: EMISSION_COLORS.HIGH,
+    label: `Modéré  ${EMISSION_THRESHOLDS.HIGH} – ${EMISSION_THRESHOLDS.VERY_HIGH}`,
+  },
+  {
+    color: EMISSION_COLORS.MEDIUM,
+    label: `Faible  ${EMISSION_THRESHOLDS.MEDIUM} – ${EMISSION_THRESHOLDS.HIGH}`,
+  },
+  {
+    color: EMISSION_COLORS.LOW,
+    label: `Bas-carbone  < ${EMISSION_THRESHOLDS.MEDIUM}`,
+  },
+] as const;
 
 export function EmissionsBarChart({ data }: EmissionsBarChartProps) {
   const [selected, setSelected] = useState<FilieresData | null>(null);
@@ -83,6 +100,12 @@ export function EmissionsBarChart({ data }: EmissionsBarChartProps) {
 
   return (
     <div className="w-full space-y-8">
+      {/*
+       * Recharts rend un <svg> focusable au clic qui déclenche un outline natif
+       * du navigateur (carré blanc). Ce style ciblé supprime ce comportement
+       * sans altérer la navigation clavier du reste de la page.
+       * Isolé ici car Recharts n'expose pas de prop pour le désactiver.
+       */}
       <style>{`
         .recharts-wrapper,
         .recharts-wrapper svg,
@@ -95,12 +118,7 @@ export function EmissionsBarChart({ data }: EmissionsBarChartProps) {
 
       {/* Légende */}
       <div className="flex flex-wrap gap-x-5 gap-y-2">
-        {[
-          { color: "#c0392b", label: "Très carboné  ≥ 600" },
-          { color: "#e67e22", label: "Modéré  200 – 600" },
-          { color: "#f1c40f", label: "Faible  50 – 200" },
-          { color: "#27ae60", label: "Bas-carbone  < 50" },
-        ].map(({ color, label }) => (
+        {LEGEND_ITEMS.map(({ color, label }) => (
           <span key={label} className="flex items-center gap-2 text-xs" style={{ color: colors.textMuted }}>
             <span
               className="inline-block w-2.5 h-2.5 rounded-sm flex-shrink-0"
@@ -157,7 +175,7 @@ export function EmissionsBarChart({ data }: EmissionsBarChartProps) {
               {data.map((entry) => (
                 <Cell
                   key={entry.id}
-                  fill={getBarColor(entry.emissionFactor)}
+                  fill={getEmissionColor(entry.emissionFactor)}
                   opacity={selected && selected.id !== entry.id ? 0.35 : 1}
                   stroke={selected?.id === entry.id ? colors.text : "none"}
                   strokeWidth={selected?.id === entry.id ? 1.5 : 0}

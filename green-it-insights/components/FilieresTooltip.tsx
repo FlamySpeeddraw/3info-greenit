@@ -1,118 +1,130 @@
+import { Button, Text, Heading } from "@radix-ui/themes";
 import type { FilieresData } from "@/types/energie";
+import {
+  EMISSION_COLORS,
+  EMISSION_THRESHOLDS,
+  getEmissionLevel,
+} from "./EmissionsConstants";
 
 interface FilieresTooltipProps {
   data: FilieresData;
   onClose: () => void;
 }
 
-function getIntensity(value: number) {
-  if (value >= 600)
-    return {
-      label: "Très carboné",
-      colorClass: "text-red-600 dark:text-red-400",
-      bgClass: "bg-red-50 dark:bg-red-950/20 border-red-100 dark:border-red-900/50",
-      badgeClass: "bg-red-100 text-red-700 dark:bg-red-900/50 dark:text-red-300",
-      dot: "#c0392b",
-    };
-  if (value >= 200)
-    return {
-      label: "Modérément carboné",
-      colorClass: "text-orange-600 dark:text-orange-400",
-      bgClass: "bg-orange-50 dark:bg-orange-950/20 border-orange-100 dark:border-orange-900/50",
-      badgeClass: "bg-orange-100 text-orange-700 dark:bg-orange-900/50 dark:text-orange-300",
-      dot: "#e67e22",
-    };
-  if (value >= 50)
-    return {
-      label: "Faiblement émetteur",
-      colorClass: "text-yellow-600 dark:text-yellow-400",
-      bgClass: "bg-yellow-50 dark:bg-yellow-950/20 border-yellow-100 dark:border-yellow-900/50",
-      badgeClass: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/50 dark:text-yellow-300",
-      dot: "#f1c40f",
-    };
-  return {
+const INTENSITY_CONFIG = {
+  VERY_HIGH: {
+    label: "Très carboné",
+    bgClass: "bg-red-50 dark:bg-red-950/20 border-red-100 dark:border-red-900/50",
+    badgeClass: "bg-red-100 text-red-700 dark:bg-red-900/50 dark:text-red-300",
+    valueClass: "text-red-600 dark:text-red-400",
+  },
+  HIGH: {
+    label: "Modérément carboné",
+    bgClass: "bg-orange-50 dark:bg-orange-950/20 border-orange-100 dark:border-orange-900/50",
+    badgeClass: "bg-orange-100 text-orange-700 dark:bg-orange-900/50 dark:text-orange-300",
+    valueClass: "text-orange-600 dark:text-orange-400",
+  },
+  MEDIUM: {
+    label: "Faiblement émetteur",
+    bgClass: "bg-yellow-50 dark:bg-yellow-950/20 border-yellow-100 dark:border-yellow-900/50",
+    badgeClass: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/50 dark:text-yellow-300",
+    valueClass: "text-yellow-600 dark:text-yellow-400",
+  },
+  LOW: {
     label: "Bas-carbone",
-    colorClass: "text-green-600 dark:text-green-400",
     bgClass: "bg-green-50 dark:bg-green-950/20 border-green-100 dark:border-green-900/50",
     badgeClass: "bg-green-100 text-green-700 dark:bg-green-900/50 dark:text-green-300",
-    dot: "#27ae60",
-  };
-}
+    valueClass: "text-green-600 dark:text-green-400",
+  },
+} as const satisfies Record<
+  keyof typeof EMISSION_COLORS,
+  { label: string; bgClass: string; badgeClass: string; valueClass: string }
+>;
 
 export function FilieresTooltip({ data, onClose }: FilieresTooltipProps) {
-  const intensity = getIntensity(data.emissionFactor);
+  const level = getEmissionLevel(data.emissionFactor);
+  const config = INTENSITY_CONFIG[level];
+  const dot = EMISSION_COLORS[level];
 
   return (
     <div
       role="dialog"
       aria-label={`Détail — ${data.name}`}
-      className={`relative rounded-xl border p-6 ${intensity.bgClass} transition-all`}
+      className={`relative rounded-xl border p-6 transition-all ${config.bgClass}`}
     >
-      {/* Fermer */}
-      <button
+      {/* Bouton fermer — composant Button du DS Radix */}
+      <Button
+        variant="ghost"
+        size="1"
         onClick={onClose}
         aria-label="Fermer"
-        className="absolute top-4 right-4 w-7 h-7 flex items-center justify-center rounded-full
-                   text-[var(--color-text-muted)] hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
+        className="absolute top-4 right-4"
       >
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-          <path d="M1 1l10 10M11 1L1 11" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round"/>
+          <path
+            d="M1 1l10 10M11 1L1 11"
+            stroke="currentColor"
+            strokeWidth="1.75"
+            strokeLinecap="round"
+          />
         </svg>
-      </button>
+      </Button>
 
       {/* En-tête */}
-      <div className="flex items-center gap-3 mb-5">
+      <div className="flex items-center gap-3 flex-wrap mb-5">
         <span
-          className="w-2.5 h-2.5 rounded-sm flex-shrink-0 mt-0.5"
-          style={{ backgroundColor: intensity.dot }}
+          className="w-2.5 h-2.5 rounded-sm flex-shrink-0"
+          style={{ backgroundColor: dot }}
           aria-hidden="true"
         />
-        <div className="flex items-center gap-3 flex-wrap">
-          <h3 className="font-semibold text-[var(--color-text)] text-base leading-tight">
-            <span aria-hidden="true" className="mr-1.5">{data.icon}</span>
-            {data.name}
-          </h3>
-          <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${intensity.badgeClass}`}>
-            {intensity.label}
-          </span>
-        </div>
+        <Heading size="3" as="h3">
+          <span aria-hidden="true" className="mr-1.5">{data.icon}</span>
+          {data.name}
+        </Heading>
+        <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${config.badgeClass}`}>
+          {config.label}
+        </span>
       </div>
 
       {/* KPIs */}
       <dl className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
         <div className="bg-white/70 dark:bg-black/25 rounded-lg px-4 py-3">
-          <dt className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-text-muted)] mb-1">
+          <Text as="dt" size="1" weight="bold" className="uppercase tracking-wider text-[var(--color-text-muted)] mb-1 block">
             Facteur d'émission
-          </dt>
-          <dd className={`text-2xl font-bold tabular-nums leading-none ${intensity.colorClass}`}>
+          </Text>
+          <dd className={`text-2xl font-bold tabular-nums leading-none ${config.valueClass}`}>
             {data.emissionFactor.toLocaleString("fr-FR")}
-            <span className="text-xs font-normal text-[var(--color-text-muted)] ml-1">gCO₂e/kWh</span>
+            <Text as="span" size="1" className="text-[var(--color-text-muted)] ml-1 font-normal">
+              gCO₂e/kWh
+            </Text>
           </dd>
         </div>
 
         <div className="bg-white/70 dark:bg-black/25 rounded-lg px-4 py-3">
-          <dt className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-text-muted)] mb-1">
+          <Text as="dt" size="1" weight="bold" className="uppercase tracking-wider text-[var(--color-text-muted)] mb-1 block">
             Mix mondial
-          </dt>
+          </Text>
           <dd className="text-2xl font-bold tabular-nums leading-none text-[var(--color-text)]">
             {data.globalShare}
           </dd>
         </div>
 
         <div className="bg-white/70 dark:bg-black/25 rounded-lg px-4 py-3">
-          <dt className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-text-muted)] mb-1">
+          <Text as="dt" size="1" weight="bold" className="uppercase tracking-wider text-[var(--color-text-muted)] mb-1 block">
             Pays utilisateurs
-          </dt>
-          <dd className="text-sm font-medium text-[var(--color-text)] leading-snug">
-            {data.exampleCountry}
+          </Text>
+          <dd>
+            <Text size="2" weight="medium">
+              {data.exampleCountry}
+            </Text>
           </dd>
         </div>
       </dl>
 
       {/* Description */}
-      <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">
+      <Text as="p" size="2" className="text-[var(--color-text-muted)] leading-relaxed">
         {data.description}
-      </p>
+      </Text>
     </div>
   );
 }
