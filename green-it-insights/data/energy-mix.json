@@ -1,0 +1,62 @@
+[
+  {
+    "id": "FRA",
+    "name": "France",
+    "carbonIntensity": 56,
+    "mix": { "fossil": 9, "nuclear": 65, "renewable": 26 }
+  },
+  {
+    "id": "DEU",
+    "name": "Allemagne",
+    "carbonIntensity": 385,
+    "mix": { "fossil": 45, "nuclear": 0, "renewable": 55 }
+  },
+  {
+    "id": "POL",
+    "name": "Pologne",
+    "carbonIntensity": 710,
+    "mix": { "fossil": 75, "nuclear": 0, "renewable": 25 }
+  },
+  {
+    "id": "NOR",
+    "name": "Norvège",
+    "carbonIntensity": 28,
+    "mix": { "fossil": 1, "nuclear": 0, "renewable": 99 }
+  },
+  {
+    "id": "SWE",
+    "name": "Suède",
+    "carbonIntensity": 42,
+    "mix": { "fossil": 2, "nuclear": 30, "renewable": 68 }
+  },
+  {
+    "id": "ISL",
+    "name": "Islande",
+    "carbonIntensity": 30,
+    "mix": { "fossil": 0, "nuclear": 0, "renewable": 100 }
+  },
+  {
+    "id": "GBR",
+    "name": "Royaume-Uni",
+    "carbonIntensity": 205,
+    "mix": { "fossil": 35, "nuclear": 14, "renewable": 51 }
+  },
+  {
+    "id": "USA",
+    "name": "États-Unis",
+    "carbonIntensity": 370,
+    "mix": { "fossil": 59, "nuclear": 19, "renewable": 22 }
+  },
+  {
+    "id": "CHN",
+    "name": "Chine",
+    "carbonIntensity": 530,
+    "mix": { "fossil": 65, "nuclear": 5, "renewable": 30 }
+  },
+  {
+    "id": "IND",
+    "name": "Inde",
+    "carbonIntensity": 705,
+    "mix": { "fossil": 75, "nuclear": 3, "renewable": 22 }
+  }
+]
