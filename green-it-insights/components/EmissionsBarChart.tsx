@@ -166,7 +166,7 @@ export function EmissionsBarChart({ data }: EmissionsBarChartProps) {
               <LabelList
                 dataKey="emissionFactor"
                 position="right"
-                formatter={(v: number) => `${v.toLocaleString("fr-FR")} g`}
+                formatter={(v) => `${Number(v).toLocaleString("fr-FR")} g`}
                 style={{ fontSize: 11, fill: colors.textMuted, fontVariantNumeric: "tabular-nums" }}
               />
             </Bar>
