@@ -19,9 +19,10 @@
     "react-dom": "19.2.4",
     "recharts": "^3.9.0"
   },
-  "devDependencies": {
+    "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/d3": "^7.4.3",
+    "@types/geojson": "^7946.0.16",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
