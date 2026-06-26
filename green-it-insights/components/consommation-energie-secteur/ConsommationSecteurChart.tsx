@@ -1,55 +1,51 @@
 "use client";
 
-import {PieChart,Pie,Cell,ResponsiveContainer,Tooltip,Legend} from "recharts";
-import {Card,Heading,Text,Box} from "@radix-ui/themes";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  ResponsiveContainer,
+  Tooltip,
+  Legend,
+} from "recharts";
+
+import {
+  Card,
+  Heading,
+  Text,
+  Box,
+} from "@radix-ui/themes";
+
 
 const data = [
-  {
-    name: "Industrie",
-    value: 37,
-    description: "Acier, ciment, fabrication électronique",
-  },
-  {
-    name: "Résidentiel",
-    value: 30,
-    description: "Chauffage, climatisation, éclairage",
-  },
-  {
-    name: "Transport",
-    value: 26,
-    description: "Voitures, camions, avions, bateaux",
-  },
-  {
-    name: "Numérique",
-    value: 4,
-    description: "Datacenters, smartphones, IA",
-  },
-  {
-    name: "Agriculture",
-    value: 3,
-    description: "Irrigation, machines agricoles",
-  },
+  { name: "Industrie", value: 37 },
+  { name: "Résidentiel", value: 30 },
+  { name: "Transport", value: 26 },
+  { name: "Numérique", value: 4 },
+  { name: "Agriculture", value: 3 },
 ];
 
+
 const COLORS = [
-  "#112F1F", 
-  "#3D2E2B",
-  "#6B8F71", 
-  "#4F8FBF", 
-  "#9AA66D", 
+  "var(--grass-9)",
+  "var(--brown-9)",
+  "var(--grass-10)",
+  "#4F8FBF",
+  "var(--brown-10)",
 ];
 
 
 export default function ConsommationSecteurChart() {
   return (
     <Card size="3">
+
       <Box p="4">
 
         <Heading size="6">
           Répartition mondiale de la consommation d'énergie
         </Heading>
 
-        <Text size="2" color="gray">
+        <Text size="2">
           Répartition estimée par secteur d'activité.
         </Text>
 
@@ -62,28 +58,23 @@ export default function ConsommationSecteurChart() {
 
               <Pie
                 data={data}
+                dataKey="value"
                 cx="50%"
                 cy="50%"
                 innerRadius={70}
                 outerRadius={120}
-                dataKey="value"
-                paddingAngle={2}
               >
 
-                {data.map((entry, index) => (
+                {data.map((item, index) => (
                   <Cell
-                    key={`cell-${index}`}
+                    key={item.name}
                     fill={COLORS[index]}
                   />
                 ))}
 
               </Pie>
 
-
-              <Tooltip
-                formatter={(value) => `${value}%`}
-              />
-
+              <Tooltip />
 
               <Legend />
 
@@ -94,6 +85,7 @@ export default function ConsommationSecteurChart() {
         </Box>
 
       </Box>
+
     </Card>
   );
 }
