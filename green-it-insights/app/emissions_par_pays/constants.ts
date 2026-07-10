@@ -1,17 +1,18 @@
+import { COLORS } from "../color.const";
 import type { EnergyMix } from "./types";
 
 export const MIX_COLORS: Record<keyof EnergyMix, string> = {
-  charbon: "#3D2E2B",
-  gaz: "#8C5E4F",
-  nucleaire: "#5F7C65",
-  hydraulique: "#2F6F7E",
-  eolien: "#6A9A72",
-  solaire: "#D0A629",
-  autres: "#7B756B",
+  charbon: COLORS.brown.dark,
+  gaz: COLORS.light.brown[8],
+  nucleaire: COLORS.light.grass[8],
+  hydraulique: COLORS.green.accent,
+  eolien: COLORS.light.grass[7],
+  solaire: COLORS.light.brown[7],
+  autres: COLORS.brown.light,
 };
 
-export const SELECTED_BAR_COLOR = "#112F1F";
-export const MUTED_BAR_COLOR = "#C8D7CB";
+export const SELECTED_BAR_COLOR = COLORS.green.dark;
+export const MUTED_BAR_COLOR = COLORS.light.grass[5];
 
 export const REFERENCE_COUNTRY_NAMES = [
   "Suede",
