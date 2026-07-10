@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "@radix-ui/themes/styles.css";
 
-@variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* 
  * NOTE: The colors defined below are also available as TypeScript constants 
