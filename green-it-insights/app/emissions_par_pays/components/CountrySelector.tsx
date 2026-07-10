@@ -6,6 +6,7 @@ import {
   Text,
   TextField,
 } from "@radix-ui/themes";
+import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import type { CountryEnergyData } from "../types";
 
 type CountrySelectorProps = {
@@ -30,19 +31,15 @@ export function CountrySelector({
   onSelectCountry,
 }: CountrySelectorProps) {
   return (
-    <Card
-      asChild
-      variant="surface"
-      className="border border-green-dark/15 bg-eco-white p-5 shadow-sm dark:border-brown-accent/20 dark:bg-oled-gray sm:p-6"
-    >
-      <aside>
+    <Card asChild variant="surface" className="content-card country-selector-card">
+      <aside className="section-stack">
         <Text
           as="label"
           htmlFor="country-search"
           size="2"
           weight="bold"
           color="brown"
-          className="block uppercase tracking-[0.12em]"
+          className="form-label"
         >
           Pays selectionne
         </Text>
@@ -56,8 +53,12 @@ export function CountrySelector({
           color="grass"
           size="3"
           variant="surface"
-          className="mt-3 w-full font-semibold"
-        />
+          className="field-full"
+        >
+          <TextField.Slot>
+            <MagnifyingGlassIcon height="18" width="18" />
+          </TextField.Slot>
+        </TextField.Root>
         <datalist id="selected-country-options">
           {countrySuggestions.map((country) => (
             <option
@@ -84,7 +85,7 @@ export function CountrySelector({
             id="country"
             color="grass"
             variant="surface"
-            className="mt-3 w-full font-semibold"
+            className="field-full"
           />
           <Select.Content>
             {countries.map((country) => (
@@ -95,11 +96,11 @@ export function CountrySelector({
           </Select.Content>
         </Select.Root>
 
-        <Box className="mt-6 rounded-md bg-brown-bg p-4 dark:bg-brown-dark/30">
+        <Box className="muted-card metric-panel">
           <Text as="p" size="2" color="brown">
             Intensite carbone
           </Text>
-          <Flex align="baseline" gap="2" className="mt-1">
+          <Flex align="baseline" gap="2" className="metric-row">
             <Text size="8" weight="bold">
               {selectedCountry.carbonIntensity}
             </Text>
@@ -107,7 +108,7 @@ export function CountrySelector({
               gCO2/kWh
             </Text>
           </Flex>
-          <Text as="p" size="1" weight="medium" color="brown" className="mt-2">
+          <Text as="p" size="1" weight="medium" color="brown" className="metric-meta">
             {selectedCountry.sourceCountry} - {selectedCountry.year}
           </Text>
         </Box>

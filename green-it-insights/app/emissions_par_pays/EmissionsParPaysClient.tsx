@@ -129,7 +129,7 @@ export function EmissionsParPaysClient({
   }
 
   return (
-    <div className="flex flex-col gap-12 lg:gap-16">
+    <div className="emissions-interactive-stack">
       <ScrollReveal>
         <CarbonIntensityComparison
           canAddComparedCountry={canAddComparedCountry}
@@ -149,7 +149,7 @@ export function EmissionsParPaysClient({
       </ScrollReveal>
 
       <ScrollReveal>
-        <section className="grid gap-8">
+        <section className="country-selector-section">
           <CountrySelector
             countrySearch={countrySearch}
             countrySuggestions={countrySuggestions}

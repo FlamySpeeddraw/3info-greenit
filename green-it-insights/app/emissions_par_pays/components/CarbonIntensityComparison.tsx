@@ -8,6 +8,7 @@ import {
   Text,
   TextField,
 } from "@radix-ui/themes";
+import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import {
   Bar,
   BarChart,
@@ -60,11 +61,11 @@ export function CarbonIntensityComparison({
     <Card
       asChild
       variant="surface"
-      className="border border-green-dark/15 bg-eco-white p-5 shadow-sm dark:border-brown-accent/20 dark:bg-oled-gray sm:p-6"
+      className="content-card comparison-card"
     >
       <section>
         <Flex
-          mb="6"
+          mb="5"
           direction={{ initial: "column", sm: "row" }}
           gap="2"
           align={{ sm: "end" }}
@@ -74,7 +75,7 @@ export function CarbonIntensityComparison({
             <Heading as="h2" size="7">
               Intensite carbone de l&apos;electricite
             </Heading>
-            <Text as="p" size="2" color="brown" className="mt-2 leading-6">
+            <Text as="p" size="2" color="brown" className="comparison-copy">
               Choisis librement les pays a comparer. Valeurs issues de la colonne
               OWID <Code color="brown">carbon_intensity_elec</Code>.
             </Text>
@@ -84,14 +85,14 @@ export function CarbonIntensityComparison({
           </Text>
         </Flex>
 
-        <Box className="mb-6 grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
-          <Text as="label" className="block">
+        <Box className="comparison-form">
+          <Text as="label" className="field-label-block">
             <Text
               as="span"
               size="2"
               weight="bold"
               color="brown"
-              className="block uppercase tracking-[0.12em]"
+              className="form-label"
             >
               Ajouter un pays au graphique
             </Text>
@@ -109,8 +110,12 @@ export function CarbonIntensityComparison({
               color="grass"
               size="3"
               variant="surface"
-              className="mt-3 w-full font-semibold"
-            />
+              className="field-spacing"
+            >
+              <TextField.Slot>
+                <MagnifyingGlassIcon height="18" width="18" />
+              </TextField.Slot>
+            </TextField.Root>
             <datalist id="comparison-country-options">
               {comparisonSuggestions.map((country) => (
                 <option
@@ -122,7 +127,7 @@ export function CarbonIntensityComparison({
             </datalist>
           </Text>
 
-          <Flex gap="3" wrap="wrap">
+          <Flex gap="5" wrap="wrap" className="comparison-actions">
             <Button
               type="button"
               onClick={onAddComparedCountryFromSearch}
@@ -130,6 +135,7 @@ export function CarbonIntensityComparison({
               color="grass"
               variant="solid"
               size="3"
+              className="action-button-sm"
             >
               Ajouter
             </Button>
@@ -139,6 +145,7 @@ export function CarbonIntensityComparison({
               color="grass"
               variant="outline"
               size="3"
+              className="action-button-lg"
             >
               Ajouter le pays selectionne
             </Button>
@@ -148,13 +155,14 @@ export function CarbonIntensityComparison({
               color="brown"
               variant="soft"
               size="3"
+              className="action-button-sm"
             >
               Reperes
             </Button>
           </Flex>
         </Box>
 
-        <Flex mb="5" gap="2" wrap="wrap">
+        <Flex gap="4" wrap="wrap" className="country-chip-list">
           {comparisonCountries.map((country) => (
             <Button
               key={country.isoCode}
@@ -162,7 +170,7 @@ export function CarbonIntensityComparison({
               onClick={() => onRemoveComparedCountry(country.country)}
               color="grass"
               variant="soft"
-              size="2"
+              size="3"
               title={`Retirer ${country.country} du graphique`}
             >
               {country.country} x

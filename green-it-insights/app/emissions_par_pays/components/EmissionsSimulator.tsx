@@ -30,23 +30,25 @@ export function EmissionsSimulator({
     <Card
       asChild
       variant="surface"
-      className="border border-green-dark/15 bg-green-dark p-5 text-eco-white shadow-sm dark:border-brown-accent/20 dark:bg-oled-gray sm:p-6"
+      className="simulator-card"
     >
       <section>
-        <Grid gap="6" className="lg:grid-cols-[320px_1fr] lg:items-center">
+        <Grid asChild>
+          <div className="simulator-layout">
           <Box>
-            <Heading as="h2" size="7" className="text-eco-white">
+            <Heading as="h2" size="7" className="simulator-title">
               Simulation des emissions
             </Heading>
-            <Text as="p" size="2" className="mt-2 leading-6 text-green-bg">
+            <Text as="p" size="2" className="simulator-copy">
               Saisis une consommation electrique pour estimer les emissions
               selon le pays choisi.
             </Text>
           </Box>
 
-          <Grid gap="4" columns={{ sm: "2" }}>
-            <Text as="label" className="block">
-              <Text as="span" size="2" weight="bold" className="text-green-bg">
+          <Grid asChild>
+            <div className="simulator-controls">
+            <Text as="label" className="field-label-block">
+              <Text as="span" size="2" weight="bold" className="simulator-label">
                 Consommation en kWh
               </Text>
               <TextField.Root
@@ -60,30 +62,32 @@ export function EmissionsSimulator({
                 color="grass"
                 size="3"
                 variant="surface"
-                className="mt-2 w-full font-bold text-green-dark"
+                className="simulator-field"
               />
             </Text>
 
-            <Box className="rounded-md border border-eco-white/20 bg-eco-white/10 p-4">
-              <Text as="p" size="2" className="text-green-bg">
+            <Box className="simulator-result">
+              <Text as="p" size="2" className="simulator-label">
                 Emissions estimees
               </Text>
-              <Flex align="baseline" gap="2" className="mt-1">
-                <Text size="8" weight="bold" className="text-eco-white">
+              <Flex align="baseline" gap="2" className="metric-row">
+                <Text size="8" weight="bold" className="simulator-title">
                   {emissionsKg.toFixed(1)}
                 </Text>
-                <Text size="3" weight="bold" className="text-eco-white">
+                <Text size="3" weight="bold" className="simulator-title">
                   kgCO2
                 </Text>
               </Flex>
             </Box>
+            </div>
           </Grid>
+          </div>
         </Grid>
 
         <Text
           as="p"
           size="2"
-          className="mt-6 rounded-md bg-eco-white/10 p-4 leading-6 text-eco-white"
+          className="simulator-note"
         >
           {selectedCountry.country === "France" ? (
             <>
