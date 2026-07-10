@@ -1,51 +1,69 @@
 "use client";
 
 import { useEffect, useRef, type ReactNode } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-type ScrollRevealProps = {
+gsap.registerPlugin(ScrollTrigger);
+
+/**
+ * Composant d'apparition au défilement (charte §6).
+ *
+ * Anime uniquement `opacity` et `transform` (`y`) pour éviter tout reflow.
+ *
+ * Dégradation gracieuse (éco-conception / A11y) :
+ *  - Le contenu est visible par défaut (opacité 1). GSAP ne le masque que
+ *    lorsque le JS s'exécute → si le JS échoue ou est désactivé, le texte
+ *    reste lisible.
+ *  - `prefers-reduced-motion` : l'animation est désactivée, le contenu
+ *    s'affiche immédiatement.
+ *  - Un élément déjà visible au chargement n'est PAS masqué : pas de
+ *    clignotement (FOUC) sur les sections au-dessus de la ligne de flottaison,
+ *    et pas de contenu qui resterait caché faute de déclenchement.
+ *  - L'animation se joue une seule fois et ne re-masque pas au scroll arrière.
+ */
+export function ScrollReveal({
+  children,
+  className,
+}: {
   children: ReactNode;
   className?: string;
-};
-
-export function ScrollReveal({ children, className = "" }: ScrollRevealProps) {
+}) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const element = ref.current;
+    const el = ref.current;
+    if (!el) return;
 
-    if (!element) {
-      return;
-    }
+    const ctx = gsap.context(() => {
+      const mm = gsap.matchMedia();
 
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        const rect = el.getBoundingClientRect();
+        const alreadyVisible =
+          rect.top < window.innerHeight && rect.bottom > 0;
+        // Déjà à l'écran : on laisse visible (aucun masquage, aucun flash).
+        if (alreadyVisible) return;
 
-    if (prefersReducedMotion) {
-      element.classList.add("is-visible");
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          element.classList.add("is-visible");
-          observer.unobserve(element);
-        }
-      },
-      {
-        rootMargin: "0px 0px -12% 0px",
-        threshold: 0.16,
-      },
-    );
-
-    observer.observe(element);
+        gsap.from(el, {
+          opacity: 0,
+          y: 40,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 88%",
+            toggleActions: "play none none none",
+          },
+        });
+      });
+    }, ref);
 
     return () => observer.disconnect();
   }, []);
 
   return (
-    <div ref={ref} className={`scroll-reveal ${className}`}>
+    <div ref={ref} className={className}>
       {children}
     </div>
   );
