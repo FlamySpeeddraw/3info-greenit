@@ -1,9 +1,7 @@
 "use client";
 
 import { EnergyMap } from "@/components/EnergyMap";
-import { Header } from "@/components/Header";
 import { Container, Heading, Text } from "@radix-ui/themes";
-// Remplace par le bon chemin vers le fichier que tu viens de me montrer
 import { useTheme } from "@/app/theme-provider"; 
 
 export default function MixPage() {
