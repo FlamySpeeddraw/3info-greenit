@@ -1,0 +1,200 @@
+Country,Year,EnergyPerCapita_kWh
+Afghanistan,2021,676.696
+Albania,2021,14100.432
+Algeria,2021,16017.653
+Angola,2021,2791.332
+Antigua and Barbuda,2021,29464.332
+Argentina,2021,21168.963
+Armenia,2021,17684.547
+Aruba,2021,46090.324
+Australia,2021,61304.32
+Austria,2021,45508.77
+Azerbaijan,2021,19155.395
+"Bahamas, The",2021,35447.574
+Bahrain,2021,161111.203
+Bangladesh,2021,2907.366
+Barbados,2021,23025.998
+Belarus,2021,31953.428
+Belgium,2021,63587.875
+Belize,2021,7437.571
+Benin,2021,2484.818
+Bermuda,2021,46490.223
+Bhutan,2021,27785.357
+Bolivia,2021,7062.148
+Bosnia and Herzegovina,2021,23013.498
+Botswana,2021,9385.398
+Brazil,2021,16659.977
+British Virgin Islands,2021,20316.449
+Brunei Darussalam,2021,103268.102
+Bulgaria,2021,32224.797
+Burkina Faso,2021,904.726
+Burundi,2021,293.889
+Cambodia,2021,4035.081
+Cameroon,2021,1593.62
+Canada,2021,101349.102
+Cabo Verde,2021,7249.497
+Central African Republic,2021,286.132
+Chad,2021,361.161
+Chile,2021,24462.756
+China,2021,30750.547
+Colombia,2021,11156.515
+Comoros,2021,1633.784
+"Congo, Rep.",2021,2348.011
+Costa Rica,2021,11957.598
+Cote d'Ivoire,2021,2370.596
+Croatia,2021,24213.969
+Cuba,2021,9229.538
+Cyprus,2021,23985.012
+Czechia,2021,44374.195
+"Congo, Dem. Rep.",2021,410.887
+Denmark,2021,32358.58
+Djibouti,2021,2785.072
+Dominica,2021,10547.773
+Dominican Republic,2021,9987.583
+Timor-Leste,2021,1615.498
+Ecuador,2021,11945.164
+"Egypt, Arab Rep.",2021,9689.934
+El Salvador,2021,7076.433
+Equatorial Guinea,2021,12399.339
+Eritrea,2021,914.495
+Estonia,2021,46211.348
+Eswatini,2021,5981.112
+Ethiopia,2021,871.584
+Faroe Islands,2021,70956.359
+Fiji,2021,9222.848
+Finland,2021,57919.223
+France,2021,40191.641
+French Polynesia,2021,15242.301
+Gabon,2021,8009.644
+"Gambia, The",2021,931.273
+Georgia,2021,20834.768
+Germany,2021,42496.609
+Ghana,2021,3483.363
+Greece,2021,28963.67
+Greenland,2021,63520.266
+Grenada,2021,9432.062
+Guatemala,2021,5712.118
+Guinea,2021,1281.525
+Guinea-Bissau,2021,677.328
+Guyana,2021,13690.034
+Haiti,2021,1030.881
+Honduras,2021,5086.934
+"Hong Kong SAR, China",2021,32504.035
+Hungary,2021,29244.559
+Iceland,2021,163754.672
+India,2021,6809.693
+Indonesia,2021,8087.771
+"Iran, Islamic Rep.",2021,37783.531
+Iraq,2021,13615.412
+Ireland,2021,35986.184
+Israel,2021,32813.754
+Italy,2021,29854.949
+Jamaica,2021,12235.784
+Japan,2021,40425.16
+Jordan,2021,9183.148
+Kazakhstan,2021,42831.074
+Kenya,2021,1952.694
+Kiribati,2021,2446.698
+Kosovo,2021,16776.646
+Kuwait,2021,99797.43
+Kyrgyz Republic,2021,9274.61
+Lao PDR,2021,18847.086
+Latvia,2021,22746.469
+Lebanon,2021,18831.662
+Lesotho,2021,2132.814
+Liberia,2021,1064.616
+Libya,2021,28270.334
+Lithuania,2021,25173.395
+Luxembourg,2021,67594.57
+"Macao SAR, China",2021,21399.566
+Madagascar,2021,507.644
+Malawi,2021,464.983
+Malaysia,2021,37131.539
+Maldives,2021,17669.365
+Mali,2021,1168.567
+Malta,2021,74324.461
+Mauritania,2021,3988.532
+Mauritius,2021,19724.719
+Mexico,2021,17172.896
+Moldova,2021,16006.373
+Mongolia,2021,22407.674
+Montenegro,2021,18940.291
+Morocco,2021,7256.722
+Mozambique,2021,2241.226
+Myanmar,2021,3064.848
+Namibia,2021,8748.273
+Nauru,2021,21609.617
+Nepal,2021,1607.635
+Netherlands,2021,57972.379
+New Caledonia,2021,70000.125
+New Zealand,2021,45918.477
+Nicaragua,2021,4265.271
+Niger,2021,409.757
+Nigeria,2021,2547.954
+"Korea, Dem. People's Rep.",2021,3833.954
+North Macedonia,2021,13786.646
+Norway,2021,105215.008
+Oman,2021,87023.781
+Pakistan,2021,4683.584
+West Bank and Gaza,2021,3999.195
+Panama,2021,27067.068
+Papua New Guinea,2021,2123.498
+Paraguay,2021,15782.273
+Peru,2021,9710.914
+Philippines,2021,4790.206
+Poland,2021,31971.576
+Portugal,2021,25897.682
+Qatar,2021,201562.766
+Romania,2021,20177.553
+Russian Federation,2021,57444.508
+Rwanda,2021,471.355
+St. Kitts and Nevis,2021,20900.703
+St. Lucia,2021,13599.725
+St. Vincent and the Grenadines,2021,8245.438
+Samoa,2021,7302.089
+Sao Tome and Principe,2021,3310.244
+Saudi Arabia,2021,82945.312
+Senegal,2021,2505.209
+Serbia,2021,27640.852
+Seychelles,2021,45933.664
+Sierra Leone,2021,492.598
+Singapore,2021,153291.406
+Slovak Republic,2021,35836.406
+Slovenia,2021,36133.637
+Solomon Islands,2021,1892.131
+Somalia,2021,217.41
+South Africa,2021,23674.678
+"Korea, Rep.",2021,67653.844
+South Sudan,2021,731.989
+Spain,2021,32225.066
+Sri Lanka,2021,5035.38
+Sudan,2021,2317.393
+Suriname,2021,20284.996
+Sweden,2021,60540.156
+Switzerland,2021,34296.211
+Syrian Arab Republic,2021,5507.217
+"Taiwan, China",2021,57541.781
+Tajikistan,2021,7674.914
+Tanzania,2021,907.404
+Thailand,2021,19368.557
+Togo,2021,1115.704
+Tonga,2021,6698.594
+Trinidad and Tobago,2021,113474.203
+Tunisia,2021,9524.104
+Turkiye,2021,23015.531
+Turkmenistan,2021,69868.859
+Turks and Caicos Islands,2021,19615.283
+Tuvalu,2021,0.0
+Uganda,2021,766.846
+Ukraine,2021,21472.234
+United Arab Emirates,2021,133080.094
+United Kingdom,2021,29591.666
+United States,2021,77023.773
+Uruguay,2021,18316.926
+Uzbekistan,2021,16600.65
+Vanuatu,2021,2957.444
+"Venezuela, RB",2021,21421.594
+Viet Nam,2021,12399.49
+"Yemen, Rep.",2021,1080.039
+Zambia,2021,3418.863
+Zimbabwe,2021,2635.154
