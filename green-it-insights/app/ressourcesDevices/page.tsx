@@ -1,9 +1,7 @@
-import { Header } from '@/components/Header';
 import SectionCarte from './components/SectionCarte';
-import { Box, Container, Heading, Text } from '@radix-ui/themes';
+import { Container } from '@radix-ui/themes';
 import Title from './components/Title';
 import Sources from './components/Sources';
-import { Footer } from '@/components/Footer';
 
 const page = () => {
     return (

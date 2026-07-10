@@ -1,6 +1,5 @@
 "use client";
 
-import { COLORS } from "@/app/color.const";
 import { useState } from "react";
 import Carte from "./Carte";
 import { Button } from "@radix-ui/themes";
