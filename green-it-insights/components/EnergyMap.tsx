@@ -1,35 +1,81 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import * as d3 from "d3";
-import { Heading, Text, Flex, Box, IconButton } from "@radix-ui/themes";
+import { Heading, Text, IconButton } from "@radix-ui/themes";
 import { Cross1Icon } from "@radix-ui/react-icons";
-import { COLORS } from "@/app/color.const"; 
+import { COLORS } from "@/app/color.const";
+import { useTheme } from "@/app/theme-provider";
 import energyData from "@/data/energy-mix.json";
 import { FeatureCollection, Geometry } from "geojson";
-
-const INTENSITY_COLORS = {
-  low: COLORS.dark.grass[7],      
-  moderate: COLORS.dark.brown[7], 
-  high: COLORS.dark.brown[8],     
-};
 
 const SVG_WIDTH = 800;
 const SVG_HEIGHT = 600;
 const CLIP_HEIGHT = 550;
+
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia(`(max-width: ${breakpoint}px)`);
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, [breakpoint]);
+
+  return isMobile;
+}
 
 export function EnergyMap() {
   const svgRef = useRef<SVGSVGElement>(null);
   const [selectedCountry, setSelectedCountry] = useState(energyData[0]);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [geoData, setGeoData] = useState<FeatureCollection<Geometry, any> | null>(null);
+  const isMobile = useIsMobile();
+  const { useDarkMode } = useTheme();
+
+  const ui = useDarkMode
+    ? {
+        bg: COLORS.oled.black,
+        surface: COLORS.oled.gray,
+        border: COLORS.oled.gray,
+        text: COLORS.dark.foreground,
+        strong: COLORS.eco.white,
+        label: COLORS.dark.grass[7],
+        stroke: COLORS.eco.white,
+        noData: COLORS.oled.gray,
+        close: COLORS.dark.brown[9],
+      }
+    : {
+        bg: COLORS.eco.white,
+        surface: COLORS.eco.gray,
+        border: COLORS.light.grass[4],
+        text: COLORS.light.foreground,
+        strong: COLORS.green.dark,
+        label: COLORS.green.accent,
+        stroke: COLORS.light.grass[6],
+        noData: COLORS.light.grass[3],
+        close: COLORS.brown.light,
+      };
+
+  const intensityColors = useDarkMode
+    ? {
+        low: COLORS.dark.grass[7],
+        moderate: COLORS.dark.brown[7],
+        high: COLORS.dark.brown[8],
+      }
+    : {
+        low: COLORS.green.accent,
+        moderate: COLORS.brown.accent,
+        high: COLORS.brown.dark,
+      };
 
   useEffect(() => {
     fetch("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
       .then((res) => res.json())
       .then((data) => setGeoData(data));
   }, []);
-
   useEffect(() => {
     if (!geoData || !svgRef.current) return;
 
@@ -54,13 +100,13 @@ export function EnergyMap() {
       .attr("d", pathGenerator as any)
       .attr("fill", (d) => {
         const countryData = energyData.find((c) => c.id === d.id);
-        if (!countryData) return COLORS.oled.black;
+        if (!countryData) return ui.noData;
 
-        if (countryData.carbonIntensity < 100) return INTENSITY_COLORS.low;
-        if (countryData.carbonIntensity < 400) return INTENSITY_COLORS.moderate;
-        return INTENSITY_COLORS.high;
+        if (countryData.carbonIntensity < 100) return intensityColors.low;
+        if (countryData.carbonIntensity < 400) return intensityColors.moderate;
+        return intensityColors.high;
       })
-      .attr("stroke", COLORS.eco.white)
+      .attr("stroke", ui.stroke)
       .attr("stroke-width", 0.5)
       .style("cursor", (d) => energyData.find((c) => c.id === d.id) ? "pointer" : "default")
       .on("click", (event, d) => {
@@ -80,7 +126,9 @@ export function EnergyMap() {
         d3.select(this).attr("opacity", 1);
       });
 
-  }, [geoData]);
+    // Redessine la carte quand les données ou le thème changent.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [geoData, useDarkMode]);
 
   const pieData = [
     { name: "Renouvelable", value: selectedCountry.mix.renewable, color: COLORS.green.accent },
@@ -97,9 +145,9 @@ export function EnergyMap() {
   };
 
   const getIntensityColor = (intensity: number) => {
-    if (intensity < 100) return INTENSITY_COLORS.low;
-    if (intensity < 400) return INTENSITY_COLORS.moderate;
-    return INTENSITY_COLORS.high;
+    if (intensity < 100) return intensityColors.low;
+    if (intensity < 400) return intensityColors.moderate;
+    return intensityColors.high;
   };
 
   const handleMapClick = () => {
@@ -108,33 +156,67 @@ export function EnergyMap() {
     }
   };
 
+  // Styles du tiroir : panneau latéral sur desktop, bottom sheet sur mobile.
+  const drawerStyle: CSSProperties = isMobile
+    ? {
+        position: "absolute",
+        left: 0,
+        right: 0,
+        bottom: 0,
+        maxHeight: "65%",
+        backgroundColor: ui.bg,
+        borderTop: `1px solid ${ui.border}`,
+        borderTopLeftRadius: "16px",
+        borderTopRightRadius: "16px",
+        transform: isDrawerOpen ? "translateY(0)" : "translateY(100%)",
+        opacity: isDrawerOpen ? 1 : 0,
+        pointerEvents: isDrawerOpen ? "auto" : "none",
+        display: "flex",
+        flexDirection: "column",
+        transition: "all 300ms ease-in-out",
+        overflowY: "auto",
+        zIndex: 10,
+      }
+    : {
+        backgroundColor: ui.bg,
+        borderLeft: `1px solid ${ui.border}`,
+        width: isDrawerOpen ? "350px" : "0px",
+        opacity: isDrawerOpen ? 1 : 0,
+        pointerEvents: isDrawerOpen ? "auto" : "none",
+        display: "flex",
+        flexDirection: "column",
+        transition: "all 300ms ease-in-out",
+        overflowY: "auto",
+      };
+
   return (
     <div
       onClick={handleMapClick}
-      style={{ 
-        backgroundColor: COLORS.dark.background, 
-        height: "100vh",
+      style={{
+        backgroundColor: ui.bg,
+        height: isMobile ? "70vh" : "100vh",
         width: "100%",
         overflow: "hidden",
-        display: "flex"
+        display: "flex",
+        position: "relative",
       }}
     >
       {/* Map Section */}
-      <div 
-        style={{ 
+      <div
+        style={{
           flex: 1,
           overflow: "hidden",
           position: "relative"
         }}
       >
-        <svg 
-          ref={svgRef} 
+        <svg
+          ref={svgRef}
           viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
           preserveAspectRatio="xMidYMid meet"
-          style={{ 
+          style={{
             width: "100%",
             height: "100%",
-            backgroundColor: COLORS.oled.black,
+            backgroundColor: ui.bg,
             display: "block",
             overflow: "hidden"
           }}
@@ -148,38 +230,28 @@ export function EnergyMap() {
         </svg>
       </div>
 
-      {/* Info Drawer - Côté droit */}
-      <div 
+      {/* Info Drawer - panneau latéral (desktop) / bottom sheet (mobile) */}
+      <div
         onClick={(e) => e.stopPropagation()}
-        style={{ 
-          backgroundColor: COLORS.oled.black,
-          borderLeft: `1px solid ${COLORS.oled.gray}`,
-          width: isDrawerOpen ? "350px" : "0px",
-          opacity: isDrawerOpen ? 1 : 0,
-          pointerEvents: isDrawerOpen ? "auto" : "none",
-          display: "flex",
-          flexDirection: "column",
-          transition: "all 300ms ease-in-out",
-          overflowY: "auto"
-        }}
+        style={drawerStyle}
       >
         <div style={{ padding: "24px", flex: 1, display: "flex", flexDirection: "column", minHeight: 0 }}>
           {/* Header */}
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
-            <Heading 
-              size="5" 
+            <Heading
+              size="5"
               weight="bold"
-              style={{ 
-                color: COLORS.eco.white,
+              style={{
+                color: ui.strong,
                 flex: 1,
               }}
             >
               {selectedCountry.name}
             </Heading>
-            <IconButton 
-              variant="ghost" 
+            <IconButton
+              variant="ghost"
               onClick={() => setIsDrawerOpen(false)}
-              style={{ color: COLORS.dark.brown[9], width: "32px", height: "32px" }}
+              style={{ color: ui.close, width: "32px", height: "32px" }}
             >
               <Cross1Icon width="18" height="18" />
             </IconButton>
@@ -187,11 +259,11 @@ export function EnergyMap() {
 
           {/* Intensité Carbone */}
           <div style={{ marginBottom: "24px" }}>
-            <Text 
+            <Text
               size="1"
               weight="bold"
-              style={{ 
-                color: COLORS.dark.grass[7],
+              style={{
+                color: ui.label,
                 textTransform: "uppercase",
                 letterSpacing: "0.05em",
                 marginBottom: "0.75rem",
@@ -201,24 +273,24 @@ export function EnergyMap() {
             >
               Intensité carbone
             </Text>
-            <Heading 
+            <Heading
               size="4"
-              style={{ 
+              style={{
                 color: getIntensityColor(selectedCountry.carbonIntensity),
                 marginBottom: "0.5rem"
               }}
             >
               {selectedCountry.carbonIntensity}
             </Heading>
-            <Text 
+            <Text
               size="1"
-              style={{ color: COLORS.dark.foreground, fontSize: "0.875rem" }}
+              style={{ color: ui.text, fontSize: "0.875rem" }}
             >
               gCO₂e/kWh
             </Text>
-            <Text 
+            <Text
               size="1"
-              style={{ color: COLORS.dark.grass[7], marginTop: "0.5rem" }}
+              style={{ color: ui.label, marginTop: "0.5rem" }}
             >
               {getIntensityLabel(selectedCountry.carbonIntensity)}
             </Text>
@@ -226,11 +298,11 @@ export function EnergyMap() {
 
           {/* Mix Énergétique */}
           <div>
-            <Text 
+            <Text
               size="1"
               weight="bold"
-              style={{ 
-                color: COLORS.dark.grass[7],
+              style={{
+                color: ui.label,
                 textTransform: "uppercase",
                 letterSpacing: "0.05em",
                 marginBottom: "1.25rem",
@@ -246,16 +318,16 @@ export function EnergyMap() {
               {pieData.map((item, i) => (
                 <div key={i}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
-                    <Text 
+                    <Text
                       size="1"
-                      style={{ color: COLORS.dark.foreground, fontSize: "0.875rem" }}
+                      style={{ color: ui.text, fontSize: "0.875rem" }}
                     >
                       {item.name}
                     </Text>
-                    <Text 
-                      size="1" 
+                    <Text
+                      size="1"
                       weight="bold"
-                      style={{ color: COLORS.eco.white, fontSize: "0.875rem" }}
+                      style={{ color: ui.strong, fontSize: "0.875rem" }}
                     >
                       {item.value}%
                     </Text>
@@ -263,7 +335,7 @@ export function EnergyMap() {
                   <div
                     style={{
                       height: "5px",
-                      backgroundColor: COLORS.oled.gray,
+                      backgroundColor: ui.surface,
                       borderRadius: "2.5px",
                       overflow: "hidden"
                     }}
