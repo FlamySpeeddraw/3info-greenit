@@ -59,7 +59,7 @@ export function ScrollReveal({
       });
     }, ref);
 
-    return () => ctx.revert();
+    return () => observer.disconnect();
   }, []);
 
   return (
