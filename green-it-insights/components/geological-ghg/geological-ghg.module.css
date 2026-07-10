@@ -1,0 +1,280 @@
+/*
+ * Seuls restent ici les styles impossibles ou illisibles en Tailwind/Radix :
+ * - illustration placeholder (clip-path, calques superposés, palettes par tonalité)
+ * - habillage SVG du graphique CO2 (sélecteurs descendants, variables par sévérité)
+ * Tout le reste (layout, typo, couleurs simples) est en props Radix + Tailwind
+ * dans les composants.
+ */
+
+.placeholderIllustration {
+  --tone-sky: #d9ddd0;
+  --tone-sun: #e9c66b;
+  --tone-horizon: #3d2e2b;
+  --tone-ground: #112f1f;
+  --tone-trace: rgba(251, 251, 249, 0.35);
+  background: linear-gradient(180deg, var(--tone-sky), var(--tone-ground));
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.placeholderVolcanic {
+  composes: placeholderIllustration;
+  --tone-sky: #786158;
+  --tone-sun: #d88a3d;
+  --tone-horizon: #3d2e2b;
+  --tone-ground: #17100f;
+  --tone-trace: rgba(216, 138, 61, 0.46);
+}
+
+.placeholderOceanic {
+  composes: placeholderIllustration;
+  --tone-sky: #d9e6df;
+  --tone-sun: #fbfbf9;
+  --tone-horizon: #2e6a49;
+  --tone-ground: #224d35;
+  --tone-trace: rgba(251, 251, 249, 0.5);
+}
+
+.placeholderForest {
+  composes: placeholderIllustration;
+  --tone-sky: #c6d5bf;
+  --tone-sun: #f0d58a;
+  --tone-horizon: #224d35;
+  --tone-ground: #112f1f;
+  --tone-trace: rgba(61, 46, 43, 0.32);
+}
+
+.placeholderCoast {
+  composes: placeholderIllustration;
+  --tone-sky: #e4dcc8;
+  --tone-sun: #d7b56d;
+  --tone-horizon: #5c4641;
+  --tone-ground: #2e6a49;
+  --tone-trace: rgba(251, 251, 249, 0.44);
+}
+
+.placeholderIce {
+  composes: placeholderIllustration;
+  --tone-sky: #e7ece6;
+  --tone-sun: #fbfbf9;
+  --tone-horizon: #8e6e66;
+  --tone-ground: #dfe8e3;
+  --tone-trace: rgba(17, 47, 31, 0.2);
+}
+
+.placeholderIndustrial {
+  composes: placeholderIllustration;
+  --tone-sky: #d4d1c8;
+  --tone-sun: #c28c5a;
+  --tone-horizon: #3d2e2b;
+  --tone-ground: #224d35;
+  --tone-trace: rgba(8, 14, 10, 0.28);
+}
+
+.placeholderSky,
+.placeholderSun,
+.placeholderHorizon,
+.placeholderGround,
+.placeholderTraceOne,
+.placeholderTraceTwo {
+  display: block;
+  position: absolute;
+}
+
+.placeholderSky {
+  background:
+    linear-gradient(105deg, transparent 0 18%, var(--tone-trace) 18% 19%, transparent 19% 100%),
+    linear-gradient(75deg, transparent 0 48%, rgba(251, 251, 249, 0.2) 48% 49%, transparent 49% 100%);
+  inset: 0;
+}
+
+.placeholderSun {
+  background: var(--tone-sun);
+  border-radius: 50%;
+  height: 4.5rem;
+  opacity: 0.88;
+  right: 10%;
+  top: 12%;
+  width: 4.5rem;
+}
+
+.placeholderHorizon {
+  background: var(--tone-horizon);
+  clip-path: polygon(0 60%, 12% 48%, 24% 55%, 36% 34%, 52% 58%, 68% 42%, 84% 56%, 100% 44%, 100% 100%, 0 100%);
+  height: 44%;
+  inset-inline: 0;
+  opacity: 0.78;
+  top: 32%;
+}
+
+.placeholderGround {
+  background: var(--tone-ground);
+  clip-path: polygon(0 20%, 20% 32%, 42% 18%, 58% 36%, 80% 22%, 100% 34%, 100% 100%, 0 100%);
+  inset: auto 0 0;
+  height: 42%;
+}
+
+.placeholderTraceOne {
+  background: var(--tone-trace);
+  border-radius: 999px;
+  bottom: 19%;
+  height: 0.6rem;
+  left: 12%;
+  opacity: 0.72;
+  transform: rotate(-2deg);
+  width: 42%;
+}
+
+.placeholderTraceTwo {
+  background: var(--tone-trace);
+  border-radius: 999px;
+  bottom: 10%;
+  height: 0.45rem;
+  opacity: 0.6;
+  right: 10%;
+  transform: rotate(3deg);
+  width: 34%;
+}
+
+.chartGridLine line {
+  stroke: rgba(61, 46, 43, 0.16);
+  stroke-width: 1;
+}
+
+.chartHealthThreshold {
+  --threshold-color: #b45309;
+  --threshold-fill: rgba(180, 83, 9, 0.08);
+}
+
+.chartHealthThreshold[data-severity="occupational"] {
+  --threshold-color: #c2410c;
+  --threshold-fill: rgba(194, 65, 12, 0.1);
+}
+
+.chartHealthThreshold[data-severity="short-term"] {
+  --threshold-color: #dc2626;
+  --threshold-fill: rgba(220, 38, 38, 0.12);
+}
+
+.chartHealthThreshold[data-severity="evacuation"],
+.chartHealthThreshold[data-severity="lethal"] {
+  --threshold-color: #991b1b;
+  --threshold-fill: rgba(153, 27, 27, 0.14);
+}
+
+.chartHealthThreshold rect {
+  fill: var(--threshold-fill);
+}
+
+.chartHealthThreshold line {
+  stroke: var(--threshold-color);
+  stroke-dasharray: 7 5;
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+
+.chartHealthThreshold text {
+  fill: var(--threshold-color);
+  font-size: 0.72rem;
+  font-weight: 700;
+  paint-order: stroke;
+  stroke: rgba(251, 251, 249, 0.9);
+  stroke-width: 4px;
+  text-anchor: end;
+}
+
+.chartGridLine text,
+.chartXAxisLabel {
+  fill: var(--brown-9);
+  font-size: 0.68rem;
+}
+
+.chartGridLine text {
+  text-anchor: end;
+}
+
+.chartXAxisLabel {
+  text-anchor: middle;
+}
+
+.chartBasePath,
+.chartProgressPath {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chartBasePath {
+  opacity: 0.22;
+  stroke: var(--brown-9);
+  stroke-dasharray: 3 7;
+  stroke-width: 2;
+}
+
+.chartProgressPath {
+  stroke: var(--grass-9);
+  stroke-width: 4;
+}
+
+.chartPoint {
+  fill: var(--color-eco-white);
+  stroke: var(--grass-9);
+  stroke-width: 2;
+}
+
+.chartPoint[data-industrial="true"] {
+  fill: #d88a3d;
+  stroke: var(--brown-9);
+}
+
+.chartActivePoint circle {
+  fill: rgba(17, 47, 31, 0.12);
+  stroke: var(--grass-9);
+  stroke-width: 2;
+}
+
+/* Mode sombre : piloté par la classe .dark du theme-provider, comme le reste du site */
+:global(.dark) .chartGridLine line {
+  stroke: rgba(234, 239, 234, 0.13);
+}
+
+:global(.dark) .chartGridLine text,
+:global(.dark) .chartXAxisLabel {
+  fill: var(--brown-11);
+}
+
+:global(.dark) .chartHealthThreshold {
+  --threshold-color: #fdba74;
+  --threshold-fill: rgba(251, 146, 60, 0.12);
+}
+
+:global(.dark) .chartHealthThreshold[data-severity="short-term"],
+:global(.dark) .chartHealthThreshold[data-severity="evacuation"],
+:global(.dark) .chartHealthThreshold[data-severity="lethal"] {
+  --threshold-color: #fca5a5;
+  --threshold-fill: rgba(248, 113, 113, 0.14);
+}
+
+:global(.dark) .chartHealthThreshold text {
+  stroke: rgba(8, 14, 10, 0.9);
+}
+
+:global(.dark) .chartBasePath {
+  stroke: var(--brown-11);
+}
+
+:global(.dark) .chartProgressPath {
+  stroke: var(--grass-11);
+}
+
+:global(.dark) .chartPoint {
+  fill: var(--color-oled-black);
+  stroke: var(--grass-11);
+}
+
+:global(.dark) .chartActivePoint circle {
+  fill: rgba(187, 247, 208, 0.14);
+  stroke: var(--grass-11);
+}
