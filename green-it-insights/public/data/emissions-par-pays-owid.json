@@ -1,0 +1,3256 @@
+{
+    "source":  "Our World in Data Energy Dataset",
+    "sourceUrl":  "https://github.com/owid/energy-data",
+    "downloadedFrom":  "https://raw.githubusercontent.com/owid/energy-data/master/owid-energy-data.csv",
+    "generatedAt":  "2026-06-26",
+    "countries":  [
+                      {
+                          "country":  "Afghanistan",
+                          "sourceCountry":  "Afghanistan",
+                          "isoCode":  "AFG",
+                          "year":  2024,
+                          "carbonIntensity":  131.3,
+                          "mix":  {
+                                      "charbon":  3,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  75.8,
+                                      "eolien":  0,
+                                      "solaire":  11.1,
+                                      "autres":  10.1
+                                  }
+                      },
+                      {
+                          "country":  "Albania",
+                          "sourceCountry":  "Albania",
+                          "isoCode":  "ALB",
+                          "year":  2024,
+                          "carbonIntensity":  25.2,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  95.9,
+                                      "eolien":  0,
+                                      "solaire":  4.1,
+                                      "autres":  0
+                                  }
+                      },
+                      {
+                          "country":  "Algeria",
+                          "sourceCountry":  "Algeria",
+                          "isoCode":  "DZA",
+                          "year":  2024,
+                          "carbonIntensity":  632.9,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  98.6,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  1,
+                                      "autres":  0.3
+                                  }
+                      },
+                      {
+                          "country":  "Allemagne",
+                          "sourceCountry":  "Germany",
+                          "isoCode":  "DEU",
+                          "year":  2025,
+                          "carbonIntensity":  329.6,
+                          "mix":  {
+                                      "charbon":  20.6,
+                                      "gaz":  16.5,
+                                      "nucleaire":  0,
+                                      "hydraulique":  3.9,
+                                      "eolien":  27.2,
+                                      "solaire":  17.9,
+                                      "autres":  13.9
+                                  }
+                      },
+                      {
+                          "country":  "American Samoa",
+                          "sourceCountry":  "American Samoa",
+                          "isoCode":  "ASM",
+                          "year":  2024,
+                          "carbonIntensity":  611.1,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  5.6,
+                                      "autres":  94.4
+                                  }
+                      },
+                      {
+                          "country":  "Angola",
+                          "sourceCountry":  "Angola",
+                          "isoCode":  "AGO",
+                          "year":  2024,
+                          "carbonIntensity":  185.4,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  9,
+                                      "nucleaire":  0,
+                                      "hydraulique":  70.6,
+                                      "eolien":  0,
+                                      "solaire":  2.8,
+                                      "autres":  17.6
+                                  }
+                      },
+                      {
+                          "country":  "Antigua and Barbuda",
+                          "sourceCountry":  "Antigua and Barbuda",
+                          "isoCode":  "ATG",
+                          "year":  2024,
+                          "carbonIntensity":  594.6,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  8.1,
+                                      "autres":  91.9
+                                  }
+                      },
+                      {
+                          "country":  "Argentina",
+                          "sourceCountry":  "Argentina",
+                          "isoCode":  "ARG",
+                          "year":  2025,
+                          "carbonIntensity":  346,
+                          "mix":  {
+                                      "charbon":  1.8,
+                                      "gaz":  52.7,
+                                      "nucleaire":  7,
+                                      "hydraulique":  17.1,
+                                      "eolien":  12.2,
+                                      "solaire":  3.4,
+                                      "autres":  5.8
+                                  }
+                      },
+                      {
+                          "country":  "Armenia",
+                          "sourceCountry":  "Armenia",
+                          "isoCode":  "ARM",
+                          "year":  2025,
+                          "carbonIntensity":  211.9,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  34.1,
+                                      "nucleaire":  27,
+                                      "hydraulique":  28,
+                                      "eolien":  0,
+                                      "solaire":  11,
+                                      "autres":  0
+                                  }
+                      },
+                      {
+                          "country":  "Aruba",
+                          "sourceCountry":  "Aruba",
+                          "isoCode":  "ABW",
+                          "year":  2024,
+                          "carbonIntensity":  550,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  14,
+                                      "solaire":  3,
+                                      "autres":  83
+                                  }
+                      },
+                      {
+                          "country":  "Australia",
+                          "sourceCountry":  "Australia",
+                          "isoCode":  "AUS",
+                          "year":  2024,
+                          "carbonIntensity":  553.8,
+                          "mix":  {
+                                      "charbon":  45.2,
+                                      "gaz":  17.4,
+                                      "nucleaire":  0,
+                                      "hydraulique":  4.6,
+                                      "eolien":  11.6,
+                                      "solaire":  17.8,
+                                      "autres":  3.3
+                                  }
+                      },
+                      {
+                          "country":  "Austria",
+                          "sourceCountry":  "Austria",
+                          "isoCode":  "AUT",
+                          "year":  2025,
+                          "carbonIntensity":  116.9,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  11.9,
+                                      "nucleaire":  0,
+                                      "hydraulique":  51.8,
+                                      "eolien":  11.3,
+                                      "solaire":  14.1,
+                                      "autres":  10.8
+                                  }
+                      },
+                      {
+                          "country":  "Azerbaijan",
+                          "sourceCountry":  "Azerbaijan",
+                          "isoCode":  "AZE",
+                          "year":  2025,
+                          "carbonIntensity":  631.9,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  87.6,
+                                      "nucleaire":  0,
+                                      "hydraulique":  11.5,
+                                      "eolien":  0.3,
+                                      "solaire":  0,
+                                      "autres":  0.6
+                                  }
+                      },
+                      {
+                          "country":  "Bahamas",
+                          "sourceCountry":  "Bahamas",
+                          "isoCode":  "BHS",
+                          "year":  2024,
+                          "carbonIntensity":  653.3,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0.9,
+                                      "autres":  99.1
+                                  }
+                      },
+                      {
+                          "country":  "Bahrain",
+                          "sourceCountry":  "Bahrain",
+                          "isoCode":  "BHR",
+                          "year":  2024,
+                          "carbonIntensity":  902.2,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  99.7,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0.3,
+                                      "autres":  0
+                                  }
+                      },
+                      {
+                          "country":  "Bangladesh",
+                          "sourceCountry":  "Bangladesh",
+                          "isoCode":  "BGD",
+                          "year":  2025,
+                          "carbonIntensity":  696.1,
+                          "mix":  {
+                                      "charbon":  21.5,
+                                      "gaz":  64.3,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0.6,
+                                      "eolien":  0,
+                                      "solaire":  1.5,
+                                      "autres":  12.1
+                                  }
+                      },
+                      {
+                          "country":  "Barbados",
+                          "sourceCountry":  "Barbados",
+                          "isoCode":  "BRB",
+                          "year":  2024,
+                          "carbonIntensity":  594.6,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  2.7,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  9,
+                                      "autres":  88.3
+                                  }
+                      },
+                      {
+                          "country":  "Belarus",
+                          "sourceCountry":  "Belarus",
+                          "isoCode":  "BLR",
+                          "year":  2025,
+                          "carbonIntensity":  309.2,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  54.5,
+                                      "nucleaire":  36.6,
+                                      "hydraulique":  2,
+                                      "eolien":  1,
+                                      "solaire":  0.8,
+                                      "autres":  5
+                                  }
+                      },
+                      {
+                          "country":  "Belgium",
+                          "sourceCountry":  "Belgium",
+                          "isoCode":  "BEL",
+                          "year":  2025,
+                          "carbonIntensity":  149.8,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  21.5,
+                                      "nucleaire":  33.1,
+                                      "hydraulique":  0.6,
+                                      "eolien":  18.8,
+                                      "solaire":  14.3,
+                                      "autres":  11.6
+                                  }
+                      },
+                      {
+                          "country":  "Belize",
+                          "sourceCountry":  "Belize",
+                          "isoCode":  "BLZ",
+                          "year":  2024,
+                          "carbonIntensity":  170.2,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  51.1,
+                                      "eolien":  0,
+                                      "solaire":  2.1,
+                                      "autres":  46.8
+                                  }
+                      },
+                      {
+                          "country":  "Benin",
+                          "sourceCountry":  "Benin",
+                          "isoCode":  "BEN",
+                          "year":  2024,
+                          "carbonIntensity":  584.2,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  72.3,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  4,
+                                      "autres":  23.8
+                                  }
+                      },
+                      {
+                          "country":  "Bermuda",
+                          "sourceCountry":  "Bermuda",
+                          "isoCode":  "BMU",
+                          "year":  2024,
+                          "carbonIntensity":  639.3,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  100
+                                  }
+                      },
+                      {
+                          "country":  "Bhutan",
+                          "sourceCountry":  "Bhutan",
+                          "isoCode":  "BTN",
+                          "year":  2024,
+                          "carbonIntensity":  23.6,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  100,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  0
+                                  }
+                      },
+                      {
+                          "country":  "Bolivia",
+                          "sourceCountry":  "Bolivia",
+                          "isoCode":  "BOL",
+                          "year":  2025,
+                          "carbonIntensity":  481.3,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  62.4,
+                                      "nucleaire":  0,
+                                      "hydraulique":  27.9,
+                                      "eolien":  2.1,
+                                      "solaire":  2.9,
+                                      "autres":  4.7
+                                  }
+                      },
+                      {
+                          "country":  "Bosnia and Herzegovina",
+                          "sourceCountry":  "Bosnia and Herzegovina",
+                          "isoCode":  "BIH",
+                          "year":  2025,
+                          "carbonIntensity":  570.6,
+                          "mix":  {
+                                      "charbon":  55.4,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  36.6,
+                                      "eolien":  2.6,
+                                      "solaire":  4.1,
+                                      "autres":  1.3
+                                  }
+                      },
+                      {
+                          "country":  "Botswana",
+                          "sourceCountry":  "Botswana",
+                          "isoCode":  "BWA",
+                          "year":  2024,
+                          "carbonIntensity":  851.3,
+                          "mix":  {
+                                      "charbon":  98.3,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0.3,
+                                      "autres":  1.5
+                                  }
+                      },
+                      {
+                          "country":  "Brazil",
+                          "sourceCountry":  "Brazil",
+                          "isoCode":  "BRA",
+                          "year":  2025,
+                          "carbonIntensity":  110,
+                          "mix":  {
+                                      "charbon":  2.3,
+                                      "gaz":  7.3,
+                                      "nucleaire":  2.1,
+                                      "hydraulique":  51.8,
+                                      "eolien":  15.7,
+                                      "solaire":  11.8,
+                                      "autres":  9
+                                  }
+                      },
+                      {
+                          "country":  "British Virgin Islands",
+                          "sourceCountry":  "British Virgin Islands",
+                          "isoCode":  "VGB",
+                          "year":  2023,
+                          "carbonIntensity":  647.1,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  100
+                                  }
+                      },
+                      {
+                          "country":  "Brunei",
+                          "sourceCountry":  "Brunei",
+                          "isoCode":  "BRN",
+                          "year":  2024,
+                          "carbonIntensity":  892.1,
+                          "mix":  {
+                                      "charbon":  19.8,
+                                      "gaz":  79.1,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0.2,
+                                      "autres":  0.9
+                                  }
+                      },
+                      {
+                          "country":  "Bulgaria",
+                          "sourceCountry":  "Bulgaria",
+                          "isoCode":  "BGR",
+                          "year":  2025,
+                          "carbonIntensity":  275.6,
+                          "mix":  {
+                                      "charbon":  22.5,
+                                      "gaz":  4.9,
+                                      "nucleaire":  39.1,
+                                      "hydraulique":  6.7,
+                                      "eolien":  3.5,
+                                      "solaire":  18.2,
+                                      "autres":  5.2
+                                  }
+                      },
+                      {
+                          "country":  "Burkina Faso",
+                          "sourceCountry":  "Burkina Faso",
+                          "isoCode":  "BFA",
+                          "year":  2024,
+                          "carbonIntensity":  562.1,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  5.3,
+                                      "eolien":  0,
+                                      "solaire":  6.5,
+                                      "autres":  88.2
+                                  }
+                      },
+                      {
+                          "country":  "Burundi",
+                          "sourceCountry":  "Burundi",
+                          "isoCode":  "BDI",
+                          "year":  2024,
+                          "carbonIntensity":  183.7,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  73.5,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  26.5
+                                  }
+                      },
+                      {
+                          "country":  "Cameroon",
+                          "sourceCountry":  "Cameroon",
+                          "isoCode":  "CMR",
+                          "year":  2024,
+                          "carbonIntensity":  225.9,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  22,
+                                      "nucleaire":  0,
+                                      "hydraulique":  72,
+                                      "eolien":  0,
+                                      "solaire":  0.6,
+                                      "autres":  5.4
+                                  }
+                      },
+                      {
+                          "country":  "Canada",
+                          "sourceCountry":  "Canada",
+                          "isoCode":  "CAN",
+                          "year":  2025,
+                          "carbonIntensity":  190.7,
+                          "mix":  {
+                                      "charbon":  4.1,
+                                      "gaz":  17.8,
+                                      "nucleaire":  13.1,
+                                      "hydraulique":  52.8,
+                                      "eolien":  7.9,
+                                      "solaire":  1.6,
+                                      "autres":  2.8
+                                  }
+                      },
+                      {
+                          "country":  "Cape Verde",
+                          "sourceCountry":  "Cape Verde",
+                          "isoCode":  "CPV",
+                          "year":  2024,
+                          "carbonIntensity":  461.5,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  15.4,
+                                      "solaire":  15.4,
+                                      "autres":  69.2
+                                  }
+                      },
+                      {
+                          "country":  "Cayman Islands",
+                          "sourceCountry":  "Cayman Islands",
+                          "isoCode":  "CYM",
+                          "year":  2024,
+                          "carbonIntensity":  633.8,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  4.2,
+                                      "autres":  95.8
+                                  }
+                      },
+                      {
+                          "country":  "Central African Republic",
+                          "sourceCountry":  "Central African Republic",
+                          "isoCode":  "CAF",
+                          "year":  2023,
+                          "carbonIntensity":  0,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  100,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  0
+                                  }
+                      },
+                      {
+                          "country":  "Chad",
+                          "sourceCountry":  "Chad",
+                          "isoCode":  "TCD",
+                          "year":  2024,
+                          "carbonIntensity":  621.6,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  2.7,
+                                      "solaire":  0,
+                                      "autres":  97.3
+                                  }
+                      },
+                      {
+                          "country":  "Chile",
+                          "sourceCountry":  "Chile",
+                          "isoCode":  "CHL",
+                          "year":  2025,
+                          "carbonIntensity":  289.5,
+                          "mix":  {
+                                      "charbon":  17.8,
+                                      "gaz":  15.3,
+                                      "nucleaire":  0,
+                                      "hydraulique":  22.2,
+                                      "eolien":  13.1,
+                                      "solaire":  25.1,
+                                      "autres":  6.6
+                                  }
+                      },
+                      {
+                          "country":  "China",
+                          "sourceCountry":  "China",
+                          "isoCode":  "CHN",
+                          "year":  2025,
+                          "carbonIntensity":  525.3,
+                          "mix":  {
+                                      "charbon":  54.3,
+                                      "gaz":  3.2,
+                                      "nucleaire":  4.6,
+                                      "hydraulique":  13.2,
+                                      "eolien":  10.7,
+                                      "solaire":  11.1,
+                                      "autres":  2.9
+                                  }
+                      },
+                      {
+                          "country":  "Colombia",
+                          "sourceCountry":  "Colombia",
+                          "isoCode":  "COL",
+                          "year":  2025,
+                          "carbonIntensity":  186.8,
+                          "mix":  {
+                                      "charbon":  6.1,
+                                      "gaz":  13.8,
+                                      "nucleaire":  0,
+                                      "hydraulique":  69.2,
+                                      "eolien":  0.2,
+                                      "solaire":  5.1,
+                                      "autres":  5.7
+                                  }
+                      },
+                      {
+                          "country":  "Comoros",
+                          "sourceCountry":  "Comoros",
+                          "isoCode":  "COM",
+                          "year":  2023,
+                          "carbonIntensity":  642.9,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  100
+                                  }
+                      },
+                      {
+                          "country":  "Congo",
+                          "sourceCountry":  "Congo",
+                          "isoCode":  "COG",
+                          "year":  2024,
+                          "carbonIntensity":  716.1,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  73.8,
+                                      "nucleaire":  0,
+                                      "hydraulique":  20.1,
+                                      "eolien":  0,
+                                      "solaire":  0.2,
+                                      "autres":  5.9
+                                  }
+                      },
+                      {
+                          "country":  "Cook Islands",
+                          "sourceCountry":  "Cook Islands",
+                          "isoCode":  "COK",
+                          "year":  2024,
+                          "carbonIntensity":  250,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  50,
+                                      "autres":  50
+                                  }
+                      },
+                      {
+                          "country":  "Costa Rica",
+                          "sourceCountry":  "Costa Rica",
+                          "isoCode":  "CRI",
+                          "year":  2025,
+                          "carbonIntensity":  24.2,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  74.8,
+                                      "eolien":  12.1,
+                                      "solaire":  0.7,
+                                      "autres":  12.4
+                                  }
+                      },
+                      {
+                          "country":  "Cote d\u0027Ivoire",
+                          "sourceCountry":  "Cote d\u0027Ivoire",
+                          "isoCode":  "CIV",
+                          "year":  2024,
+                          "carbonIntensity":  405,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  70.9,
+                                      "nucleaire":  0,
+                                      "hydraulique":  27.8,
+                                      "eolien":  0,
+                                      "solaire":  0.2,
+                                      "autres":  1.1
+                                  }
+                      },
+                      {
+                          "country":  "Croatia",
+                          "sourceCountry":  "Croatia",
+                          "isoCode":  "HRV",
+                          "year":  2025,
+                          "carbonIntensity":  158.5,
+                          "mix":  {
+                                      "charbon":  5,
+                                      "gaz":  18.8,
+                                      "nucleaire":  0,
+                                      "hydraulique":  39.3,
+                                      "eolien":  21.4,
+                                      "solaire":  8.8,
+                                      "autres":  6.8
+                                  }
+                      },
+                      {
+                          "country":  "Cuba",
+                          "sourceCountry":  "Cuba",
+                          "isoCode":  "CUB",
+                          "year":  2024,
+                          "carbonIntensity":  642.8,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  13.6,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0.6,
+                                      "eolien":  0.4,
+                                      "solaire":  1.2,
+                                      "autres":  84.1
+                                  }
+                      },
+                      {
+                          "country":  "Cyprus",
+                          "sourceCountry":  "Cyprus",
+                          "isoCode":  "CYP",
+                          "year":  2025,
+                          "carbonIntensity":  489,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  3.6,
+                                      "solaire":  23.2,
+                                      "autres":  73.3
+                                  }
+                      },
+                      {
+                          "country":  "Democratic Republic of Congo",
+                          "sourceCountry":  "Democratic Republic of Congo",
+                          "isoCode":  "COD",
+                          "year":  2024,
+                          "carbonIntensity":  27.6,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  84.2,
+                                      "eolien":  0,
+                                      "solaire":  15.8,
+                                      "autres":  0.1
+                                  }
+                      },
+                      {
+                          "country":  "Denmark",
+                          "sourceCountry":  "Denmark",
+                          "isoCode":  "DNK",
+                          "year":  2025,
+                          "carbonIntensity":  114.4,
+                          "mix":  {
+                                      "charbon":  2.7,
+                                      "gaz":  2.4,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0.1,
+                                      "eolien":  57.7,
+                                      "solaire":  13.4,
+                                      "autres":  23.8
+                                  }
+                      },
+                      {
+                          "country":  "Djibouti",
+                          "sourceCountry":  "Djibouti",
+                          "isoCode":  "DJI",
+                          "year":  2024,
+                          "carbonIntensity":  450,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  35,
+                                      "solaire":  0,
+                                      "autres":  65
+                                  }
+                      },
+                      {
+                          "country":  "Dominica",
+                          "sourceCountry":  "Dominica",
+                          "isoCode":  "DMA",
+                          "year":  2023,
+                          "carbonIntensity":  600,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  13.3,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  86.7
+                                  }
+                      },
+                      {
+                          "country":  "Dominican Republic",
+                          "sourceCountry":  "Dominican Republic",
+                          "isoCode":  "DOM",
+                          "year":  2025,
+                          "carbonIntensity":  537.5,
+                          "mix":  {
+                                      "charbon":  29.1,
+                                      "gaz":  26.8,
+                                      "nucleaire":  0,
+                                      "hydraulique":  6.7,
+                                      "eolien":  6.3,
+                                      "solaire":  9.9,
+                                      "autres":  21.3
+                                  }
+                      },
+                      {
+                          "country":  "East Timor",
+                          "sourceCountry":  "East Timor",
+                          "isoCode":  "TLS",
+                          "year":  2024,
+                          "carbonIntensity":  666.7,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  100
+                                  }
+                      },
+                      {
+                          "country":  "Ecuador",
+                          "sourceCountry":  "Ecuador",
+                          "isoCode":  "ECU",
+                          "year":  2025,
+                          "carbonIntensity":  159,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  2.7,
+                                      "nucleaire":  0,
+                                      "hydraulique":  77.9,
+                                      "eolien":  0.5,
+                                      "solaire":  0.1,
+                                      "autres":  18.8
+                                  }
+                      },
+                      {
+                          "country":  "Egypt",
+                          "sourceCountry":  "Egypt",
+                          "isoCode":  "EGY",
+                          "year":  2024,
+                          "carbonIntensity":  574.5,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  81.3,
+                                      "nucleaire":  0,
+                                      "hydraulique":  6.1,
+                                      "eolien":  2.6,
+                                      "solaire":  2.6,
+                                      "autres":  7.5
+                                  }
+                      },
+                      {
+                          "country":  "Equatorial Guinea",
+                          "sourceCountry":  "Equatorial Guinea",
+                          "isoCode":  "GNQ",
+                          "year":  2024,
+                          "carbonIntensity":  644.3,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  72.5,
+                                      "nucleaire":  0,
+                                      "hydraulique":  26.8,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  0.7
+                                  }
+                      },
+                      {
+                          "country":  "Eritrea",
+                          "sourceCountry":  "Eritrea",
+                          "isoCode":  "ERI",
+                          "year":  2024,
+                          "carbonIntensity":  577.8,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  11.1,
+                                      "autres":  88.9
+                                  }
+                      },
+                      {
+                          "country":  "Espagne",
+                          "sourceCountry":  "Spain",
+                          "isoCode":  "ESP",
+                          "year":  2025,
+                          "carbonIntensity":  153.6,
+                          "mix":  {
+                                      "charbon":  0.3,
+                                      "gaz":  21.6,
+                                      "nucleaire":  18.8,
+                                      "hydraulique":  11.4,
+                                      "eolien":  20.4,
+                                      "solaire":  21.8,
+                                      "autres":  5.7
+                                  }
+                      },
+                      {
+                          "country":  "Estonia",
+                          "sourceCountry":  "Estonia",
+                          "isoCode":  "EST",
+                          "year":  2025,
+                          "carbonIntensity":  319.2,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  1.3,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0.5,
+                                      "eolien":  18.8,
+                                      "solaire":  18.5,
+                                      "autres":  60.9
+                                  }
+                      },
+                      {
+                          "country":  "Eswatini",
+                          "sourceCountry":  "Eswatini",
+                          "isoCode":  "SWZ",
+                          "year":  2024,
+                          "carbonIntensity":  131.2,
+                          "mix":  {
+                                      "charbon":  3.3,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  57.4,
+                                      "eolien":  0,
+                                      "solaire":  4.9,
+                                      "autres":  34.4
+                                  }
+                      },
+                      {
+                          "country":  "Etats-Unis",
+                          "sourceCountry":  "United States",
+                          "isoCode":  "USA",
+                          "year":  2025,
+                          "carbonIntensity":  384.4,
+                          "mix":  {
+                                      "charbon":  16.3,
+                                      "gaz":  40,
+                                      "nucleaire":  17.4,
+                                      "hydraulique":  5.3,
+                                      "eolien":  10.3,
+                                      "solaire":  8.6,
+                                      "autres":  2.1
+                                  }
+                      },
+                      {
+                          "country":  "Ethiopia",
+                          "sourceCountry":  "Ethiopia",
+                          "isoCode":  "ETH",
+                          "year":  2025,
+                          "carbonIntensity":  23.1,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  96.5,
+                                      "eolien":  3.3,
+                                      "solaire":  0.1,
+                                      "autres":  0.1
+                                  }
+                      },
+                      {
+                          "country":  "Falkland Islands",
+                          "sourceCountry":  "Falkland Islands",
+                          "isoCode":  "FLK",
+                          "year":  2023,
+                          "carbonIntensity":  1000,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  100
+                                  }
+                      },
+                      {
+                          "country":  "Faroe Islands",
+                          "sourceCountry":  "Faroe Islands",
+                          "isoCode":  "FRO",
+                          "year":  2023,
+                          "carbonIntensity":  346.9,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  26.5,
+                                      "eolien":  18.4,
+                                      "solaire":  0,
+                                      "autres":  55.1
+                                  }
+                      },
+                      {
+                          "country":  "Fiji",
+                          "sourceCountry":  "Fiji",
+                          "isoCode":  "FJI",
+                          "year":  2024,
+                          "carbonIntensity":  278.3,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  52.2,
+                                      "eolien":  0,
+                                      "solaire":  0.9,
+                                      "autres":  47
+                                  }
+                      },
+                      {
+                          "country":  "Finland",
+                          "sourceCountry":  "Finland",
+                          "isoCode":  "FIN",
+                          "year":  2025,
+                          "carbonIntensity":  57.5,
+                          "mix":  {
+                                      "charbon":  0.2,
+                                      "gaz":  1.2,
+                                      "nucleaire":  39.9,
+                                      "hydraulique":  15.1,
+                                      "eolien":  27.4,
+                                      "solaire":  1.2,
+                                      "autres":  15
+                                  }
+                      },
+                      {
+                          "country":  "France",
+                          "sourceCountry":  "France",
+                          "isoCode":  "FRA",
+                          "year":  2025,
+                          "carbonIntensity":  41.4,
+                          "mix":  {
+                                      "charbon":  0.3,
+                                      "gaz":  3,
+                                      "nucleaire":  68.8,
+                                      "hydraulique":  10.4,
+                                      "eolien":  8.2,
+                                      "solaire":  5.6,
+                                      "autres":  3.7
+                                  }
+                      },
+                      {
+                          "country":  "French Polynesia",
+                          "sourceCountry":  "French Polynesia",
+                          "isoCode":  "PYF",
+                          "year":  2024,
+                          "carbonIntensity":  430.6,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  26.4,
+                                      "eolien":  0,
+                                      "solaire":  8.3,
+                                      "autres":  65.3
+                                  }
+                      },
+                      {
+                          "country":  "Gabon",
+                          "sourceCountry":  "Gabon",
+                          "isoCode":  "GAB",
+                          "year":  2024,
+                          "carbonIntensity":  523.1,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  44.2,
+                                      "nucleaire":  0,
+                                      "hydraulique":  35,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  20.8
+                                  }
+                      },
+                      {
+                          "country":  "Gambia",
+                          "sourceCountry":  "Gambia",
+                          "isoCode":  "GMB",
+                          "year":  2024,
+                          "carbonIntensity":  666.7,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  100
+                                  }
+                      },
+                      {
+                          "country":  "Georgia",
+                          "sourceCountry":  "Georgia",
+                          "isoCode":  "GEO",
+                          "year":  2025,
+                          "carbonIntensity":  145.9,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  20.4,
+                                      "nucleaire":  0,
+                                      "hydraulique":  78.8,
+                                      "eolien":  0.6,
+                                      "solaire":  0.2,
+                                      "autres":  0
+                                  }
+                      },
+                      {
+                          "country":  "Ghana",
+                          "sourceCountry":  "Ghana",
+                          "isoCode":  "GHA",
+                          "year":  2024,
+                          "carbonIntensity":  468.9,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  61.4,
+                                      "nucleaire":  0,
+                                      "hydraulique":  35.4,
+                                      "eolien":  0,
+                                      "solaire":  0.7,
+                                      "autres":  2.4
+                                  }
+                      },
+                      {
+                          "country":  "Gibraltar",
+                          "sourceCountry":  "Gibraltar",
+                          "isoCode":  "GIB",
+                          "year":  2024,
+                          "carbonIntensity":  590.9,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  81.8,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  18.2
+                                  }
+                      },
+                      {
+                          "country":  "Greece",
+                          "sourceCountry":  "Greece",
+                          "isoCode":  "GRC",
+                          "year":  2025,
+                          "carbonIntensity":  315.1,
+                          "mix":  {
+                                      "charbon":  4.7,
+                                      "gaz":  38.4,
+                                      "nucleaire":  0,
+                                      "hydraulique":  5.9,
+                                      "eolien":  20.4,
+                                      "solaire":  22.2,
+                                      "autres":  8.4
+                                  }
+                      },
+                      {
+                          "country":  "Greenland",
+                          "sourceCountry":  "Greenland",
+                          "isoCode":  "GRL",
+                          "year":  2024,
+                          "carbonIntensity":  150,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  78.3,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  21.7
+                                  }
+                      },
+                      {
+                          "country":  "Grenada",
+                          "sourceCountry":  "Grenada",
+                          "isoCode":  "GRD",
+                          "year":  2024,
+                          "carbonIntensity":  666.7,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  100
+                                  }
+                      },
+                      {
+                          "country":  "Guam",
+                          "sourceCountry":  "Guam",
+                          "isoCode":  "GUM",
+                          "year":  2024,
+                          "carbonIntensity":  607.5,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  8.6,
+                                      "autres":  91.4
+                                  }
+                      },
+                      {
+                          "country":  "Guatemala",
+                          "sourceCountry":  "Guatemala",
+                          "isoCode":  "GTM",
+                          "year":  2024,
+                          "carbonIntensity":  301.5,
+                          "mix":  {
+                                      "charbon":  15.8,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  39.9,
+                                      "eolien":  2.3,
+                                      "solaire":  1.8,
+                                      "autres":  40.2
+                                  }
+                      },
+                      {
+                          "country":  "Guinea",
+                          "sourceCountry":  "Guinea",
+                          "isoCode":  "GIN",
+                          "year":  2024,
+                          "carbonIntensity":  181.1,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  74.4,
+                                      "eolien":  0,
+                                      "solaire":  0.7,
+                                      "autres":  24.8
+                                  }
+                      },
+                      {
+                          "country":  "Guinea-Bissau",
+                          "sourceCountry":  "Guinea-Bissau",
+                          "isoCode":  "GNB",
+                          "year":  2024,
+                          "carbonIntensity":  625,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  100
+                                  }
+                      },
+                      {
+                          "country":  "Guyana",
+                          "sourceCountry":  "Guyana",
+                          "isoCode":  "GUY",
+                          "year":  2024,
+                          "carbonIntensity":  644.9,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0.7,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  1.4,
+                                      "autres":  97.8
+                                  }
+                      },
+                      {
+                          "country":  "Haiti",
+                          "sourceCountry":  "Haiti",
+                          "isoCode":  "HTI",
+                          "year":  2024,
+                          "carbonIntensity":  534.9,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  18.6,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  81.4
+                                  }
+                      },
+                      {
+                          "country":  "Honduras",
+                          "sourceCountry":  "Honduras",
+                          "isoCode":  "HND",
+                          "year":  2024,
+                          "carbonIntensity":  322.1,
+                          "mix":  {
+                                      "charbon":  0.5,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  30.4,
+                                      "eolien":  6,
+                                      "solaire":  9.5,
+                                      "autres":  53.6
+                                  }
+                      },
+                      {
+                          "country":  "Hong Kong",
+                          "sourceCountry":  "Hong Kong",
+                          "isoCode":  "HKG",
+                          "year":  2024,
+                          "carbonIntensity":  675.5,
+                          "mix":  {
+                                      "charbon":  33.7,
+                                      "gaz":  64.1,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0.6,
+                                      "autres":  1.6
+                                  }
+                      },
+                      {
+                          "country":  "Hungary",
+                          "sourceCountry":  "Hungary",
+                          "isoCode":  "HUN",
+                          "year":  2025,
+                          "carbonIntensity":  163,
+                          "mix":  {
+                                      "charbon":  3.4,
+                                      "gaz":  20.3,
+                                      "nucleaire":  40,
+                                      "hydraulique":  0.6,
+                                      "eolien":  1.5,
+                                      "solaire":  27.3,
+                                      "autres":  7
+                                  }
+                      },
+                      {
+                          "country":  "Iceland",
+                          "sourceCountry":  "Iceland",
+                          "isoCode":  "ISL",
+                          "year":  2024,
+                          "carbonIntensity":  27.8,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  70.7,
+                                      "eolien":  0.1,
+                                      "solaire":  0.1,
+                                      "autres":  29.2
+                                  }
+                      },
+                      {
+                          "country":  "India",
+                          "sourceCountry":  "India",
+                          "isoCode":  "IND",
+                          "year":  2025,
+                          "carbonIntensity":  670.1,
+                          "mix":  {
+                                      "charbon":  70.8,
+                                      "gaz":  2.3,
+                                      "nucleaire":  2.6,
+                                      "hydraulique":  8.6,
+                                      "eolien":  5,
+                                      "solaire":  9.4,
+                                      "autres":  1.3
+                                  }
+                      },
+                      {
+                          "country":  "Indonesia",
+                          "sourceCountry":  "Indonesia",
+                          "isoCode":  "IDN",
+                          "year":  2024,
+                          "carbonIntensity":  680.2,
+                          "mix":  {
+                                      "charbon":  61.5,
+                                      "gaz":  18.5,
+                                      "nucleaire":  0,
+                                      "hydraulique":  7.3,
+                                      "eolien":  0.1,
+                                      "solaire":  0.4,
+                                      "autres":  12.2
+                                  }
+                      },
+                      {
+                          "country":  "Iran",
+                          "sourceCountry":  "Iran",
+                          "isoCode":  "IRN",
+                          "year":  2025,
+                          "carbonIntensity":  659.5,
+                          "mix":  {
+                                      "charbon":  0.2,
+                                      "gaz":  89.5,
+                                      "nucleaire":  1.9,
+                                      "hydraulique":  3.3,
+                                      "eolien":  0.3,
+                                      "solaire":  0.2,
+                                      "autres":  4.6
+                                  }
+                      },
+                      {
+                          "country":  "Iraq",
+                          "sourceCountry":  "Iraq",
+                          "isoCode":  "IRQ",
+                          "year":  2024,
+                          "carbonIntensity":  683.1,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  53,
+                                      "nucleaire":  0,
+                                      "hydraulique":  1.3,
+                                      "eolien":  0,
+                                      "solaire":  0.3,
+                                      "autres":  45.4
+                                  }
+                      },
+                      {
+                          "country":  "Ireland",
+                          "sourceCountry":  "Ireland",
+                          "isoCode":  "IRL",
+                          "year":  2025,
+                          "carbonIntensity":  256.5,
+                          "mix":  {
+                                      "charbon":  0.5,
+                                      "gaz":  48.4,
+                                      "nucleaire":  0,
+                                      "hydraulique":  2.1,
+                                      "eolien":  38,
+                                      "solaire":  4.8,
+                                      "autres":  6.3
+                                  }
+                      },
+                      {
+                          "country":  "Israel",
+                          "sourceCountry":  "Israel",
+                          "isoCode":  "ISR",
+                          "year":  2025,
+                          "carbonIntensity":  492.7,
+                          "mix":  {
+                                      "charbon":  3.4,
+                                      "gaz":  79.7,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0.6,
+                                      "solaire":  16.2,
+                                      "autres":  0.2
+                                  }
+                      },
+                      {
+                          "country":  "Italy",
+                          "sourceCountry":  "Italy",
+                          "isoCode":  "ITA",
+                          "year":  2025,
+                          "carbonIntensity":  284.8,
+                          "mix":  {
+                                      "charbon":  1.4,
+                                      "gaz":  47.2,
+                                      "nucleaire":  0,
+                                      "hydraulique":  15.8,
+                                      "eolien":  8.1,
+                                      "solaire":  16.9,
+                                      "autres":  10.6
+                                  }
+                      },
+                      {
+                          "country":  "Jamaica",
+                          "sourceCountry":  "Jamaica",
+                          "isoCode":  "JAM",
+                          "year":  2024,
+                          "carbonIntensity":  563,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  56.9,
+                                      "nucleaire":  0,
+                                      "hydraulique":  2.4,
+                                      "eolien":  5.9,
+                                      "solaire":  3,
+                                      "autres":  31.7
+                                  }
+                      },
+                      {
+                          "country":  "Japan",
+                          "sourceCountry":  "Japan",
+                          "isoCode":  "JPN",
+                          "year":  2025,
+                          "carbonIntensity":  477.3,
+                          "mix":  {
+                                      "charbon":  32.1,
+                                      "gaz":  32.8,
+                                      "nucleaire":  9.1,
+                                      "hydraulique":  7.2,
+                                      "eolien":  1.2,
+                                      "solaire":  9.8,
+                                      "autres":  7.8
+                                  }
+                      },
+                      {
+                          "country":  "Jordan",
+                          "sourceCountry":  "Jordan",
+                          "isoCode":  "JOR",
+                          "year":  2024,
+                          "carbonIntensity":  529.8,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  62,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0.1,
+                                      "eolien":  7.4,
+                                      "solaire":  16.6,
+                                      "autres":  13.9
+                                  }
+                      },
+                      {
+                          "country":  "Kazakhstan",
+                          "sourceCountry":  "Kazakhstan",
+                          "isoCode":  "KAZ",
+                          "year":  2024,
+                          "carbonIntensity":  802,
+                          "mix":  {
+                                      "charbon":  54,
+                                      "gaz":  29.3,
+                                      "nucleaire":  0,
+                                      "hydraulique":  9.5,
+                                      "eolien":  4.1,
+                                      "solaire":  1.6,
+                                      "autres":  1.5
+                                  }
+                      },
+                      {
+                          "country":  "Kenya",
+                          "sourceCountry":  "Kenya",
+                          "isoCode":  "KEN",
+                          "year":  2025,
+                          "carbonIntensity":  95.4,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  20.9,
+                                      "eolien":  16.4,
+                                      "solaire":  4.6,
+                                      "autres":  58
+                                  }
+                      },
+                      {
+                          "country":  "Kiribati",
+                          "sourceCountry":  "Kiribati",
+                          "isoCode":  "KIR",
+                          "year":  2024,
+                          "carbonIntensity":  500,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  25,
+                                      "autres":  75
+                                  }
+                      },
+                      {
+                          "country":  "Kuwait",
+                          "sourceCountry":  "Kuwait",
+                          "isoCode":  "KWT",
+                          "year":  2025,
+                          "carbonIntensity":  635.3,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  62,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  2,
+                                      "solaire":  0.2,
+                                      "autres":  35.8
+                                  }
+                      },
+                      {
+                          "country":  "Kyrgyzstan",
+                          "sourceCountry":  "Kyrgyzstan",
+                          "isoCode":  "KGZ",
+                          "year":  2025,
+                          "carbonIntensity":  152.7,
+                          "mix":  {
+                                      "charbon":  12.6,
+                                      "gaz":  1.7,
+                                      "nucleaire":  0,
+                                      "hydraulique":  84.7,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  1
+                                  }
+                      },
+                      {
+                          "country":  "Laos",
+                          "sourceCountry":  "Laos",
+                          "isoCode":  "LAO",
+                          "year":  2024,
+                          "carbonIntensity":  232.1,
+                          "mix":  {
+                                      "charbon":  23.3,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  76.5,
+                                      "eolien":  0,
+                                      "solaire":  0.2,
+                                      "autres":  0.1
+                                  }
+                      },
+                      {
+                          "country":  "Latvia",
+                          "sourceCountry":  "Latvia",
+                          "isoCode":  "LVA",
+                          "year":  2025,
+                          "carbonIntensity":  138.8,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  26.2,
+                                      "nucleaire":  0,
+                                      "hydraulique":  46.7,
+                                      "eolien":  3.5,
+                                      "solaire":  13.1,
+                                      "autres":  10.5
+                                  }
+                      },
+                      {
+                          "country":  "Lebanon",
+                          "sourceCountry":  "Lebanon",
+                          "isoCode":  "LBN",
+                          "year":  2024,
+                          "carbonIntensity":  389.5,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  13.1,
+                                      "eolien":  0.2,
+                                      "solaire":  30,
+                                      "autres":  56.7
+                                  }
+                      },
+                      {
+                          "country":  "Lesotho",
+                          "sourceCountry":  "Lesotho",
+                          "isoCode":  "LSO",
+                          "year":  2022,
+                          "carbonIntensity":  20.8,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  100,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  0
+                                  }
+                      },
+                      {
+                          "country":  "Liberia",
+                          "sourceCountry":  "Liberia",
+                          "isoCode":  "LBR",
+                          "year":  2024,
+                          "carbonIntensity":  315.8,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  52.6,
+                                      "eolien":  0,
+                                      "solaire":  1.8,
+                                      "autres":  45.6
+                                  }
+                      },
+                      {
+                          "country":  "Libya",
+                          "sourceCountry":  "Libya",
+                          "isoCode":  "LBY",
+                          "year":  2024,
+                          "carbonIntensity":  826.8,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  74.5,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  25.4
+                                  }
+                      },
+                      {
+                          "country":  "Lithuania",
+                          "sourceCountry":  "Lithuania",
+                          "isoCode":  "LTU",
+                          "year":  2025,
+                          "carbonIntensity":  138.4,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  16.5,
+                                      "nucleaire":  0,
+                                      "hydraulique":  3.9,
+                                      "eolien":  44.9,
+                                      "solaire":  18.8,
+                                      "autres":  15.9
+                                  }
+                      },
+                      {
+                          "country":  "Luxembourg",
+                          "sourceCountry":  "Luxembourg",
+                          "isoCode":  "LUX",
+                          "year":  2025,
+                          "carbonIntensity":  123.4,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  3.9,
+                                      "nucleaire":  0,
+                                      "hydraulique":  3.2,
+                                      "eolien":  30.5,
+                                      "solaire":  30.5,
+                                      "autres":  31.8
+                                  }
+                      },
+                      {
+                          "country":  "Macao",
+                          "sourceCountry":  "Macao",
+                          "isoCode":  "MAC",
+                          "year":  2024,
+                          "carbonIntensity":  474.4,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  62.8,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  37.2
+                                  }
+                      },
+                      {
+                          "country":  "Madagascar",
+                          "sourceCountry":  "Madagascar",
+                          "isoCode":  "MDG",
+                          "year":  2024,
+                          "carbonIntensity":  432.1,
+                          "mix":  {
+                                      "charbon":  20.6,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  37,
+                                      "eolien":  0,
+                                      "solaire":  4.1,
+                                      "autres":  38.3
+                                  }
+                      },
+                      {
+                          "country":  "Malawi",
+                          "sourceCountry":  "Malawi",
+                          "isoCode":  "MWI",
+                          "year":  2024,
+                          "carbonIntensity":  54.6,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  92.4,
+                                      "eolien":  0,
+                                      "solaire":  0.5,
+                                      "autres":  7.1
+                                  }
+                      },
+                      {
+                          "country":  "Malaysia",
+                          "sourceCountry":  "Malaysia",
+                          "isoCode":  "MYS",
+                          "year":  2024,
+                          "carbonIntensity":  600.4,
+                          "mix":  {
+                                      "charbon":  43.1,
+                                      "gaz":  36,
+                                      "nucleaire":  0,
+                                      "hydraulique":  17.4,
+                                      "eolien":  0,
+                                      "solaire":  2.1,
+                                      "autres":  1.4
+                                  }
+                      },
+                      {
+                          "country":  "Maldives",
+                          "sourceCountry":  "Maldives",
+                          "isoCode":  "MDV",
+                          "year":  2024,
+                          "carbonIntensity":  611.8,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  7.1,
+                                      "autres":  92.9
+                                  }
+                      },
+                      {
+                          "country":  "Mali",
+                          "sourceCountry":  "Mali",
+                          "isoCode":  "MLI",
+                          "year":  2024,
+                          "carbonIntensity":  538.6,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  15.4,
+                                      "eolien":  0,
+                                      "solaire":  2.9,
+                                      "autres":  81.7
+                                  }
+                      },
+                      {
+                          "country":  "Malta",
+                          "sourceCountry":  "Malta",
+                          "isoCode":  "MLT",
+                          "year":  2025,
+                          "carbonIntensity":  484,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  83.1,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  15.5,
+                                      "autres":  1.4
+                                  }
+                      },
+                      {
+                          "country":  "Mauritania",
+                          "sourceCountry":  "Mauritania",
+                          "isoCode":  "MRT",
+                          "year":  2024,
+                          "carbonIntensity":  512.1,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  10.1,
+                                      "eolien":  4.8,
+                                      "solaire":  7.7,
+                                      "autres":  77.3
+                                  }
+                      },
+                      {
+                          "country":  "Mauritius",
+                          "sourceCountry":  "Mauritius",
+                          "isoCode":  "MUS",
+                          "year":  2024,
+                          "carbonIntensity":  642.2,
+                          "mix":  {
+                                      "charbon":  39.3,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  3.2,
+                                      "eolien":  0.3,
+                                      "solaire":  5,
+                                      "autres":  52.2
+                                  }
+                      },
+                      {
+                          "country":  "Mexico",
+                          "sourceCountry":  "Mexico",
+                          "isoCode":  "MEX",
+                          "year":  2025,
+                          "carbonIntensity":  474,
+                          "mix":  {
+                                      "charbon":  3,
+                                      "gaz":  61.6,
+                                      "nucleaire":  2.8,
+                                      "hydraulique":  8.1,
+                                      "eolien":  6,
+                                      "solaire":  7.4,
+                                      "autres":  11.1
+                                  }
+                      },
+                      {
+                          "country":  "Moldova",
+                          "sourceCountry":  "Moldova",
+                          "isoCode":  "MDA",
+                          "year":  2025,
+                          "carbonIntensity":  633.1,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  85.2,
+                                      "nucleaire":  0,
+                                      "hydraulique":  5.7,
+                                      "eolien":  2.6,
+                                      "solaire":  2.6,
+                                      "autres":  3.9
+                                  }
+                      },
+                      {
+                          "country":  "Mongolia",
+                          "sourceCountry":  "Mongolia",
+                          "isoCode":  "MNG",
+                          "year":  2025,
+                          "carbonIntensity":  816.3,
+                          "mix":  {
+                                      "charbon":  85.8,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0.6,
+                                      "eolien":  5.6,
+                                      "solaire":  2.2,
+                                      "autres":  5.9
+                                  }
+                      },
+                      {
+                          "country":  "Montenegro",
+                          "sourceCountry":  "Montenegro",
+                          "isoCode":  "MNE",
+                          "year":  2025,
+                          "carbonIntensity":  264.2,
+                          "mix":  {
+                                      "charbon":  24.4,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  58.5,
+                                      "eolien":  11.4,
+                                      "solaire":  5.7,
+                                      "autres":  0
+                                  }
+                      },
+                      {
+                          "country":  "Montserrat",
+                          "sourceCountry":  "Montserrat",
+                          "isoCode":  "MSR",
+                          "year":  2024,
+                          "carbonIntensity":  1000,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  100
+                                  }
+                      },
+                      {
+                          "country":  "Morocco",
+                          "sourceCountry":  "Morocco",
+                          "isoCode":  "MAR",
+                          "year":  2025,
+                          "carbonIntensity":  596.4,
+                          "mix":  {
+                                      "charbon":  61.5,
+                                      "gaz":  10.9,
+                                      "nucleaire":  0,
+                                      "hydraulique":  2,
+                                      "eolien":  16,
+                                      "solaire":  5.8,
+                                      "autres":  3.7
+                                  }
+                      },
+                      {
+                          "country":  "Mozambique",
+                          "sourceCountry":  "Mozambique",
+                          "isoCode":  "MOZ",
+                          "year":  2024,
+                          "carbonIntensity":  129.4,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  15.8,
+                                      "nucleaire":  0,
+                                      "hydraulique":  82.4,
+                                      "eolien":  0,
+                                      "solaire":  0.4,
+                                      "autres":  1.4
+                                  }
+                      },
+                      {
+                          "country":  "Myanmar",
+                          "sourceCountry":  "Myanmar",
+                          "isoCode":  "MMR",
+                          "year":  2024,
+                          "carbonIntensity":  503,
+                          "mix":  {
+                                      "charbon":  5.5,
+                                      "gaz":  46.1,
+                                      "nucleaire":  0,
+                                      "hydraulique":  46.1,
+                                      "eolien":  0,
+                                      "solaire":  0.6,
+                                      "autres":  1.8
+                                  }
+                      },
+                      {
+                          "country":  "Namibia",
+                          "sourceCountry":  "Namibia",
+                          "isoCode":  "NAM",
+                          "year":  2024,
+                          "carbonIntensity":  48.8,
+                          "mix":  {
+                                      "charbon":  2.4,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  61,
+                                      "eolien":  1.2,
+                                      "solaire":  35.4,
+                                      "autres":  0
+                                  }
+                      },
+                      {
+                          "country":  "Nauru",
+                          "sourceCountry":  "Nauru",
+                          "isoCode":  "NRU",
+                          "year":  2024,
+                          "carbonIntensity":  600,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  20,
+                                      "autres":  80
+                                  }
+                      },
+                      {
+                          "country":  "Nepal",
+                          "sourceCountry":  "Nepal",
+                          "isoCode":  "NPL",
+                          "year":  2024,
+                          "carbonIntensity":  24.3,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  98.8,
+                                      "eolien":  0.1,
+                                      "solaire":  1.1,
+                                      "autres":  0
+                                  }
+                      },
+                      {
+                          "country":  "Netherlands",
+                          "sourceCountry":  "Netherlands",
+                          "isoCode":  "NLD",
+                          "year":  2025,
+                          "carbonIntensity":  253.6,
+                          "mix":  {
+                                      "charbon":  7.1,
+                                      "gaz":  34.9,
+                                      "nucleaire":  3,
+                                      "hydraulique":  0,
+                                      "eolien":  25,
+                                      "solaire":  21.1,
+                                      "autres":  9
+                                  }
+                      },
+                      {
+                          "country":  "New Caledonia",
+                          "sourceCountry":  "New Caledonia",
+                          "isoCode":  "NCL",
+                          "year":  2024,
+                          "carbonIntensity":  560.9,
+                          "mix":  {
+                                      "charbon":  36.5,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  17.3,
+                                      "eolien":  1.3,
+                                      "solaire":  8.3,
+                                      "autres":  36.5
+                                  }
+                      },
+                      {
+                          "country":  "New Zealand",
+                          "sourceCountry":  "New Zealand",
+                          "isoCode":  "NZL",
+                          "year":  2025,
+                          "carbonIntensity":  92.8,
+                          "mix":  {
+                                      "charbon":  1.1,
+                                      "gaz":  8.9,
+                                      "nucleaire":  0,
+                                      "hydraulique":  54.8,
+                                      "eolien":  9.7,
+                                      "solaire":  0.9,
+                                      "autres":  24.6
+                                  }
+                      },
+                      {
+                          "country":  "Nicaragua",
+                          "sourceCountry":  "Nicaragua",
+                          "isoCode":  "NIC",
+                          "year":  2024,
+                          "carbonIntensity":  300.9,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  14.4,
+                                      "eolien":  12.4,
+                                      "solaire":  0.7,
+                                      "autres":  72.6
+                                  }
+                      },
+                      {
+                          "country":  "Niger",
+                          "sourceCountry":  "Niger",
+                          "isoCode":  "NER",
+                          "year":  2024,
+                          "carbonIntensity":  673.7,
+                          "mix":  {
+                                      "charbon":  17.9,
+                                      "gaz":  5.3,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  3.2,
+                                      "autres":  73.7
+                                  }
+                      },
+                      {
+                          "country":  "Nigeria",
+                          "sourceCountry":  "Nigeria",
+                          "isoCode":  "NGA",
+                          "year":  2025,
+                          "carbonIntensity":  455.7,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  68.7,
+                                      "nucleaire":  0,
+                                      "hydraulique":  30.9,
+                                      "eolien":  0,
+                                      "solaire":  0.3,
+                                      "autres":  0.1
+                                  }
+                      },
+                      {
+                          "country":  "North Korea",
+                          "sourceCountry":  "North Korea",
+                          "isoCode":  "PRK",
+                          "year":  2024,
+                          "carbonIntensity":  340.6,
+                          "mix":  {
+                                      "charbon":  34.1,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  62.7,
+                                      "eolien":  0,
+                                      "solaire":  0.6,
+                                      "autres":  2.6
+                                  }
+                      },
+                      {
+                          "country":  "North Macedonia",
+                          "sourceCountry":  "North Macedonia",
+                          "isoCode":  "MKD",
+                          "year":  2025,
+                          "carbonIntensity":  441.4,
+                          "mix":  {
+                                      "charbon":  30.6,
+                                      "gaz":  19.6,
+                                      "nucleaire":  0,
+                                      "hydraulique":  19.9,
+                                      "eolien":  2.9,
+                                      "solaire":  23.8,
+                                      "autres":  3.1
+                                  }
+                      },
+                      {
+                          "country":  "Norway",
+                          "sourceCountry":  "Norway",
+                          "isoCode":  "NOR",
+                          "year":  2025,
+                          "carbonIntensity":  28.1,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0.6,
+                                      "nucleaire":  0,
+                                      "hydraulique":  90,
+                                      "eolien":  8.4,
+                                      "solaire":  0.3,
+                                      "autres":  0.7
+                                  }
+                      },
+                      {
+                          "country":  "Oman",
+                          "sourceCountry":  "Oman",
+                          "isoCode":  "OMN",
+                          "year":  2025,
+                          "carbonIntensity":  544.5,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  91.9,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0.2,
+                                      "solaire":  4.4,
+                                      "autres":  3.6
+                                  }
+                      },
+                      {
+                          "country":  "Pakistan",
+                          "sourceCountry":  "Pakistan",
+                          "isoCode":  "PAK",
+                          "year":  2025,
+                          "carbonIntensity":  346.6,
+                          "mix":  {
+                                      "charbon":  14.8,
+                                      "gaz":  21,
+                                      "nucleaire":  12.2,
+                                      "hydraulique":  20.2,
+                                      "eolien":  2.9,
+                                      "solaire":  18.8,
+                                      "autres":  10.1
+                                  }
+                      },
+                      {
+                          "country":  "Palestine",
+                          "sourceCountry":  "Palestine",
+                          "isoCode":  "PSE",
+                          "year":  2024,
+                          "carbonIntensity":  414.1,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  39.4,
+                                      "autres":  60.6
+                                  }
+                      },
+                      {
+                          "country":  "Panama",
+                          "sourceCountry":  "Panama",
+                          "isoCode":  "PAN",
+                          "year":  2024,
+                          "carbonIntensity":  221.2,
+                          "mix":  {
+                                      "charbon":  3.7,
+                                      "gaz":  20.8,
+                                      "nucleaire":  0,
+                                      "hydraulique":  53.1,
+                                      "eolien":  7.1,
+                                      "solaire":  7.4,
+                                      "autres":  7.8
+                                  }
+                      },
+                      {
+                          "country":  "Papua New Guinea",
+                          "sourceCountry":  "Papua New Guinea",
+                          "isoCode":  "PNG",
+                          "year":  2024,
+                          "carbonIntensity":  513.7,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  19.2,
+                                      "nucleaire":  0,
+                                      "hydraulique":  21.1,
+                                      "eolien":  0,
+                                      "solaire":  0.2,
+                                      "autres":  59.4
+                                  }
+                      },
+                      {
+                          "country":  "Paraguay",
+                          "sourceCountry":  "Paraguay",
+                          "isoCode":  "PRY",
+                          "year":  2025,
+                          "carbonIntensity":  24.7,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  99.5,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  0.5
+                                  }
+                      },
+                      {
+                          "country":  "Peru",
+                          "sourceCountry":  "Peru",
+                          "isoCode":  "PER",
+                          "year":  2025,
+                          "carbonIntensity":  238.2,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  36.1,
+                                      "nucleaire":  0,
+                                      "hydraulique":  56.1,
+                                      "eolien":  3.5,
+                                      "solaire":  3,
+                                      "autres":  1.3
+                                  }
+                      },
+                      {
+                          "country":  "Philippines",
+                          "sourceCountry":  "Philippines",
+                          "isoCode":  "PHL",
+                          "year":  2025,
+                          "carbonIntensity":  588.3,
+                          "mix":  {
+                                      "charbon":  58.7,
+                                      "gaz":  17.3,
+                                      "nucleaire":  0,
+                                      "hydraulique":  10.3,
+                                      "eolien":  1.2,
+                                      "solaire":  2.4,
+                                      "autres":  10.1
+                                  }
+                      },
+                      {
+                          "country":  "Pologne",
+                          "sourceCountry":  "Poland",
+                          "isoCode":  "POL",
+                          "year":  2025,
+                          "carbonIntensity":  588.6,
+                          "mix":  {
+                                      "charbon":  50.4,
+                                      "gaz":  14.3,
+                                      "nucleaire":  0,
+                                      "hydraulique":  1,
+                                      "eolien":  14.2,
+                                      "solaire":  11.3,
+                                      "autres":  8.8
+                                  }
+                      },
+                      {
+                          "country":  "Portugal",
+                          "sourceCountry":  "Portugal",
+                          "isoCode":  "PRT",
+                          "year":  2025,
+                          "carbonIntensity":  127.9,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  16.4,
+                                      "nucleaire":  0,
+                                      "hydraulique":  29.7,
+                                      "eolien":  26.7,
+                                      "solaire":  17.3,
+                                      "autres":  9.8
+                                  }
+                      },
+                      {
+                          "country":  "Puerto Rico",
+                          "sourceCountry":  "Puerto Rico",
+                          "isoCode":  "PRI",
+                          "year":  2025,
+                          "carbonIntensity":  654.7,
+                          "mix":  {
+                                      "charbon":  16.5,
+                                      "gaz":  29.5,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0.2,
+                                      "eolien":  1.1,
+                                      "solaire":  4.9,
+                                      "autres":  47.7
+                                  }
+                      },
+                      {
+                          "country":  "Qatar",
+                          "sourceCountry":  "Qatar",
+                          "isoCode":  "QAT",
+                          "year":  2025,
+                          "carbonIntensity":  581.5,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  95.9,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  3.8,
+                                      "autres":  0.2
+                                  }
+                      },
+                      {
+                          "country":  "Romania",
+                          "sourceCountry":  "Romania",
+                          "isoCode":  "ROU",
+                          "year":  2025,
+                          "carbonIntensity":  250.8,
+                          "mix":  {
+                                      "charbon":  13.4,
+                                      "gaz":  18.7,
+                                      "nucleaire":  20.5,
+                                      "hydraulique":  24.3,
+                                      "eolien":  12,
+                                      "solaire":  9.8,
+                                      "autres":  1.3
+                                  }
+                      },
+                      {
+                          "country":  "Royaume-Uni",
+                          "sourceCountry":  "United Kingdom",
+                          "isoCode":  "GBR",
+                          "year":  2025,
+                          "carbonIntensity":  217.4,
+                          "mix":  {
+                                      "charbon":  0.1,
+                                      "gaz":  31.1,
+                                      "nucleaire":  12.4,
+                                      "hydraulique":  1.9,
+                                      "eolien":  29.4,
+                                      "solaire":  6.6,
+                                      "autres":  18.5
+                                  }
+                      },
+                      {
+                          "country":  "Russia",
+                          "sourceCountry":  "Russia",
+                          "isoCode":  "RUS",
+                          "year":  2025,
+                          "carbonIntensity":  449.7,
+                          "mix":  {
+                                      "charbon":  18.4,
+                                      "gaz":  44.7,
+                                      "nucleaire":  18.3,
+                                      "hydraulique":  16.7,
+                                      "eolien":  0.3,
+                                      "solaire":  0.2,
+                                      "autres":  1.3
+                                  }
+                      },
+                      {
+                          "country":  "Rwanda",
+                          "sourceCountry":  "Rwanda",
+                          "isoCode":  "RWA",
+                          "year":  2024,
+                          "carbonIntensity":  354,
+                          "mix":  {
+                                      "charbon":  15,
+                                      "gaz":  26.5,
+                                      "nucleaire":  0,
+                                      "hydraulique":  46,
+                                      "eolien":  0,
+                                      "solaire":  3.5,
+                                      "autres":  8.8
+                                  }
+                      },
+                      {
+                          "country":  "Saint Helena",
+                          "sourceCountry":  "Saint Helena",
+                          "isoCode":  "SHN",
+                          "year":  2023,
+                          "carbonIntensity":  1000,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  100
+                                  }
+                      },
+                      {
+                          "country":  "Saint Kitts and Nevis",
+                          "sourceCountry":  "Saint Kitts and Nevis",
+                          "isoCode":  "KNA",
+                          "year":  2024,
+                          "carbonIntensity":  608.7,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  4.3,
+                                      "solaire":  4.3,
+                                      "autres":  91.3
+                                  }
+                      },
+                      {
+                          "country":  "Saint Lucia",
+                          "sourceCountry":  "Saint Lucia",
+                          "isoCode":  "LCA",
+                          "year":  2024,
+                          "carbonIntensity":  650,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  2.5,
+                                      "autres":  97.5
+                                  }
+                      },
+                      {
+                          "country":  "Saint Pierre and Miquelon",
+                          "sourceCountry":  "Saint Pierre and Miquelon",
+                          "isoCode":  "SPM",
+                          "year":  2023,
+                          "carbonIntensity":  600,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  100
+                                  }
+                      },
+                      {
+                          "country":  "Saint Vincent and the Grenadines",
+                          "sourceCountry":  "Saint Vincent and the Grenadines",
+                          "isoCode":  "VCT",
+                          "year":  2024,
+                          "carbonIntensity":  600,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  13.3,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  86.7
+                                  }
+                      },
+                      {
+                          "country":  "Samoa",
+                          "sourceCountry":  "Samoa",
+                          "isoCode":  "WSM",
+                          "year":  2024,
+                          "carbonIntensity":  375,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  18.8,
+                                      "eolien":  0,
+                                      "solaire":  18.8,
+                                      "autres":  62.5
+                                  }
+                      },
+                      {
+                          "country":  "Sao Tome and Principe",
+                          "sourceCountry":  "Sao Tome and Principe",
+                          "isoCode":  "STP",
+                          "year":  2023,
+                          "carbonIntensity":  555.6,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  11.1,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  88.9
+                                  }
+                      },
+                      {
+                          "country":  "Senegal",
+                          "sourceCountry":  "Senegal",
+                          "isoCode":  "SEN",
+                          "year":  2024,
+                          "carbonIntensity":  540,
+                          "mix":  {
+                                      "charbon":  1.3,
+                                      "gaz":  0.3,
+                                      "nucleaire":  0,
+                                      "hydraulique":  4.1,
+                                      "eolien":  5.4,
+                                      "solaire":  8.9,
+                                      "autres":  80.1
+                                  }
+                      },
+                      {
+                          "country":  "Serbia",
+                          "sourceCountry":  "Serbia",
+                          "isoCode":  "SRB",
+                          "year":  2025,
+                          "carbonIntensity":  695.8,
+                          "mix":  {
+                                      "charbon":  65,
+                                      "gaz":  6.9,
+                                      "nucleaire":  0,
+                                      "hydraulique":  22.2,
+                                      "eolien":  4,
+                                      "solaire":  0.4,
+                                      "autres":  1.4
+                                  }
+                      },
+                      {
+                          "country":  "Seychelles",
+                          "sourceCountry":  "Seychelles",
+                          "isoCode":  "SYC",
+                          "year":  2024,
+                          "carbonIntensity":  555.6,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  1.6,
+                                      "solaire":  14.3,
+                                      "autres":  84.1
+                                  }
+                      },
+                      {
+                          "country":  "Sierra Leone",
+                          "sourceCountry":  "Sierra Leone",
+                          "isoCode":  "SLE",
+                          "year":  2024,
+                          "carbonIntensity":  47.6,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  85.7,
+                                      "eolien":  0,
+                                      "solaire":  9.5,
+                                      "autres":  4.8
+                                  }
+                      },
+                      {
+                          "country":  "Slovakia",
+                          "sourceCountry":  "Slovakia",
+                          "isoCode":  "SVK",
+                          "year":  2025,
+                          "carbonIntensity":  94.8,
+                          "mix":  {
+                                      "charbon":  1.1,
+                                      "gaz":  11.3,
+                                      "nucleaire":  66.4,
+                                      "hydraulique":  10.9,
+                                      "eolien":  0,
+                                      "solaire":  2.4,
+                                      "autres":  8
+                                  }
+                      },
+                      {
+                          "country":  "Slovenia",
+                          "sourceCountry":  "Slovenia",
+                          "isoCode":  "SVN",
+                          "year":  2025,
+                          "carbonIntensity":  183.3,
+                          "mix":  {
+                                      "charbon":  14.7,
+                                      "gaz":  6.4,
+                                      "nucleaire":  39.3,
+                                      "hydraulique":  27.2,
+                                      "eolien":  0.1,
+                                      "solaire":  10.4,
+                                      "autres":  2
+                                  }
+                      },
+                      {
+                          "country":  "Solomon Islands",
+                          "sourceCountry":  "Solomon Islands",
+                          "isoCode":  "SLB",
+                          "year":  2024,
+                          "carbonIntensity":  636.4,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  9.1,
+                                      "autres":  90.9
+                                  }
+                      },
+                      {
+                          "country":  "Somalia",
+                          "sourceCountry":  "Somalia",
+                          "isoCode":  "SOM",
+                          "year":  2024,
+                          "carbonIntensity":  511.6,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  2.3,
+                                      "solaire":  18.6,
+                                      "autres":  79.1
+                                  }
+                      },
+                      {
+                          "country":  "South Africa",
+                          "sourceCountry":  "South Africa",
+                          "isoCode":  "ZAF",
+                          "year":  2025,
+                          "carbonIntensity":  699.3,
+                          "mix":  {
+                                      "charbon":  81.4,
+                                      "gaz":  0,
+                                      "nucleaire":  4.2,
+                                      "hydraulique":  0.8,
+                                      "eolien":  4.7,
+                                      "solaire":  8,
+                                      "autres":  1
+                                  }
+                      },
+                      {
+                          "country":  "South Korea",
+                          "sourceCountry":  "South Korea",
+                          "isoCode":  "KOR",
+                          "year":  2025,
+                          "carbonIntensity":  417.1,
+                          "mix":  {
+                                      "charbon":  31.1,
+                                      "gaz":  27.9,
+                                      "nucleaire":  29.6,
+                                      "hydraulique":  0.6,
+                                      "eolien":  0.6,
+                                      "solaire":  6.1,
+                                      "autres":  4.1
+                                  }
+                      },
+                      {
+                          "country":  "South Sudan",
+                          "sourceCountry":  "South Sudan",
+                          "isoCode":  "SSD",
+                          "year":  2024,
+                          "carbonIntensity":  642.9,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  1.8,
+                                      "autres":  98.2
+                                  }
+                      },
+                      {
+                          "country":  "Sudan",
+                          "sourceCountry":  "Sudan",
+                          "isoCode":  "SDN",
+                          "year":  2024,
+                          "carbonIntensity":  153.7,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  77.9,
+                                      "eolien":  0,
+                                      "solaire":  1.1,
+                                      "autres":  21.1
+                                  }
+                      },
+                      {
+                          "country":  "Suede",
+                          "sourceCountry":  "Sweden",
+                          "isoCode":  "SWE",
+                          "year":  2025,
+                          "carbonIntensity":  35.3,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0.1,
+                                      "nucleaire":  27.6,
+                                      "hydraulique":  40,
+                                      "eolien":  22.8,
+                                      "solaire":  2.6,
+                                      "autres":  7
+                                  }
+                      },
+                      {
+                          "country":  "Suriname",
+                          "sourceCountry":  "Suriname",
+                          "isoCode":  "SUR",
+                          "year":  2024,
+                          "carbonIntensity":  321.8,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  1.1,
+                                      "nucleaire":  0,
+                                      "hydraulique":  51.7,
+                                      "eolien":  0,
+                                      "solaire":  0.6,
+                                      "autres":  46.6
+                                  }
+                      },
+                      {
+                          "country":  "Switzerland",
+                          "sourceCountry":  "Switzerland",
+                          "isoCode":  "CHE",
+                          "year":  2025,
+                          "carbonIntensity":  39.2,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0.4,
+                                      "nucleaire":  29.9,
+                                      "hydraulique":  52.3,
+                                      "eolien":  0.2,
+                                      "solaire":  12.1,
+                                      "autres":  5.1
+                                  }
+                      },
+                      {
+                          "country":  "Syria",
+                          "sourceCountry":  "Syria",
+                          "isoCode":  "SYR",
+                          "year":  2024,
+                          "carbonIntensity":  706.2,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  52.3,
+                                      "nucleaire":  0,
+                                      "hydraulique":  3,
+                                      "eolien":  0,
+                                      "solaire":  0.4,
+                                      "autres":  44.3
+                                  }
+                      },
+                      {
+                          "country":  "Taiwan",
+                          "sourceCountry":  "Taiwan",
+                          "isoCode":  "TWN",
+                          "year":  2025,
+                          "carbonIntensity":  633.2,
+                          "mix":  {
+                                      "charbon":  36.3,
+                                      "gaz":  48.8,
+                                      "nucleaire":  1.1,
+                                      "hydraulique":  1.9,
+                                      "eolien":  4.2,
+                                      "solaire":  5.4,
+                                      "autres":  2.3
+                                  }
+                      },
+                      {
+                          "country":  "Tajikistan",
+                          "sourceCountry":  "Tajikistan",
+                          "isoCode":  "TJK",
+                          "year":  2025,
+                          "carbonIntensity":  72.6,
+                          "mix":  {
+                                      "charbon":  4.7,
+                                      "gaz":  1,
+                                      "nucleaire":  0,
+                                      "hydraulique":  94.4,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  0
+                                  }
+                      },
+                      {
+                          "country":  "Tanzania",
+                          "sourceCountry":  "Tanzania",
+                          "isoCode":  "TZA",
+                          "year":  2024,
+                          "carbonIntensity":  345,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  62.8,
+                                      "nucleaire":  0,
+                                      "hydraulique":  31.7,
+                                      "eolien":  0,
+                                      "solaire":  0.5,
+                                      "autres":  5.1
+                                  }
+                      },
+                      {
+                          "country":  "Tchequie",
+                          "sourceCountry":  "Czechia",
+                          "isoCode":  "CZE",
+                          "year":  2025,
+                          "carbonIntensity":  401.5,
+                          "mix":  {
+                                      "charbon":  35.2,
+                                      "gaz":  5.4,
+                                      "nucleaire":  42.3,
+                                      "hydraulique":  2.3,
+                                      "eolien":  0.8,
+                                      "solaire":  5.8,
+                                      "autres":  8.2
+                                  }
+                      },
+                      {
+                          "country":  "Thailand",
+                          "sourceCountry":  "Thailand",
+                          "isoCode":  "THA",
+                          "year":  2024,
+                          "carbonIntensity":  554.7,
+                          "mix":  {
+                                      "charbon":  16.7,
+                                      "gaz":  68.3,
+                                      "nucleaire":  0,
+                                      "hydraulique":  3.2,
+                                      "eolien":  1.7,
+                                      "solaire":  2.7,
+                                      "autres":  7.4
+                                  }
+                      },
+                      {
+                          "country":  "Togo",
+                          "sourceCountry":  "Togo",
+                          "isoCode":  "TGO",
+                          "year":  2024,
+                          "carbonIntensity":  422.5,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  70.4,
+                                      "nucleaire":  0,
+                                      "hydraulique":  11.3,
+                                      "eolien":  0,
+                                      "solaire":  18.3,
+                                      "autres":  0
+                                  }
+                      },
+                      {
+                          "country":  "Tonga",
+                          "sourceCountry":  "Tonga",
+                          "isoCode":  "TON",
+                          "year":  2024,
+                          "carbonIntensity":  571.4,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  14.3,
+                                      "autres":  85.7
+                                  }
+                      },
+                      {
+                          "country":  "Trinidad and Tobago",
+                          "sourceCountry":  "Trinidad and Tobago",
+                          "isoCode":  "TTO",
+                          "year":  2024,
+                          "carbonIntensity":  681.7,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  99.5,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0.1,
+                                      "autres":  0.4
+                                  }
+                      },
+                      {
+                          "country":  "Tunisia",
+                          "sourceCountry":  "Tunisia",
+                          "isoCode":  "TUN",
+                          "year":  2025,
+                          "carbonIntensity":  560.3,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  94.9,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  1.5,
+                                      "solaire":  2.5,
+                                      "autres":  1
+                                  }
+                      },
+                      {
+                          "country":  "Turkey",
+                          "sourceCountry":  "Turkey",
+                          "isoCode":  "TUR",
+                          "year":  2025,
+                          "carbonIntensity":  474.7,
+                          "mix":  {
+                                      "charbon":  34.3,
+                                      "gaz":  22.1,
+                                      "nucleaire":  0,
+                                      "hydraulique":  16.2,
+                                      "eolien":  11.1,
+                                      "solaire":  10.5,
+                                      "autres":  5.7
+                                  }
+                      },
+                      {
+                          "country":  "Turkmenistan",
+                          "sourceCountry":  "Turkmenistan",
+                          "isoCode":  "TKM",
+                          "year":  2024,
+                          "carbonIntensity":  1306.3,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  100,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  0
+                                  }
+                      },
+                      {
+                          "country":  "Turks and Caicos Islands",
+                          "sourceCountry":  "Turks and Caicos Islands",
+                          "isoCode":  "TCA",
+                          "year":  2024,
+                          "carbonIntensity":  629.6,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  3.7,
+                                      "autres":  96.3
+                                  }
+                      },
+                      {
+                          "country":  "Uganda",
+                          "sourceCountry":  "Uganda",
+                          "isoCode":  "UGA",
+                          "year":  2024,
+                          "carbonIntensity":  58.5,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  86.1,
+                                      "eolien":  0,
+                                      "solaire":  2.9,
+                                      "autres":  11
+                                  }
+                      },
+                      {
+                          "country":  "Ukraine",
+                          "sourceCountry":  "Ukraine",
+                          "isoCode":  "UKR",
+                          "year":  2022,
+                          "carbonIntensity":  250.5,
+                          "mix":  {
+                                      "charbon":  20.9,
+                                      "gaz":  6.4,
+                                      "nucleaire":  55.8,
+                                      "hydraulique":  9.9,
+                                      "eolien":  1.3,
+                                      "solaire":  4.6,
+                                      "autres":  1.2
+                                  }
+                      },
+                      {
+                          "country":  "United States Virgin Islands",
+                          "sourceCountry":  "United States Virgin Islands",
+                          "isoCode":  "VIR",
+                          "year":  2023,
+                          "carbonIntensity":  632.4,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  2.9,
+                                      "autres":  97.1
+                                  }
+                      },
+                      {
+                          "country":  "Uruguay",
+                          "sourceCountry":  "Uruguay",
+                          "isoCode":  "URY",
+                          "year":  2025,
+                          "carbonIntensity":  80.4,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  27.2,
+                                      "eolien":  40.6,
+                                      "solaire":  5.1,
+                                      "autres":  27.1
+                                  }
+                      },
+                      {
+                          "country":  "Uzbekistan",
+                          "sourceCountry":  "Uzbekistan",
+                          "isoCode":  "UZB",
+                          "year":  2025,
+                          "carbonIntensity":  1000,
+                          "mix":  {
+                                      "charbon":  6.6,
+                                      "gaz":  72.3,
+                                      "nucleaire":  0,
+                                      "hydraulique":  7.3,
+                                      "eolien":  4.6,
+                                      "solaire":  7.5,
+                                      "autres":  1.7
+                                  }
+                      },
+                      {
+                          "country":  "Vanuatu",
+                          "sourceCountry":  "Vanuatu",
+                          "isoCode":  "VUT",
+                          "year":  2023,
+                          "carbonIntensity":  500,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  12.5,
+                                      "eolien":  0,
+                                      "solaire":  12.5,
+                                      "autres":  75
+                                  }
+                      },
+                      {
+                          "country":  "Venezuela",
+                          "sourceCountry":  "Venezuela",
+                          "isoCode":  "VEN",
+                          "year":  2024,
+                          "carbonIntensity":  85.9,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  4.5,
+                                      "nucleaire":  0,
+                                      "hydraulique":  91.1,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  4.4
+                                  }
+                      },
+                      {
+                          "country":  "Vietnam",
+                          "sourceCountry":  "Vietnam",
+                          "isoCode":  "VNM",
+                          "year":  2025,
+                          "carbonIntensity":  460.7,
+                          "mix":  {
+                                      "charbon":  48.1,
+                                      "gaz":  6.2,
+                                      "nucleaire":  0,
+                                      "hydraulique":  33,
+                                      "eolien":  4.6,
+                                      "solaire":  7.4,
+                                      "autres":  0.5
+                                  }
+                      },
+                      {
+                          "country":  "Western Sahara",
+                          "sourceCountry":  "Western Sahara",
+                          "isoCode":  "ESH",
+                          "year":  2009,
+                          "carbonIntensity":  666.7,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  0,
+                                      "autres":  100
+                                  }
+                      },
+                      {
+                          "country":  "Yemen",
+                          "sourceCountry":  "Yemen",
+                          "isoCode":  "YEM",
+                          "year":  2024,
+                          "carbonIntensity":  592.4,
+                          "mix":  {
+                                      "charbon":  0,
+                                      "gaz":  1.1,
+                                      "nucleaire":  0,
+                                      "hydraulique":  0,
+                                      "eolien":  0,
+                                      "solaire":  11.2,
+                                      "autres":  87.6
+                                  }
+                      },
+                      {
+                          "country":  "Zambia",
+                          "sourceCountry":  "Zambia",
+                          "isoCode":  "ZMB",
+                          "year":  2024,
+                          "carbonIntensity":  119.7,
+                          "mix":  {
+                                      "charbon":  10.8,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  86.2,
+                                      "eolien":  0,
+                                      "solaire":  0.9,
+                                      "autres":  2.1
+                                  }
+                      },
+                      {
+                          "country":  "Zimbabwe",
+                          "sourceCountry":  "Zimbabwe",
+                          "isoCode":  "ZWE",
+                          "year":  2024,
+                          "carbonIntensity":  384,
+                          "mix":  {
+                                      "charbon":  42.9,
+                                      "gaz":  0,
+                                      "nucleaire":  0,
+                                      "hydraulique":  55.6,
+                                      "eolien":  0,
+                                      "solaire":  0.4,
+                                      "autres":  1.2
+                                  }
+                      }
+                  ]
+}
