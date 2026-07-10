@@ -1,9 +1,8 @@
+import { ScrollReveal } from "./ScrollReveal";
 import {
-  Card,
   Heading,
   Text,
   Box,
-  Grid,
   Badge,
 } from "@radix-ui/themes";
 
@@ -48,6 +47,7 @@ const events = [
 
 
 export default function EvolutionNumeriqueDetails() {
+
   return (
     <Box mt="8">
 
@@ -59,46 +59,83 @@ export default function EvolutionNumeriqueDetails() {
       <Text size="2">
         La consommation énergétique du numérique augmente
         principalement à cause de la multiplication des équipements,
-        des services en ligne et des infrastructures nécessaires. Elle a doublée depuis 2005
+        des services en ligne et des infrastructures nécessaires.
+        Elle a doublé depuis 2005.
       </Text>
 
 
-      <Grid
-        columns={{
-          initial: "1",
-          md: "3",
-        }}
-        gap="4"
-        mt="5"
-      >
+      <Box mt="8" className="relative">
 
-        {events.map((event) => (
-
-          <Card key={event.year}>
-
-            <Box p="4">
-
-              <Badge color="grass">
-                {event.year}
-              </Badge>
+        {/* Ligne verticale */}
+        <Box
+          className="
+            absolute
+            left-5
+            top-0
+            h-full
+            w-[3px]
+            bg-green-dark
+          "
+        />
 
 
-              <Heading size="3" mt="3">
-                {event.icon} {event.title}
-              </Heading>
+        <Box className="flex flex-col gap-8">
+
+          {events.map((event) => (
+
+  <ScrollReveal key={event.year}>
+
+    <Box
+      className="
+        relative
+        pl-16
+      "
+    >
+
+      {/* Point de la timeline */}
+      <Box
+        className="
+          absolute
+          left-2
+          top-5
+          h-6
+          w-6
+          rounded-full
+          bg-green-dark
+          border-4
+          border-eco-white
+        "
+      />
 
 
-              <Text size="2">
-                {event.description}
-              </Text>
+      <Box className="glassmorphism rounded-xl p-5">
 
-            </Box>
+        <Badge color="grass">
+          {event.year}
+        </Badge>
 
-          </Card>
 
-        ))}
+        <Heading size="4" mt="3">
+          {event.icon} {event.title}
+        </Heading>
 
-      </Grid>
+
+        <Text size="2">
+          {event.description}
+        </Text>
+
+      </Box>
+
+
+    </Box>
+
+  </ScrollReveal>
+
+))}
+
+        </Box>
+
+      </Box>
 
     </Box>
   );
