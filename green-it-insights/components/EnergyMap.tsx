@@ -112,7 +112,7 @@ export function EnergyMap() {
     <div
       onClick={handleMapClick}
       style={{ 
-        backgroundColor: COLORS.dark.bg, 
+        backgroundColor: COLORS.dark.background, 
         height: "100vh",
         width: "100%",
         overflow: "hidden",
