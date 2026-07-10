@@ -9,7 +9,7 @@ import {
 import { CarbonIntensityComparison } from "./components/CarbonIntensityComparison";
 import { CountrySelector } from "./components/CountrySelector";
 import { EmissionsSimulator } from "./components/EmissionsSimulator";
-import { EnergyMixChart } from "./components/EnergyMixChart";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import type { CountryEnergyData } from "./types";
 
 type EmissionsParPaysClientProps = {
@@ -129,46 +129,52 @@ export function EmissionsParPaysClient({
   }
 
   return (
-    <>
-      <CarbonIntensityComparison
-        canAddComparedCountry={canAddComparedCountry}
-        chartHeight={chartHeight}
-        comparisonCountries={comparisonCountries}
-        comparisonSearch={comparisonSearch}
-        comparisonSuggestions={comparisonSuggestions}
-        selectedCountry={selectedCountry}
-        onAddComparedCountryFromSearch={addComparedCountryFromSearch}
-        onAddSelectedCountryToComparison={() =>
-          addComparedCountry(selectedCountry)
-        }
-        onComparisonSearchChange={setComparisonSearch}
-        onRemoveComparedCountry={removeComparedCountry}
-        onResetComparisonCountries={resetComparisonCountries}
-      />
-
-      <section className="grid gap-6 lg:grid-cols-[320px_1fr]">
-        <CountrySelector
-          countrySearch={countrySearch}
-          countrySuggestions={countrySuggestions}
-          countries={countries}
+    <div className="flex flex-col gap-12 lg:gap-16">
+      <ScrollReveal>
+        <CarbonIntensityComparison
+          canAddComparedCountry={canAddComparedCountry}
+          chartHeight={chartHeight}
+          comparisonCountries={comparisonCountries}
+          comparisonSearch={comparisonSearch}
+          comparisonSuggestions={comparisonSuggestions}
           selectedCountry={selectedCountry}
-          selectedCountryName={selectedCountryName}
-          onCountrySearchBlur={() => setCountrySearch(selectedCountry.country)}
-          onCountrySearchChange={handleCountrySearchChange}
-          onSelectCountry={selectCountry}
+          onAddComparedCountryFromSearch={addComparedCountryFromSearch}
+          onAddSelectedCountryToComparison={() =>
+            addComparedCountry(selectedCountry)
+          }
+          onComparisonSearchChange={setComparisonSearch}
+          onRemoveComparedCountry={removeComparedCountry}
+          onResetComparisonCountries={resetComparisonCountries}
         />
+      </ScrollReveal>
 
-        <EnergyMixChart selectedCountry={selectedCountry} />
-      </section>
+      <ScrollReveal>
+        <section className="grid gap-8">
+          <CountrySelector
+            countrySearch={countrySearch}
+            countrySuggestions={countrySuggestions}
+            countries={countries}
+            selectedCountry={selectedCountry}
+            selectedCountryName={selectedCountryName}
+            onCountrySearchBlur={() =>
+              setCountrySearch(selectedCountry.country)
+            }
+            onCountrySearchChange={handleCountrySearchChange}
+            onSelectCountry={selectCountry}
+          />
+        </section>
+      </ScrollReveal>
 
-      <EmissionsSimulator
-        emissionsKg={emissionsKg}
-        franceRatio={franceRatio}
-        kwh={kwh}
-        polandFranceRatio={polandFranceRatio}
-        selectedCountry={selectedCountry}
-        onKwhChange={setKwh}
-      />
-    </>
+      <ScrollReveal>
+        <EmissionsSimulator
+          emissionsKg={emissionsKg}
+          franceRatio={franceRatio}
+          kwh={kwh}
+          polandFranceRatio={polandFranceRatio}
+          selectedCountry={selectedCountry}
+          onKwhChange={setKwh}
+        />
+      </ScrollReveal>
+    </div>
   );
 }
