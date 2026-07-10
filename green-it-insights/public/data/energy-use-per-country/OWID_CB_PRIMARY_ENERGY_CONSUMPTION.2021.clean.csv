@@ -1,0 +1,201 @@
+Country,Year,EnergyPerCapita_kWh
+Afghanistan,2021,27.135
+Albania,2021,40.253
+Algeria,2021,707.627
+Angola,2021,96.311
+Antigua and Barbuda,2021,2.747
+Argentina,2021,958.463
+Armenia,2021,49.357
+Aruba,2021,4.911
+Australia,2021,1589.075
+Austria,2021,406.033
+Azerbaijan,2021,197.549
+"Bahamas, The",2021,14.46
+Bahrain,2021,235.749
+Bangladesh,2021,492.381
+Barbados,2021,6.475
+Belarus,2021,306.055
+Belgium,2021,738.345
+Belize,2021,2.975
+Benin,2021,32.295
+Bermuda,2021,2.985
+Bhutan,2021,21.603
+Bolivia,2021,85.307
+Bosnia and Herzegovina,2021,75.276
+Botswana,2021,24.293
+Brazil,2021,3570.67
+British Virgin Islands,2021,0.633
+Brunei Darussalam,2021,45.994
+Bulgaria,2021,221.896
+Burkina Faso,2021,19.995
+Burundi,2021,3.689
+Cambodia,2021,66.938
+Cameroon,2021,43.344
+Canada,2021,3866.976
+Cabo Verde,2021,4.262
+Central African Republic,2021,1.561
+Chad,2021,6.205
+Chile,2021,476.857
+China,2021,43847.004
+Colombia,2021,574.745
+Comoros,2021,1.342
+"Congo, Rep.",2021,13.703
+Costa Rica,2021,61.629
+Cote d'Ivoire,2021,65.14
+Croatia,2021,98.312
+Cuba,2021,103.891
+Cyprus,2021,29.842
+Czechia,2021,466.406
+"Congo, Dem. Rep.",2021,39.402
+Denmark,2021,189.435
+Djibouti,2021,3.079
+Dominica,2021,0.764
+Dominican Republic,2021,111.041
+Timor-Leste,2021,2.134
+Ecuador,2021,212.597
+"Egypt, Arab Rep.",2021,1058.743
+El Salvador,2021,44.682
+Equatorial Guinea,2021,20.266
+Eritrea,2021,3.311
+Estonia,2021,61.401
+Eswatini,2021,7.131
+Ethiopia,2021,104.837
+Faroe Islands,2021,3.755
+Fiji,2021,8.528
+Finland,2021,320.64
+France,2021,2593.625
+French Polynesia,2021,4.634
+Gabon,2021,18.752
+"Gambia, The",2021,2.458
+Georgia,2021,78.297
+Germany,2021,3544.581
+Ghana,2021,114.369
+Greece,2021,302.536
+Greenland,2021,3.574
+Grenada,2021,1.175
+Guatemala,2021,100.582
+Guinea,2021,17.341
+Guinea-Bissau,2021,1.396
+Guyana,2021,11.015
+Haiti,2021,11.801
+Honduras,2021,52.285
+"Hong Kong SAR, China",2021,243.604
+Hungary,2021,283.958
+Iceland,2021,60.645
+India,2021,9585.078
+Indonesia,2021,2214.053
+"Iran, Islamic Rep.",2021,3322.058
+Iraq,2021,592.728
+Ireland,2021,179.446
+Israel,2021,292.044
+Italy,2021,1768.617
+Jamaica,2021,34.599
+Japan,2021,5037.481
+Jordan,2021,102.376
+Kazakhstan,2021,822.205
+Kenya,2021,103.504
+Kiribati,2021,0.315
+Kosovo,2021,27.883
+Kuwait,2021,424.15
+Kyrgyz Republic,2021,60.542
+Lao PDR,2021,139.941
+Latvia,2021,42.625
+Lebanon,2021,105.318
+Lesotho,2021,4.866
+Liberia,2021,5.529
+Libya,2021,190.409
+Lithuania,2021,70.149
+Luxembourg,2021,43.215
+"Macao SAR, China",2021,14.693
+Madagascar,2021,14.679
+Malawi,2021,9.248
+Malaysia,2021,1246.65
+Maldives,2021,9.214
+Mali,2021,25.597
+Malta,2021,39.15
+Mauritania,2021,18.407
+Mauritius,2021,25.621
+Mexico,2021,2175.894
+Moldova,2021,49.004
+Mongolia,2021,75.016
+Montenegro,2021,11.892
+Morocco,2021,269.054
+Mozambique,2021,71.892
+Myanmar,2021,164.883
+Namibia,2021,22.134
+Nauru,2021,0.271
+Nepal,2021,48.285
+Netherlands,2021,1014.615
+New Caledonia,2021,20.147
+New Zealand,2021,235.549
+Nicaragua,2021,29.219
+Niger,2021,10.347
+Nigeria,2021,543.737
+"Korea, Dem. People's Rep.",2021,99.575
+North Macedonia,2021,28.998
+Norway,2021,568.479
+Oman,2021,393.389
+Pakistan,2021,1083.791
+West Bank and Gaza,2021,20.529
+Panama,2021,117.776
+Papua New Guinea,2021,21.128
+Paraguay,2021,105.801
+Peru,2021,327.408
+Philippines,2021,545.51
+Poland,2021,1224.758
+Portugal,2021,266.49
+Qatar,2021,541.849
+Romania,2021,390.003
+Russian Federation,2021,8335.356
+Rwanda,2021,6.345
+St. Kitts and Nevis,2021,0.996
+St. Lucia,2021,2.443
+St. Vincent and the Grenadines,2021,0.86
+Samoa,2021,1.598
+Sao Tome and Principe,2021,0.739
+Saudi Arabia,2021,2981.917
+Senegal,2021,42.28
+Serbia,2021,201.689
+Seychelles,2021,4.891
+Sierra Leone,2021,4.148
+Singapore,2021,910.714
+Slovak Republic,2021,195.223
+Slovenia,2021,76.582
+Solomon Islands,2021,1.339
+Somalia,2021,3.71
+South Africa,2021,1406.093
+"Korea, Rep.",2021,3506.508
+South Sudan,2021,7.868
+Spain,2021,1530.27
+Sri Lanka,2021,109.638
+Sudan,2021,105.806
+Suriname,2021,12.434
+Sweden,2021,633.68
+Switzerland,2021,298.082
+Syrian Arab Republic,2021,117.438
+"Taiwan, China",2021,1372.941
+Tajikistan,2021,74.831
+Tanzania,2021,57.7
+Thailand,2021,1386.81
+Togo,2021,9.645
+Tonga,2021,0.71
+Trinidad and Tobago,2021,173.124
+Tunisia,2021,116.794
+Turkiye,2021,1951.151
+Turkmenistan,2021,443.098
+Turks and Caicos Islands,2021,0.885
+Tuvalu,2021,0.0
+Uganda,2021,35.163
+Ukraine,2021,934.717
+United Arab Emirates,2021,1246.315
+United Kingdom,2021,1990.958
+United States,2021,25956.828
+Uruguay,2021,62.759
+Uzbekistan,2021,565.774
+Vanuatu,2021,0.944
+"Venezuela, RB",2021,604.086
+Viet Nam,2021,1208.554
+World,2021,165729.031
+"Yemen, Rep.",2021,35.621
+Zambia,2021,66.576
+Zimbabwe,2021,42.145
