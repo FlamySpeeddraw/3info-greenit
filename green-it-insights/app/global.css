@@ -1,0 +1,188 @@
+@import "tailwindcss";
+@import "@radix-ui/themes/styles.css";
+
+/* 
+ * NOTE: The colors defined below are also available as TypeScript constants 
+ * in app/color.const.ts for easy import in TS/JS files.
+ */
+@theme {
+  --color-green-dark: #112F1F;
+  --color-green-light: #224D35;
+  --color-green-accent: #2E6A49;
+  --color-green-bg: #F0F4F1;
+
+  --color-brown-dark: #3D2E2B;
+  --color-brown-light: #5C4641;
+  --color-brown-accent: #8E6E66;
+  --color-brown-bg: #F5F1EF;
+
+  --color-eco-white: #FBFBF9;
+  --color-eco-gray: #F4F3EE;
+
+  --color-oled-black: #080E0A;
+  --color-oled-gray: #121A15;
+
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+:root {
+  --background: #FBFBF9;
+  --foreground: #112F1F;
+
+  /* Radix UI Overrides for Custom Grass (Dark Green) Palette */
+  --grass-1: #f8faf8;
+  --grass-2: #f0f4f1;
+  --grass-3: #e1eae3;
+  --grass-4: #cfdfd2;
+  --grass-5: #bad2be;
+  --grass-6: #a0c2a5;
+  --grass-7: #80ae87;
+  --grass-8: #5c9365;
+  --grass-9: #112F1F; /* Primary Dark Green */
+  --grass-10: #224D35; /* Hover Green */
+  --grass-11: #112F1F;
+  --grass-12: #08170F;
+
+  /* Radix UI Overrides for Custom Brown Palette */
+  --brown-1: #faf9f9;
+  --brown-2: #f5f1ef;
+  --brown-3: #eae2e0;
+  --brown-4: #dfd2cf;
+  --brown-5: #d2beba;
+  --brown-6: #c1a6a0;
+  --brown-7: #ae8b83;
+  --brown-8: #996e64;
+  --brown-9: #3D2E2B; /* Primary Dark Brown */
+  --brown-10: #5C4641; /* Hover Brown */
+  --brown-11: #3D2E2B;
+  --brown-12: #1F1715;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #080E0A;
+    --foreground: #EAEFEA;
+
+    /* Dark mode Radix overrides for grass scale (emerald/forest) */
+    --grass-1: #080e0a;
+    --grass-2: #0e1711;
+    --grass-3: #16261c;
+    --grass-4: #1d3627;
+    --grass-5: #254732;
+    --grass-6: #2d5a3f;
+    --grass-7: #37704e;
+    --grass-8: #43885e;
+    --grass-9: #2E6A49; /* Bright Green in dark mode */
+    --grass-10: #37704e;
+    --grass-11: #bbf7d0;
+    --grass-12: #e8fdf0;
+
+    /* Dark mode Radix overrides for brown scale */
+    --brown-1: #0e0c0b;
+    --brown-2: #171312;
+    --brown-3: #241d1c;
+    --brown-4: #332725;
+    --brown-5: #44322f;
+    --brown-6: #573e3a;
+    --brown-7: #6e4c47;
+    --brown-8: #875c55;
+    --brown-9: #8E6E66; /* Bright Brown in dark mode */
+    --brown-10: #9e7f77;
+    --brown-11: #fed7d7;
+    --brown-12: #fff5f5;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Green IT micro-interactions and utilities */
+.glassmorphism {
+  background: rgba(251, 251, 249, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(61, 46, 43, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  .glassmorphism {
+    background: rgba(18, 26, 21, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(254, 215, 215, 0.05);
+  }
+}
+
+/* Eco-friendly pulse animation for active elements */
+@keyframes ecoPulse {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+
+.eco-pulse {
+  animation: ecoPulse 3s infinite ease-in-out;
+}
+
+/* Global Typography Rules for standard HTML tags to ensure style consistency */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--foreground);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+h1 { font-size: 2.25rem; } /* Matched to Radix Heading size="8" */
+h2 { font-size: 1.875rem; } /* Matched to Radix Heading size="7" */
+h3 { font-size: 1.5rem; } /* Matched to Radix Heading size="6" */
+h4 { font-size: 1.25rem; } /* Matched to Radix Heading size="5" */
+
+p {
+  line-height: 1.625;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+  opacity: 0.9;
+}
+
+/* Light/Dark mode adjustments for paragraph readability */
+@media (prefers-color-scheme: dark) {
+  p {
+    opacity: 0.85;
+  }
+}
+
+a {
+  color: var(--grass-9);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--grass-10);
+}
+
+strong, b {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+code, pre {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background-color: var(--brown-2);
+  border: 1px solid var(--brown-4);
+  border-radius: 4px;
+  padding: 0.125rem 0.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  code, pre {
+    background-color: var(--grass-2);
+    border-color: var(--grass-4);
+  }
+}

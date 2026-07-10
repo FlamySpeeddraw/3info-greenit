@@ -49,17 +49,30 @@ export function DeviceSimulator() {
 
   return (
     <ScrollReveal>
-      <Grid columns={{ initial: "1", lg: "12" }} gap="6">
+      <Grid columns={{ initial: "1", md: "12" }} gap="6">
         {/* Control Panel */}
         <Card 
           variant="surface" 
-          className="lg:col-span-7 p-6 border transition-all"
+          className="md:col-span-7 p-6 border transition-all"
           style={{ backgroundColor: cardBgTheme, borderColor: borderTheme }}
         >
           <Heading size="4" className="mb-6 flex items-center gap-2 text-green-dark dark:text-eco-white">
             <DashboardIcon className="w-5 h-5 text-green-accent" />
             Configuration de l'Appareil
           </Heading>
+
+          {/* Mobile-only Quick Results Summary */}
+          <Box display={{ initial: "block", md: "none" }} className="mb-6 p-4 rounded-xl border text-center" style={{ backgroundColor: bgTheme, borderColor: borderTheme }}>
+            <Flex align="center" justify="between">
+              <Text size="2" weight="bold" className="text-green-dark dark:text-eco-white">Bilan Carbone :</Text>
+              <Flex gap="3" align="center">
+                <Badge color={gradeColor} size="2">Score {ecoGrade}</Badge>
+                <Text size="2" weight="bold" className="font-mono text-green-dark dark:text-eco-white">
+                  {Math.round(annualAmortizedFootprint)} kg/an
+                </Text>
+              </Flex>
+            </Flex>
+          </Box>
 
           <Flex direction="column" gap="6">
             {/* Device Selector */}
@@ -175,7 +188,7 @@ export function DeviceSimulator() {
         {/* Results Panel */}
         <Card 
           variant="surface" 
-          className="lg:col-span-5 p-6 border flex flex-col justify-between transition-all"
+          className="md:col-span-5 p-6 border flex flex-col justify-between transition-all"
           style={{ 
             backgroundColor: useDarkMode ? "rgba(18, 26, 21, 0.4)" : "rgba(61, 46, 43, 0.03)", 
             borderColor: borderTheme 

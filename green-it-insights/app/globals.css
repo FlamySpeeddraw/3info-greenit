@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "@radix-ui/themes/styles.css";
 
-@variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* 
  * NOTE: The colors defined below are also available as TypeScript constants 
@@ -28,9 +28,16 @@
   --font-mono: var(--font-geist-mono), monospace;
 }
 
-:root {
+:root,
+.radix-themes {
   --background: #FBFBF9;
   --foreground: #112F1F;
+  --surface: #FFFFFF;
+  --surface-muted: #F5F1EF;
+  --surface-strong: #F0F4F1;
+  --border-subtle: rgba(17, 47, 31, 0.15);
+  --border-warm: rgba(61, 46, 43, 0.18);
+  --shadow-subtle: 0 12px 30px rgba(17, 47, 31, 0.08);
 
   /* Radix UI Overrides for Custom Grass (Dark Green) Palette */
   --grass-1: #f8faf8;
@@ -64,6 +71,12 @@
 .dark {
   --background: #080E0A;
   --foreground: #EAEFEA;
+  --surface: #121A15;
+  --surface-muted: rgba(61, 46, 43, 0.34);
+  --surface-strong: #0e1711;
+  --border-subtle: rgba(142, 110, 102, 0.24);
+  --border-warm: rgba(251, 251, 249, 0.1);
+  --shadow-subtle: 0 14px 34px rgba(0, 0, 0, 0.28);
 
   /* Dark mode Radix overrides for grass scale (emerald/forest) */
   --grass-1: #080e0a;
@@ -99,6 +112,408 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.content-card {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-subtle);
+}
+
+.muted-card {
+  background: var(--surface-muted);
+  border: 1px solid var(--border-warm);
+}
+
+.section-stack {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.emissions-page {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  padding: 2.5rem 1.25rem;
+}
+
+.emissions-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.emissions-hero {
+  max-width: 48rem;
+}
+
+.section-eyebrow {
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.hero-title {
+  line-height: 1.1;
+}
+
+.hero-lead {
+  margin-top: 1.25rem;
+  line-height: 2;
+}
+
+.hero-meta {
+  margin-top: 0.75rem;
+  line-height: 1.5;
+}
+
+.indicator-card {
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.indicator-copy {
+  max-width: 48rem;
+}
+
+.indicator-description {
+  margin-top: 1rem;
+  line-height: 1.75;
+}
+
+.indicator-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.indicator-item {
+  border-radius: 0.375rem;
+  padding: 1.5rem;
+}
+
+.indicator-item-text {
+  margin-top: 0.75rem;
+  line-height: 1.5;
+}
+
+.indicator-note {
+  padding-top: 0.5rem;
+  line-height: 1.5;
+}
+
+.emissions-interactive-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.country-selector-section {
+  display: grid;
+  gap: 2rem;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid color-mix(in srgb, var(--brown-9) 10%, transparent);
+  background: color-mix(in srgb, var(--color-eco-white) 80%, transparent);
+  backdrop-filter: blur(12px);
+  transition: background-color 500ms ease, border-color 500ms ease;
+}
+
+.dark .site-header {
+  border-color: color-mix(in srgb, var(--color-eco-white) 5%, transparent);
+  background: color-mix(in srgb, var(--color-oled-black) 80%, transparent);
+}
+
+.site-header-inner {
+  padding: 1rem;
+}
+
+.site-logo-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background: var(--color-green-dark);
+  color: var(--color-eco-white);
+  padding: 0.5rem;
+}
+
+.dark .site-logo-mark {
+  background: var(--color-green-light);
+}
+
+.site-logo-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.site-title {
+  color: var(--color-green-dark);
+  font-family: var(--font-sans);
+}
+
+.dark .site-title {
+  color: var(--color-eco-white);
+}
+
+.site-nav {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.site-nav-link {
+  display: none;
+  color: var(--color-green-dark);
+}
+
+.site-nav-link:hover {
+  text-decoration: underline;
+}
+
+.dark .site-nav-link {
+  color: var(--color-eco-white);
+}
+
+.theme-toggle {
+  border: 1px solid color-mix(in srgb, var(--brown-9) 10%, transparent);
+  background: color-mix(in srgb, var(--brown-9) 5%, transparent);
+  border-radius: 999px;
+  padding: 0.375rem 0.75rem;
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+.dark .theme-toggle {
+  border-color: color-mix(in srgb, var(--color-eco-white) 10%, transparent);
+  background: color-mix(in srgb, var(--color-eco-white) 5%, transparent);
+}
+
+.theme-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  color: var(--brown-8);
+}
+
+.theme-icon-active {
+  color: var(--grass-8);
+}
+
+.theme-label {
+  display: none;
+  color: var(--color-green-dark);
+}
+
+.dark .theme-label {
+  color: var(--color-eco-white);
+}
+
+.comparison-card,
+.country-selector-card {
+  overflow: hidden;
+  padding: 1.25rem;
+}
+
+.comparison-header {
+  margin-bottom: 1.25rem;
+}
+
+.comparison-copy {
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+.comparison-form {
+  margin-bottom: 1.75rem;
+}
+
+.form-label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.field-spacing {
+  margin-top: 0.75rem;
+  width: 100%;
+}
+
+.field-full {
+  width: 100%;
+  font-weight: 600;
+}
+
+.field-label-block {
+  display: block;
+}
+
+.comparison-actions {
+  margin-top: 1.25rem;
+}
+
+.action-button-sm {
+  min-width: 7rem;
+}
+
+.action-button-lg {
+  min-width: 16rem;
+}
+
+.country-chip-list {
+  margin-bottom: 1.5rem;
+}
+
+.metric-panel {
+  border-radius: 0.375rem;
+  padding: 1.25rem;
+}
+
+.metric-row {
+  margin-top: 0.25rem;
+}
+
+.metric-meta {
+  margin-top: 0.5rem;
+}
+
+.simulator-card {
+  border: 1px solid var(--border-subtle);
+  background: var(--grass-9);
+  color: var(--color-eco-white);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.dark .simulator-card {
+  background: var(--surface-strong);
+  border-color: var(--border-subtle);
+}
+
+.simulator-layout {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.simulator-copy {
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  color: var(--grass-2);
+}
+
+.simulator-title {
+  color: var(--color-eco-white);
+}
+
+.simulator-label {
+  color: var(--grass-2);
+}
+
+.simulator-controls {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.simulator-field {
+  margin-top: 0.75rem;
+  width: 100%;
+  font-weight: 700;
+  color: var(--grass-12);
+}
+
+.simulator-result {
+  border: 1px solid color-mix(in srgb, var(--color-eco-white) 20%, transparent);
+  background: color-mix(in srgb, var(--color-eco-white) 10%, transparent);
+  border-radius: 0.375rem;
+  padding: 1.25rem;
+}
+
+.simulator-note {
+  margin-top: 1.5rem;
+  border-radius: 0.375rem;
+  background: color-mix(in srgb, var(--color-eco-white) 10%, transparent);
+  color: var(--color-eco-white);
+  line-height: 1.5;
+  padding: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .emissions-page {
+    padding-inline: 2rem;
+  }
+
+  .comparison-card,
+  .country-selector-card,
+  .simulator-card {
+    padding: 1.5rem;
+  }
+
+  .simulator-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-nav-link,
+  .theme-label {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .indicator-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .emissions-page {
+    padding: 3.5rem 3rem;
+  }
+
+  .emissions-layout {
+    gap: 2.5rem;
+  }
+
+  .emissions-interactive-stack {
+    gap: 2.5rem;
+  }
+
+  .simulator-layout {
+    grid-template-columns: 20rem minmax(0, 1fr);
+    align-items: center;
+  }
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 520ms ease,
+    transform 520ms ease;
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
 }
 
 /* Green IT micro-interactions and utilities */
