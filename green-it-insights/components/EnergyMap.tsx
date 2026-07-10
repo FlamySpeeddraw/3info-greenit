@@ -118,7 +118,6 @@ export function EnergyMap({ theme }: EnergyMapProps) {
       })
       .attr("stroke", ui.stroke)
       .attr("stroke-width", 0.5)
-      // Changement ici : isoCode au lieu de id
       .style("cursor", (d) => energyData.find((c) => c.isoCode === d.id) ? "pointer" : "default")
       .on("click", (event, d) => {
         event.stopPropagation();
@@ -160,7 +159,6 @@ export function EnergyMap({ theme }: EnergyMapProps) {
     {
       name: "Autres",
       value: mix.autres,
-      // Fallback color si "Autres" existe, on utilise la couleur de bordure ou de texte
       color: ui.border 
     }
   ].filter(d => d.value > 0);
