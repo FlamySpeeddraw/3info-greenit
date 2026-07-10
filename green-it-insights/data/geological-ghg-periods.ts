@@ -97,7 +97,8 @@ export const geologicalPeriods = [
     description:
       "La Terre se forme dans un environnement instable. Le dégazage volcanique, les impacts et le refroidissement progressif installent une atmosphère riche en vapeur d'eau, CO₂ et méthane, très différente de l'air actuel.",
     illustration: {
-      alt: "Placeholder d'une Terre primitive volcanique sous une atmosphère dense.",
+      src: "/geological-images/Hadean.webp",
+      alt: "Illustration d'une Terre primitive volcanique sous une atmosphère dense.",
       tone: "volcanic",
     },
     greenhouseGases: ["CO₂", "CH₄", "vapeur d'eau", "N₂O traces"],
@@ -117,7 +118,8 @@ export const geologicalPeriods = [
     description:
       "Les cyanobactéries transforment lentement l'atmosphère. L'oxygène augmente, le méthane recule et le climat alterne entre longues stabilités et épisodes glaciaires extrêmes.",
     illustration: {
-      alt: "Placeholder d'une mer peu profonde avec stromatolites et atmosphère en oxygénation.",
+      src: "/geological-images/Protérozoïque.webp",
+      alt: "Illustration d'une mer peu profonde avec stromatolites et atmosphère en oxygénation.",
       tone: "oceanic",
     },
     greenhouseGases: ["CO₂", "CH₄", "vapeur d'eau"],
@@ -137,7 +139,8 @@ export const geologicalPeriods = [
     description:
       "La vie colonise les continents. Les forêts enfouissent d'immenses quantités de carbone, ce qui fait fortement baisser le CO₂ pendant le Carbonifère avant de nouvelles perturbations climatiques.",
     illustration: {
-      alt: "Placeholder d'une forêt marécageuse paléozoïque liée à l'enfouissement du carbone.",
+      src: "/geological-images/Paléozoïque.webp",
+      alt: "Illustration d'une forêt marécageuse paléozoïque liée à l'enfouissement du carbone.",
       tone: "forest",
     },
     greenhouseGases: ["CO₂", "CH₄", "vapeur d'eau"],
@@ -157,7 +160,8 @@ export const geologicalPeriods = [
     description:
       "Le climat est globalement plus chaud. Une activité volcanique importante, des mers étendues et un cycle du carbone très actif maintiennent des concentrations de CO₂ supérieures aux niveaux préindustriels.",
     illustration: {
-      alt: "Placeholder d'un littoral mésozoïque chaud avec végétation et mer peu profonde.",
+      src: "/geological-images/Mésozoïque.webp",
+      alt: "Illustration d'un littoral mésozoïque chaud avec végétation et mer peu profonde.",
       tone: "coast",
     },
     greenhouseGases: ["CO₂", "CH₄", "vapeur d'eau"],
@@ -177,7 +181,8 @@ export const geologicalPeriods = [
     description:
       "La Terre entre dans une tendance longue au refroidissement. L'altération des roches, les océans et la biosphère contribuent à faire diminuer le CO₂, jusqu'aux cycles glaciaires récents.",
     illustration: {
-      alt: "Placeholder d'un paysage cénozoïque mêlant montagnes, forêts et glaces.",
+      src: "/geological-images/Cénozoïque.webp",
+      alt: "Illustration d'un paysage cénozoïque mêlant montagnes, forêts et glaces.",
       tone: "ice",
     },
     greenhouseGases: ["CO₂", "CH₄", "N₂O", "vapeur d'eau"],
@@ -197,7 +202,8 @@ export const geologicalPeriods = [
     description:
       "Depuis le XIXe siècle, les activités humaines ajoutent rapidement du CO₂, du méthane et du protoxyde d'azote à l'atmosphère. Le signal industriel est bref à l'échelle géologique, mais très marqué.",
     illustration: {
-      alt: "Placeholder d'un paysage actuel montrant une transition entre végétation et horizon industriel.",
+      src: "/geological-images/Actuel.webp",
+      alt: "Illustration d'un paysage actuel montrant une transition entre végétation et horizon industriel.",
       tone: "industrial",
     },
     greenhouseGases: ["CO₂", "CH₄", "N₂O", "gaz fluorés"],
@@ -258,4 +264,4 @@ export const co2HealthThresholds = [
 ] satisfies Co2HealthThreshold[];
 
 export const co2DangerExplanation =
-  "Le graphique montre le CO2 atmospherique. Pour la sante humaine en air interieur, le CO2 devient genant des 1 000 ppm pour certaines personnes, la VLEP francaise est de 5 000 ppm sur 8h, et les niveaux tres eleves imposent une evacuation. Pour le climat, le danger actuel vient surtout de la hausse rapide du CO2, qui renforce l'effet de serre et accelere les extremes climatiques.";
+  "Le graphique montre le CO2 atmospherique. Pour la sante humaine en air interieur, le CO2 devient genant des 1 000 ppm pour certaines personnes, la VLEP francaise est de 5 000 ppm sur 8h, et les niveaux tres eleves imposent une evacuation. Pour le climat, le danger actuel vient surtout de la hausse rapide du CO2, qui renforce l'effet de serre et accélère les extrêmes climatiques.";
