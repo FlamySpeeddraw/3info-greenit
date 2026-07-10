@@ -19,8 +19,14 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { COLORS } from "../../color.const";
-import { MUTED_BAR_COLOR, SELECTED_BAR_COLOR } from "../constants";
+import {
+  CHART_CURSOR_COLOR,
+  CHART_GRID_COLOR,
+  CHART_PRIMARY_TEXT_COLOR,
+  CHART_SECONDARY_TEXT_COLOR,
+  MUTED_BAR_COLOR,
+  SELECTED_BAR_COLOR,
+} from "../constants";
 import type { CountryEnergyData } from "../types";
 
 type CarbonIntensityComparisonProps = {
@@ -54,7 +60,7 @@ export function CarbonIntensityComparison({
     <Card
       asChild
       variant="surface"
-      className="border border-green-dark/15 bg-eco-white p-5 shadow-sm sm:p-6"
+      className="border border-green-dark/15 bg-eco-white p-5 shadow-sm dark:border-brown-accent/20 dark:bg-oled-gray sm:p-6"
     >
       <section>
         <Flex
@@ -171,16 +177,19 @@ export function CarbonIntensityComparison({
               layout="vertical"
               margin={{ top: 8, right: 42, left: 18, bottom: 8 }}
             >
-              <CartesianGrid stroke={COLORS.light.brown[3]} horizontal={false} />
-              <XAxis type="number" tick={{ fill: COLORS.brown.dark }} />
+              <CartesianGrid stroke={CHART_GRID_COLOR} horizontal={false} />
+              <XAxis
+                type="number"
+                tick={{ fill: CHART_SECONDARY_TEXT_COLOR }}
+              />
               <YAxis
                 dataKey="country"
                 type="category"
                 width={96}
-                tick={{ fill: COLORS.green.dark, fontWeight: 600 }}
+                tick={{ fill: CHART_PRIMARY_TEXT_COLOR, fontWeight: 600 }}
               />
               <Tooltip
-                cursor={{ fill: COLORS.brown.bg }}
+                cursor={{ fill: CHART_CURSOR_COLOR }}
                 formatter={(value) => [`${value} gCO2/kWh`, "Intensite"]}
               />
               <Bar dataKey="carbonIntensity" radius={[0, 6, 6, 0]}>
@@ -198,7 +207,7 @@ export function CarbonIntensityComparison({
                   dataKey="carbonIntensity"
                   position="right"
                   formatter={(value) => `${value ?? ""}`}
-                  fill={COLORS.brown.dark}
+                  fill={CHART_SECONDARY_TEXT_COLOR}
                   fontSize={12}
                   fontWeight={700}
                 />

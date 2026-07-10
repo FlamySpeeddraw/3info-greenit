@@ -28,7 +28,8 @@
   --font-mono: var(--font-geist-mono), monospace;
 }
 
-:root {
+:root,
+.radix-themes {
   --background: #FBFBF9;
   --foreground: #112F1F;
 
