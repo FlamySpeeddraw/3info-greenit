@@ -1,0 +1,829 @@
+.section {
+  background:
+    linear-gradient(180deg, rgba(251, 251, 249, 0.96), rgba(240, 244, 241, 0.98)),
+    var(--color-eco-white);
+  color: var(--foreground);
+  overflow: hidden;
+}
+
+.pinShell {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) minmax(178px, 24vh);
+  gap: 1rem;
+  height: 100vh;
+  min-height: 720px;
+  padding: 1.25rem;
+  position: relative;
+}
+
+.sectionHeader {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.sectionEyebrow,
+.periodEyebrow {
+  color: var(--brown-9);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.sectionTitle {
+  color: var(--foreground);
+  font-size: 1.95rem;
+  letter-spacing: 0;
+  line-height: 1.1;
+  margin: 0;
+  max-width: 980px;
+}
+
+.timeline {
+  display: grid;
+  gap: 0.6rem;
+  position: relative;
+}
+
+.timelineRail {
+  background: rgba(61, 46, 43, 0.14);
+  border-radius: 999px;
+  height: 4px;
+  overflow: hidden;
+  transform: translateY(1.15rem);
+}
+
+.timelineProgress {
+  background: linear-gradient(90deg, var(--grass-9), var(--brown-9));
+  display: block;
+  height: 100%;
+  transform-origin: left center;
+  will-change: transform;
+}
+
+.timelineList {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.timelineItem {
+  display: grid;
+  gap: 0.25rem;
+  justify-items: center;
+  min-width: 0;
+  opacity: 0.55;
+  text-align: center;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.timelineItemActive {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.timelineItemPast {
+  opacity: 0.78;
+}
+
+.timelineDot {
+  background: var(--color-eco-white);
+  border: 2px solid var(--brown-7);
+  border-radius: 999px;
+  display: block;
+  height: 1rem;
+  position: relative;
+  width: 1rem;
+}
+
+.timelineItemActive .timelineDot {
+  background: var(--grass-9);
+  border-color: var(--grass-9);
+  box-shadow: 0 0 0 6px rgba(17, 47, 31, 0.12);
+}
+
+.timelineItemPast .timelineDot {
+  background: var(--brown-9);
+  border-color: var(--brown-9);
+}
+
+.timelineName,
+.timelineDates {
+  display: block;
+  line-height: 1.25;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.timelineName {
+  color: var(--foreground);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.timelineDates {
+  color: var(--brown-9);
+  font-size: 0.68rem;
+}
+
+.slideViewport {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.slideTrack {
+  display: flex;
+  height: 100%;
+  will-change: transform;
+}
+
+.periodSlide {
+  display: grid;
+  flex: 0 0 100%;
+  gap: 0.9rem;
+  grid-template-rows: minmax(190px, 1.05fr) minmax(210px, 0.95fr);
+  min-width: 0;
+  padding: 0.1rem 0;
+}
+
+.illustrationFrame {
+  background: var(--brown-2);
+  border: 1px solid rgba(61, 46, 43, 0.14);
+  border-radius: 8px;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.periodImage {
+  object-fit: cover;
+}
+
+.placeholderIllustration {
+  --tone-sky: #d9ddd0;
+  --tone-sun: #e9c66b;
+  --tone-horizon: #3d2e2b;
+  --tone-ground: #112f1f;
+  --tone-trace: rgba(251, 251, 249, 0.35);
+  background: linear-gradient(180deg, var(--tone-sky), var(--tone-ground));
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.placeholderVolcanic {
+  --tone-sky: #786158;
+  --tone-sun: #d88a3d;
+  --tone-horizon: #3d2e2b;
+  --tone-ground: #17100f;
+  --tone-trace: rgba(216, 138, 61, 0.46);
+}
+
+.placeholderOceanic {
+  --tone-sky: #d9e6df;
+  --tone-sun: #fbfbf9;
+  --tone-horizon: #2e6a49;
+  --tone-ground: #224d35;
+  --tone-trace: rgba(251, 251, 249, 0.5);
+}
+
+.placeholderForest {
+  --tone-sky: #c6d5bf;
+  --tone-sun: #f0d58a;
+  --tone-horizon: #224d35;
+  --tone-ground: #112f1f;
+  --tone-trace: rgba(61, 46, 43, 0.32);
+}
+
+.placeholderCoast {
+  --tone-sky: #e4dcc8;
+  --tone-sun: #d7b56d;
+  --tone-horizon: #5c4641;
+  --tone-ground: #2e6a49;
+  --tone-trace: rgba(251, 251, 249, 0.44);
+}
+
+.placeholderIce {
+  --tone-sky: #e7ece6;
+  --tone-sun: #fbfbf9;
+  --tone-horizon: #8e6e66;
+  --tone-ground: #dfe8e3;
+  --tone-trace: rgba(17, 47, 31, 0.2);
+}
+
+.placeholderIndustrial {
+  --tone-sky: #d4d1c8;
+  --tone-sun: #c28c5a;
+  --tone-horizon: #3d2e2b;
+  --tone-ground: #224d35;
+  --tone-trace: rgba(8, 14, 10, 0.28);
+}
+
+.placeholderSky,
+.placeholderSun,
+.placeholderHorizon,
+.placeholderGround,
+.placeholderTraceOne,
+.placeholderTraceTwo {
+  display: block;
+  position: absolute;
+}
+
+.placeholderSky {
+  background:
+    linear-gradient(105deg, transparent 0 18%, var(--tone-trace) 18% 19%, transparent 19% 100%),
+    linear-gradient(75deg, transparent 0 48%, rgba(251, 251, 249, 0.2) 48% 49%, transparent 49% 100%);
+  inset: 0;
+}
+
+.placeholderSun {
+  background: var(--tone-sun);
+  border-radius: 50%;
+  height: 4.5rem;
+  opacity: 0.88;
+  right: 10%;
+  top: 12%;
+  width: 4.5rem;
+}
+
+.placeholderHorizon {
+  background: var(--tone-horizon);
+  clip-path: polygon(0 60%, 12% 48%, 24% 55%, 36% 34%, 52% 58%, 68% 42%, 84% 56%, 100% 44%, 100% 100%, 0 100%);
+  height: 44%;
+  inset-inline: 0;
+  opacity: 0.78;
+  top: 32%;
+}
+
+.placeholderGround {
+  background: var(--tone-ground);
+  clip-path: polygon(0 20%, 20% 32%, 42% 18%, 58% 36%, 80% 22%, 100% 34%, 100% 100%, 0 100%);
+  inset: auto 0 0;
+  height: 42%;
+}
+
+.placeholderTraceOne {
+  background: var(--tone-trace);
+  border-radius: 999px;
+  bottom: 19%;
+  height: 0.6rem;
+  left: 12%;
+  opacity: 0.72;
+  transform: rotate(-2deg);
+  width: 42%;
+}
+
+.placeholderTraceTwo {
+  background: var(--tone-trace);
+  border-radius: 999px;
+  bottom: 10%;
+  height: 0.45rem;
+  opacity: 0.6;
+  right: 10%;
+  transform: rotate(3deg);
+  width: 34%;
+}
+
+.periodDetails {
+  background: rgba(251, 251, 249, 0.78);
+  border: 1px solid rgba(61, 46, 43, 0.12);
+  border-radius: 8px;
+  display: grid;
+  gap: 0.75rem;
+  min-height: 0;
+  overflow: auto;
+  padding: 1rem;
+}
+
+.periodHeader {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.periodTitle {
+  color: var(--foreground);
+  font-size: 1.45rem;
+  letter-spacing: 0;
+  line-height: 1.12;
+  margin: 0;
+}
+
+.periodDates {
+  color: var(--brown-9);
+  font-size: 0.92rem;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.periodDescription {
+  color: var(--foreground);
+  font-size: 0.98rem;
+  line-height: 1.58;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.periodMetaGrid {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+}
+
+.periodMetaBlock {
+  min-width: 0;
+}
+
+.periodMetaTitle {
+  color: var(--brown-9);
+  font-size: 0.78rem;
+  letter-spacing: 0;
+  line-height: 1.25;
+  margin: 0 0 0.45rem;
+  text-transform: uppercase;
+}
+
+.gasList,
+.eventList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gasList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.eventList {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.eventList li {
+  color: var(--foreground);
+  font-size: 0.9rem;
+  line-height: 1.35;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.eventList li::before {
+  background: var(--brown-9);
+  border-radius: 999px;
+  content: "";
+  height: 0.35rem;
+  left: 0;
+  position: absolute;
+  top: 0.48rem;
+  width: 0.35rem;
+}
+
+.chartSurface {
+  background: rgba(251, 251, 249, 0.86);
+  border: 1px solid rgba(17, 47, 31, 0.14);
+  border-radius: 8px;
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  min-height: 0;
+  padding: 0.7rem 0.9rem 0.35rem;
+}
+
+.chartCaption {
+  align-items: baseline;
+  color: var(--foreground);
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.chartCaption span {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.chartCaption small {
+  color: var(--brown-9);
+  font-size: 0.74rem;
+  line-height: 1.25;
+  text-align: right;
+}
+
+.chartWarning {
+  color: var(--foreground);
+  font-size: 0.78rem;
+  line-height: 1.38;
+  margin: 0;
+  max-width: 980px;
+  opacity: 0.82;
+}
+
+.co2Chart {
+  display: block;
+  height: 100%;
+  max-height: 180px;
+  min-height: 132px;
+  overflow: visible;
+  width: 100%;
+}
+
+.chartGridLine line {
+  stroke: rgba(61, 46, 43, 0.16);
+  stroke-width: 1;
+}
+
+.chartHealthThreshold {
+  --threshold-color: #b45309;
+  --threshold-fill: rgba(180, 83, 9, 0.08);
+}
+
+.chartHealthThreshold[data-severity="occupational"] {
+  --threshold-color: #c2410c;
+  --threshold-fill: rgba(194, 65, 12, 0.1);
+}
+
+.chartHealthThreshold[data-severity="short-term"] {
+  --threshold-color: #dc2626;
+  --threshold-fill: rgba(220, 38, 38, 0.12);
+}
+
+.chartHealthThreshold[data-severity="evacuation"],
+.chartHealthThreshold[data-severity="lethal"] {
+  --threshold-color: #991b1b;
+  --threshold-fill: rgba(153, 27, 27, 0.14);
+}
+
+.chartHealthThreshold rect {
+  fill: var(--threshold-fill);
+}
+
+.chartHealthThreshold line {
+  stroke: var(--threshold-color);
+  stroke-dasharray: 7 5;
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+
+.chartHealthThreshold text {
+  fill: var(--threshold-color);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  paint-order: stroke;
+  stroke: rgba(251, 251, 249, 0.9);
+  stroke-width: 4px;
+  text-anchor: end;
+}
+
+.chartGridLine text,
+.chartXAxisLabel {
+  fill: var(--brown-9);
+  font-size: 0.68rem;
+  letter-spacing: 0;
+}
+
+.chartGridLine text {
+  text-anchor: end;
+}
+
+.chartXAxisLabel {
+  text-anchor: middle;
+}
+
+.chartBasePath,
+.chartProgressPath {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chartBasePath {
+  opacity: 0.22;
+  stroke: var(--brown-9);
+  stroke-dasharray: 3 7;
+  stroke-width: 2;
+}
+
+.chartProgressPath {
+  stroke: var(--grass-9);
+  stroke-width: 4;
+}
+
+.chartPoint {
+  fill: var(--color-eco-white);
+  stroke: var(--grass-9);
+  stroke-width: 2;
+}
+
+.chartPointIndustrial {
+  fill: #d88a3d;
+  stroke: var(--brown-9);
+}
+
+.chartActivePoint circle {
+  fill: rgba(17, 47, 31, 0.12);
+  stroke: var(--grass-9);
+  stroke-width: 2;
+}
+
+.chartActivePoint text {
+  fill: var(--foreground);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  paint-order: stroke;
+  stroke: rgba(251, 251, 249, 0.9);
+  stroke-width: 4px;
+  text-anchor: middle;
+}
+
+.finalCta {
+  align-items: center;
+  background: rgba(251, 251, 249, 0.94);
+  border: 1px solid rgba(17, 47, 31, 0.16);
+  border-radius: 8px;
+  bottom: 1rem;
+  box-shadow: 0 18px 42px rgba(17, 47, 31, 0.16);
+  display: flex;
+  gap: 0.9rem;
+  opacity: 0;
+  padding: 0.65rem 0.75rem 0.65rem 0.9rem;
+  pointer-events: none;
+  position: absolute;
+  right: 1rem;
+  transform: translateY(0.75rem);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+  z-index: 3;
+}
+
+.finalCta[data-visible="true"] {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.finalCtaLabel {
+  color: var(--brown-9);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.finalCtaLink {
+  background: var(--grass-9);
+  border-radius: 6px;
+  color: var(--color-eco-white);
+  display: inline-flex;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.78rem 0.95rem;
+  text-decoration: none;
+  transition:
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.finalCtaLink:hover {
+  background: var(--grass-11);
+  transform: translateY(-1px);
+}
+
+.finalCtaLink:focus-visible {
+  outline: 2px solid var(--grass-9);
+  outline-offset: 3px;
+}
+
+.section[data-reduced-motion="true"] {
+  overflow: visible;
+}
+
+.section[data-reduced-motion="true"] .pinShell {
+  height: auto;
+  min-height: 0;
+}
+
+.section[data-reduced-motion="true"] .slideViewport {
+  overflow: visible;
+}
+
+.section[data-reduced-motion="true"] .slideTrack {
+  display: grid;
+  gap: 1rem;
+  transform: none !important;
+}
+
+.section[data-reduced-motion="true"] .periodSlide {
+  border-bottom: 1px solid rgba(61, 46, 43, 0.14);
+  min-height: 620px;
+}
+
+.section[data-reduced-motion="true"] .finalCta {
+  bottom: auto;
+  justify-self: end;
+  position: sticky;
+  right: 1rem;
+}
+
+@media (min-width: 900px) {
+  .pinShell {
+    gap: 1.1rem;
+    padding: 1.5rem 2.2rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.35rem;
+  }
+
+  .periodSlide {
+    grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .periodDetails {
+    padding: 1.1rem;
+  }
+}
+
+@media (min-width: 1180px) {
+  .pinShell {
+    padding-inline: 3rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.75rem;
+  }
+
+  .periodTitle {
+    font-size: 1.7rem;
+  }
+
+  .periodDescription {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 780px) {
+  .pinShell {
+    grid-template-rows: auto minmax(0, 1fr) minmax(170px, 22vh);
+    min-height: 760px;
+    padding: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.58rem;
+  }
+
+  .timeline {
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+  }
+
+  .timelineRail {
+    min-width: 680px;
+  }
+
+  .timelineList {
+    grid-template-columns: repeat(6, 112px);
+    min-width: 680px;
+  }
+
+  .periodSlide {
+    grid-template-rows: minmax(180px, 0.9fr) minmax(255px, 1.1fr);
+  }
+
+  .periodMetaGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .chartCaption {
+    align-items: flex-start;
+    display: grid;
+  }
+
+  .chartCaption small {
+    text-align: left;
+  }
+
+  .chartWarning {
+    font-size: 0.72rem;
+    line-height: 1.32;
+  }
+
+  .co2Chart {
+    max-height: 138px;
+  }
+
+  .finalCta {
+    align-items: stretch;
+    bottom: 0.7rem;
+    display: grid;
+    gap: 0.45rem;
+    left: 1rem;
+    right: 1rem;
+  }
+
+  .finalCtaLink {
+    justify-content: center;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .section {
+    background:
+      linear-gradient(180deg, rgba(8, 14, 10, 0.98), rgba(18, 26, 21, 0.98)),
+      var(--color-oled-black);
+  }
+
+  .timelineRail {
+    background: rgba(234, 239, 234, 0.14);
+  }
+
+  .timelineDot {
+    background: var(--color-oled-black);
+  }
+
+  .periodDetails,
+  .chartSurface,
+  .finalCta {
+    background: rgba(18, 26, 21, 0.78);
+    border-color: rgba(234, 239, 234, 0.12);
+  }
+
+  .illustrationFrame {
+    background: var(--color-oled-gray);
+    border-color: rgba(234, 239, 234, 0.12);
+  }
+
+  .sectionEyebrow,
+  .periodEyebrow,
+  .periodDates,
+  .periodMetaTitle,
+  .timelineDates,
+  .chartCaption small,
+  .chartGridLine text,
+  .finalCtaLabel,
+  .chartXAxisLabel {
+    color: var(--brown-11);
+    fill: var(--brown-11);
+  }
+
+  .chartGridLine line {
+    stroke: rgba(234, 239, 234, 0.13);
+  }
+
+  .chartHealthThreshold {
+    --threshold-color: #fdba74;
+    --threshold-fill: rgba(251, 146, 60, 0.12);
+  }
+
+  .chartHealthThreshold[data-severity="short-term"],
+  .chartHealthThreshold[data-severity="evacuation"],
+  .chartHealthThreshold[data-severity="lethal"] {
+    --threshold-color: #fca5a5;
+    --threshold-fill: rgba(248, 113, 113, 0.14);
+  }
+
+  .chartHealthThreshold text {
+    stroke: rgba(8, 14, 10, 0.9);
+  }
+
+  .chartBasePath {
+    stroke: var(--brown-11);
+  }
+
+  .chartProgressPath {
+    stroke: var(--grass-11);
+  }
+
+  .chartPoint {
+    fill: var(--color-oled-black);
+    stroke: var(--grass-11);
+  }
+
+  .chartActivePoint circle {
+    fill: rgba(187, 247, 208, 0.14);
+    stroke: var(--grass-11);
+  }
+
+  .chartActivePoint text {
+    fill: var(--foreground);
+    stroke: rgba(8, 14, 10, 0.9);
+  }
+}
