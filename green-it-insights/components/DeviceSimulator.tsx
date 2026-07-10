@@ -16,7 +16,7 @@ export function DeviceSimulator() {
   const [transportMode, setTransportMode] = useState<"air" | "sea">("air");
   const [deviceLifespan, setDeviceLifespan] = useState(3); // in years
 
-  // Calculation parameters
+  // Calculation parameters — valeurs illustratives, non auditées
   const baseCost = deviceType === "smartphone" ? 75 : deviceType === "laptop" ? 240 : 520;
   const locationFactor = manufacturingLocation === "asia" ? 1.25 : 0.80; 
   const transportCost = transportMode === "air" ? 95 : 12;
@@ -26,7 +26,7 @@ export function DeviceSimulator() {
 
   // Eco-grade logic
   let ecoGrade = "A";
-  let gradeColor: "green" | "grass" | "yellow" | "orange" | "tomato" = "grass";
+  let gradeColor: "green" | "grass" | "yellow" | "orange" | "tomato" = "green";
   
   if (annualAmortizedFootprint > 160) {
     ecoGrade = "E";

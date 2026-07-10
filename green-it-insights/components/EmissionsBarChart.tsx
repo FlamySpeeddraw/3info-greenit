@@ -1,204 +1,277 @@
 "use client";
 
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-  Cell,
-  LabelList,
-} from "recharts";
-import { FilieresTooltip } from "./FilieresTooltip";
-import { useState, useEffect } from "react";
-import type { FilieresData } from "@/types/energie";
-import {
-  EMISSION_COLORS,
-  EMISSION_THRESHOLDS,
-  getEmissionColor,
-} from "./EmissionsConstants";
+import "./EmissionsBarChart.css";
 
-interface EmissionsBarChartProps {
-  data: FilieresData[];
+import { useMemo, useState } from "react";
+import { Card, Heading, Separator, Strong, Text } from "@radix-ui/themes";
+import {
+    Bar,
+    BarChart,
+    CartesianGrid,
+    Cell,
+    LabelList,
+    Rectangle,
+    ResponsiveContainer,
+    Tooltip,
+    XAxis,
+    YAxis,
+} from "recharts"; // NOTE: recharts pèse ~45 kB gzipped (d3 + redux). Choix justifié pour l'interactivité (clic/hover), sinon envisager un SVG maison.
+import { COLORS } from "@/app/color.const";
+
+type EnergyDatum = {
+    id: string;
+    name: string;
+    emissionFactor: number;
+    globalShare: string;
+    exampleCountry: string;
+    description: string;
+    icon: string;
+};
+
+type RowBackgroundProps = {
+    x?: number;
+    y?: number;
+    width?: number;
+    height?: number;
+    index?: number;
+    payload?: EnergyDatum;
+};
+
+const CHART_THEME = {
+    text: COLORS.dark.foreground,
+    grid: COLORS.dark.brown[4],
+    axis: COLORS.dark.brown[5],
+    tooltipBg: COLORS.eco.white,
+    tooltipText: COLORS.green.dark,
+    activeStroke: COLORS.brown.dark,
+    rowHover: "rgba(255, 255, 255, 0.035)",
+    rowSelected: "rgba(255, 255, 255, 0.07)",
+};
+
+function getBarColor(index: number) {
+    if (index < 3) return COLORS.green.dark;
+    if (index < 8) return COLORS.brown.dark;
+    return COLORS.brown.accent;
 }
 
-interface ChartColors {
-  textMuted: string;
-  text: string;
-  divider: string;
-  border: string;
-}
+export function EmissionsBarChart({ data }: { data: EnergyDatum[] }) {
+    const [selected, setSelected] = useState<EnergyDatum | null>(data[0] ?? null);
+    const [hoveredId, setHoveredId] = useState<string | null>(null);
 
-const LEGEND_ITEMS = [
-  {
-    color: EMISSION_COLORS.VERY_HIGH,
-    label: `Très carboné  ≥ ${EMISSION_THRESHOLDS.VERY_HIGH}`,
-  },
-  {
-    color: EMISSION_COLORS.HIGH,
-    label: `Modéré  ${EMISSION_THRESHOLDS.HIGH} – ${EMISSION_THRESHOLDS.VERY_HIGH}`,
-  },
-  {
-    color: EMISSION_COLORS.MEDIUM,
-    label: `Faible  ${EMISSION_THRESHOLDS.MEDIUM} – ${EMISSION_THRESHOLDS.HIGH}`,
-  },
-  {
-    color: EMISSION_COLORS.LOW,
-    label: `Bas-carbone  < ${EMISSION_THRESHOLDS.MEDIUM}`,
-  },
-] as const;
+    const chartData = useMemo(
+        () => data.map((item, index) => ({ ...item, fill: getBarColor(index) })),
+        [data]
+    );
 
-export function EmissionsBarChart({ data }: EmissionsBarChartProps) {
-  const [selected, setSelected] = useState<FilieresData | null>(null);
-  const [colors, setColors] = useState<ChartColors>({
-    textMuted: "#6b7280",
-    text: "#111827",
-    divider: "#e5e7eb",
-    border: "#d1d5db",
-  });
+    const selectedId = selected?.id ?? null;
 
-  useEffect(() => {
-    const readColors = () => {
-      const style = getComputedStyle(document.documentElement);
-      const probe = document.createElement("div");
-      probe.style.display = "none";
-      document.body.appendChild(probe);
+    const renderRowBackground = (props: RowBackgroundProps) => {
+        const { x = 0, y = 0, width = 0, height = 0, payload } = props;
 
-      const resolve = (varName: string, fallback: string): string => {
-        probe.style.color = style.getPropertyValue(varName).trim();
-        const resolved = getComputedStyle(probe).color;
-        return resolved && resolved !== "rgba(0, 0, 0, 0)" ? resolved : fallback;
-      };
+        const id = payload?.id;
+        const isSelected = id === selectedId;
+        const isHovered = id === hoveredId;
 
-      setColors({
-        textMuted: resolve("--color-text-muted", "#9ca3af"),
-        text:      resolve("--color-text",       "#f3f4f6"),
-        divider:   resolve("--color-divider",    "#374151"),
-        border:    resolve("--color-border",     "#4b5563"),
-      });
-
-      document.body.removeChild(probe);
+        return (
+            <g>
+                <Rectangle
+                    x={x}
+                    y={y}
+                    width={width}
+                    height={height}
+                    radius={10}
+                    fill={
+                        isSelected
+                            ? CHART_THEME.rowSelected
+                            : isHovered
+                                ? CHART_THEME.rowHover
+                                : "transparent"
+                    }
+                    stroke="none"
+                    className="emissions-chart__row-bg"
+                    onMouseEnter={() => id && setHoveredId(id)}
+                    onMouseLeave={() => setHoveredId((current) => (current === id ? null : current))}
+                    onClick={() => payload && setSelected(payload)}
+                />
+            </g>
+        );
     };
 
-    readColors();
+    return (
+        <div className="emissions-chart grid grid-cols-1 gap-5 xl:grid-cols-[1.2fr_0.8fr]">
+            <div className="h-[540px] min-w-0">
+                <ResponsiveContainer width="100%" height="100%">
+                    <BarChart
+                        data={chartData}
+                        layout="vertical"
+                        margin={{ top: 8, right: 28, left: 8, bottom: 8 }}
+                        onMouseLeave={() => setHoveredId(null)}
+                    >
+                        <CartesianGrid horizontal={false} stroke={CHART_THEME.grid} />
 
-    const observer = new MutationObserver(readColors);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["data-theme"],
-    });
+                        <XAxis
+                            type="number"
+                            stroke={CHART_THEME.axis}
+                            tick={{ fill: CHART_THEME.text, fontSize: 12 }}
+                            tickFormatter={(value) => `${Number(value).toLocaleString("fr-FR")}`}
+                        />
 
-    return () => observer.disconnect();
-  }, []);
+                        <YAxis
+                            type="category"
+                            dataKey="name"
+                            width={120}
+                            stroke={CHART_THEME.axis}
+                            tick={{ fill: CHART_THEME.text, fontSize: 12 }}
+                        />
 
-  const handleBarClick = (barData: unknown) => {
-    const entry = barData as FilieresData;
-    setSelected(selected?.id === entry.id ? null : entry);
-  };
+                        <Tooltip
+                            cursor={false}
+                            contentStyle={{
+                                backgroundColor: CHART_THEME.tooltipBg,
+                                border: `1px solid ${COLORS.brown.accent}`,
+                                borderRadius: 14,
+                                color: CHART_THEME.tooltipText,
+                                outline: "none",
+                                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.18)",
+                            }}
+                            labelStyle={{ color: CHART_THEME.tooltipText, fontWeight: 700 }}
+                            formatter={(value, _name, item) => {
+                                const payload = item.payload as EnergyDatum;
+                                const formattedValue = Number(value ?? 0).toLocaleString("fr-FR");
+                                return [`${formattedValue} gCO₂e/kWh`, payload.name];
+                            }}
+                        />
 
-  return (
-    <div className="w-full space-y-8">
-      {/*
-       * Recharts rend un <svg> focusable au clic qui déclenche un outline natif
-       * du navigateur (carré blanc). Ce style ciblé supprime ce comportement
-       * sans altérer la navigation clavier du reste de la page.
-       * Isolé ici car Recharts n'expose pas de prop pour le désactiver.
-       */}
-      <style>{`
-        .recharts-wrapper,
-        .recharts-wrapper svg,
-        .recharts-wrapper *:focus,
-        .recharts-wrapper *:focus-visible {
-          outline: none !important;
-          box-shadow: none !important;
-        }
-      `}</style>
+                        <Bar
+                            dataKey="emissionFactor"
+                            radius={[0, 10, 10, 0]}
+                            isAnimationActive={false}
+                            background={renderRowBackground}
+                            onClick={(_, index) => setSelected(chartData[index])}
+                            onMouseEnter={(data) => setHoveredId(data?.id ?? null)}
+                            onMouseLeave={() => setHoveredId(null)}
+                        >
+                            {chartData.map((entry) => {
+                                const isSelected = selectedId === entry.id;
+                                const isHovered = hoveredId === entry.id;
 
-      {/* Légende */}
-      <div className="flex flex-wrap gap-x-5 gap-y-2">
-        {LEGEND_ITEMS.map(({ color, label }) => (
-          <span key={label} className="flex items-center gap-2 text-xs" style={{ color: colors.textMuted }}>
-            <span
-              className="inline-block w-2.5 h-2.5 rounded-sm flex-shrink-0"
-              style={{ backgroundColor: color }}
-            />
-            {label} <span className="text-[10px]">gCO₂e/kWh</span>
-          </span>
-        ))}
-      </div>
+                                return (
+                                    <Cell
+                                        key={entry.id}
+                                        fill={entry.fill}
+                                        opacity={isSelected ? 1 : isHovered ? 0.98 : 0.9}
+                                        stroke={isSelected ? CHART_THEME.activeStroke : "transparent"}
+                                        strokeWidth={isSelected ? 2 : 0}
+                                        style={{ cursor: "pointer" }}
+                                    />
+                                );
+                            })}
 
-      {/* Graphique */}
-      <div
-        className="w-full"
-        style={{ height: `${data.length * 62 + 40}px` }}
-        onMouseDown={(e) => e.preventDefault()}
-      >
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart
-            layout="vertical"
-            data={data}
-            margin={{ top: 0, right: 90, left: 0, bottom: 0 }}
-            barCategoryGap="30%"
-          >
-            <CartesianGrid
-              horizontal={false}
-              strokeDasharray="3 3"
-              stroke={colors.divider}
-            />
-            <XAxis
-              type="number"
-              unit=" g"
-              tick={{ fontSize: 11, fill: colors.textMuted }}
-              tickLine={false}
-              axisLine={{ stroke: colors.border }}
-              domain={[0, "dataMax + 80"]}
-            />
-            <YAxis
-              type="category"
-              dataKey="name"
-              width={170}
-              tick={{ fontSize: 13, fill: colors.text, fontWeight: 500 }}
-              tickLine={false}
-              axisLine={false}
-            />
-            <Tooltip content={() => null} cursor={false} />
-            <Bar
-              dataKey="emissionFactor"
-              radius={[0, 5, 5, 0]}
-              style={{ cursor: "pointer" }}
-              activeBar={false}
-              isAnimationActive={false}
-              onClick={handleBarClick}
-            >
-              {data.map((entry) => (
-                <Cell
-                  key={entry.id}
-                  fill={getEmissionColor(entry.emissionFactor)}
-                  opacity={selected && selected.id !== entry.id ? 0.35 : 1}
-                  stroke={selected?.id === entry.id ? colors.text : "none"}
-                  strokeWidth={selected?.id === entry.id ? 1.5 : 0}
-                />
-              ))}
-              <LabelList
-                dataKey="emissionFactor"
-                position="right"
-                formatter={(v) => `${Number(v).toLocaleString("fr-FR")} g`}
-                style={{ fontSize: 11, fill: colors.textMuted, fontVariantNumeric: "tabular-nums" }}
-              />
-            </Bar>
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
+                            <LabelList
+                                dataKey="emissionFactor"
+                                position="right"
+                                formatter={(value) => String(value ?? "")}
+                                fill={CHART_THEME.text}
+                                fontSize={12}
+                            />
+                        </Bar>
+                    </BarChart>
+                </ResponsiveContainer>
+            </div>
 
-      {/* Encart détail au clic */}
-      {selected && (
-        <FilieresTooltip
-          data={selected}
-          onClose={() => setSelected(null)}
-        />
-      )}
-    </div>
-  );
+            <Card className="h-fit rounded-2xl border border-brown-dark/10 bg-brown-bg dark:border-brown-accent/20 dark:bg-oled-gray">
+                <div className="p-5">
+                    <Text
+                        as="p"
+                        size="1"
+                        weight="bold"
+                        className="uppercase tracking-wider text-brown-dark dark:text-[var(--brown-11)]"
+                    >
+                        Détail de la filière
+                    </Text>
+
+                    <Heading
+                        as="h3"
+                        size="5"
+                        className="mt-2 text-green-dark dark:text-[var(--foreground)]"
+                    >
+                        {selected?.name ?? "Aucune filière"}
+                    </Heading>
+
+                    <Separator my="4" size="4" />
+
+                    {selected ? (
+                        <div className="space-y-4">
+                            <div>
+                                <Text
+                                    as="p"
+                                    size="1"
+                                    className="text-brown-light dark:text-[var(--brown-11)]/75"
+                                >
+                                    Facteur d’émission
+                                </Text>
+                                <Text
+                                    as="p"
+                                    size="5"
+                                    className="text-green-dark dark:text-[var(--foreground)]"
+                                >
+                                    <Strong>{selected.emissionFactor} gCO₂e/kWh</Strong>
+                                </Text>
+                            </div>
+
+                            <div>
+                                <Text
+                                    as="p"
+                                    size="1"
+                                    className="text-brown-light dark:text-[var(--brown-11)]/75"
+                                >
+                                    Part de la production mondiale
+                                </Text>
+                                <Text
+                                    as="p"
+                                    size="4"
+                                    className="text-brown-dark dark:text-[var(--brown-11)]"
+                                >
+                                    {selected.globalShare}
+                                </Text>
+                            </div>
+
+                            <div>
+                                <Text
+                                    as="p"
+                                    size="1"
+                                    className="text-brown-light dark:text-[var(--brown-11)]/75"
+                                >
+                                    Exemple
+                                </Text>
+                                <Text
+                                    as="p"
+                                    size="2"
+                                    className="text-green-dark dark:text-[var(--foreground)]"
+                                >
+                                    {selected.exampleCountry}
+                                </Text>
+                            </div>
+
+                            <Text
+                                as="p"
+                                size="2"
+                                className="leading-6 text-brown-light dark:text-[var(--brown-11)]/85"
+                            >
+                                {selected.description}
+                            </Text>
+                        </div>
+                    ) : (
+                        <Text
+                            as="p"
+                            size="2"
+                            className="text-brown-light dark:text-[var(--brown-11)]/85"
+                        >
+                            Sélectionne une ligne du graphique pour afficher le détail.
+                        </Text>
+                    )}
+                </div>
+            </Card>
+        </div>
+    );
 }

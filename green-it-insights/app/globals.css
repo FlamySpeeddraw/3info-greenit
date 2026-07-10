@@ -32,6 +32,10 @@
   --background: #FBFBF9;
   --foreground: #112F1F;
 
+  /* Semantic tokens used by FilieresTooltip and EmissionsBarChart */
+  --color-text:       var(--foreground);
+  --color-text-muted: #5c6b60;
+
   /* Radix UI Overrides for Custom Grass (Dark Green) Palette */
   --grass-1: #f8faf8;
   --grass-2: #f0f4f1;
@@ -64,6 +68,9 @@
 .dark {
   --background: #080E0A;
   --foreground: #EAEFEA;
+
+  /* Semantic tokens for dark mode */
+  --color-text-muted: #9fb0a4;
 
   /* Dark mode Radix overrides for grass scale (emerald/forest) */
   --grass-1: #080e0a;
