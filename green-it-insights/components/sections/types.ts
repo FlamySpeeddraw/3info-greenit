@@ -1,6 +1,6 @@
 /**
- * Types locaux de la page « Focus numérique & IA ».
- * Spécifiques au contenu de cette page (non réutilisables ailleurs).
+ * Types partagés des sections de page (components/sections).
+ * Réutilisés par toutes les pages infographiques (énergie, matériels…).
  */
 
 export type KeyFigure = {

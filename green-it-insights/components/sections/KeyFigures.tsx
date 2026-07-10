@@ -1,6 +1,6 @@
 import { Badge, Card, Grid, Heading, Section, Text } from "@radix-ui/themes";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import type { KeyFigure } from "../types";
+import type { KeyFigure } from "./types";
 
 /**
  * Grille de chiffres clés générique : titre optionnel + liste de figures

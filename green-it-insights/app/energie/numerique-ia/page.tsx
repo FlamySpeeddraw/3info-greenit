@@ -7,10 +7,10 @@ import {
   Theme,
 } from "@radix-ui/themes";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
-import { Hero } from "./_sections/Hero";
-import { KeyFigures } from "./_sections/KeyFigures";
-import { ContentSection } from "./_sections/ContentSection";
-import { Sources } from "./_sections/Sources";
+import { Hero } from "@/components/sections/Hero";
+import { KeyFigures } from "@/components/sections/KeyFigures";
+import { ContentSection } from "@/components/sections/ContentSection";
+import { Sources } from "@/components/sections/Sources";
 import { Waffle } from "@/components/viz/Waffle";
 import { Donut } from "@/components/viz/Donut";
 import { TrendChart } from "@/components/viz/TrendChart";
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
  * Section A. Énergie > 2. Consommation
  * Focus sur le numérique et l'IA dans la consommation globale.
  *
- * Cette page assemble des sections GÉNÉRIQUES (./_sections) et leur fournit
+ * Cette page assemble des sections GÉNÉRIQUES (@/components/sections) et leur fournit
  * tout le contenu en paramètres : le texte vit donc ici, la logique de mise en
  * page dans les composants. Données structurées dans ./data, visualisations
  * réutilisables dans @/components/viz.

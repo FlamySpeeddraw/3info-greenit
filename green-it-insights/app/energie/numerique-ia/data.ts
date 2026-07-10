@@ -1,4 +1,4 @@
-import type { KeyFigure, Source } from "./types";
+import type { KeyFigure, Source } from "@/components/sections/types";
 
 /**
  * Données de contenu de la page « Focus numérique & IA ».
