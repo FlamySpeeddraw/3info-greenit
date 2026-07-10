@@ -2,7 +2,6 @@ import { Button, Text, Heading } from "@radix-ui/themes";
 import type { FilieresData } from "@/types/energie";
 import {
   EMISSION_COLORS,
-  EMISSION_THRESHOLDS,
   getEmissionLevel,
 } from "./EmissionsConstants";
 

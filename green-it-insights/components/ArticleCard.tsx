@@ -3,19 +3,17 @@
 import React from "react";
 import { Card, Flex, Badge, Heading, Text } from "@radix-ui/themes";
 import { ReaderIcon } from "@radix-ui/react-icons";
-import Link from "next/link";
 import { ScrollReveal } from "./ScrollReveal";
 import { useTheme } from "@/app/theme-provider";
 import { COLORS } from "@/app/color.const";
 
 type ArticleCardProps = {
   category: string;
-  badgeColor: "grass" | "brown" | "yellow" | "orange" | "tomato" | "gray" | "teal" | "blue" | "amber";
+  badgeColor: "grass" | "brown" | "yellow" | "orange" | "tomato" | "gray";
   type: string;
   title: string;
   description: string;
   linkText?: string;
-  link?: string;
 };
 
 export function ArticleCard({
@@ -24,8 +22,7 @@ export function ArticleCard({
   type,
   title,
   description,
-  linkText = "Lire le dossier",
-  link = "/ressourcesDevices"
+  linkText = "Lire le dossier"
 }: ArticleCardProps) {
   const { useDarkMode } = useTheme();
 
@@ -35,37 +32,31 @@ export function ArticleCard({
 
   return (
     <ScrollReveal className="flex">
-      <Link 
-        href={link} 
-        className="flex flex-1 no-underline" 
-        style={{ color: "inherit", textDecoration: "none" }}
+      <Card 
+        variant="surface" 
+        className="flex-1 flex flex-col justify-between p-6 border transition-all"
+        style={{ backgroundColor: cardBgTheme, borderColor: borderTheme }}
       >
-        <Card 
-          variant="surface" 
-          className="group flex-1 flex flex-col justify-between p-6 border transition-all duration-300 cursor-pointer hover:shadow-lg hover:border-green-accent/30 dark:hover:border-green-accent/30"
-          style={{ backgroundColor: cardBgTheme, borderColor: borderTheme }}
-        >
-          <div className="space-y-4">
-            <Flex justify="between" align="center">
-              <Badge color={badgeColor}>{category}</Badge>
-              <Text size="1" color="gray">{type}</Text>
-            </Flex>
-            <Heading size="4" style={{ color: headingColor }}>
-              {title}
-            </Heading>
-            <Text size="2" color="gray" className="line-clamp-4">
-              {description}
-            </Text>
-          </div>
-          <Flex 
-            align="center" 
-            gap="1" 
-            className="mt-6 font-semibold text-sm text-green-accent group-hover:underline"
-          >
-            <ReaderIcon /> {linkText}
+        <div className="space-y-4">
+          <Flex justify="between" align="center">
+            <Badge color={badgeColor}>{category}</Badge>
+            <Text size="1" color="gray">{type}</Text>
           </Flex>
-        </Card>
-      </Link>
+          <Heading size="4" style={{ color: headingColor }}>
+            {title}
+          </Heading>
+          <Text size="2" color="gray" className="line-clamp-4">
+            {description}
+          </Text>
+        </div>
+        <Flex 
+          align="center" 
+          gap="1" 
+          className="mt-6 font-semibold text-sm cursor-pointer hover:underline text-green-accent"
+        >
+          <ReaderIcon /> {linkText}
+        </Flex>
+      </Card>
     </ScrollReveal>
   );
 }

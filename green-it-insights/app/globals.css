@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "@radix-ui/themes/styles.css";
 
-@custom-variant dark (&:where(.dark, .dark *));
+@variant dark (&:where(.dark, .dark *));
 
 /* 
  * NOTE: The colors defined below are also available as TypeScript constants 
@@ -38,6 +38,10 @@
   --border-subtle: rgba(17, 47, 31, 0.15);
   --border-warm: rgba(61, 46, 43, 0.18);
   --shadow-subtle: 0 12px 30px rgba(17, 47, 31, 0.08);
+
+  /* Semantic tokens used by FilieresTooltip and EmissionsBarChart */
+  --color-text:       var(--foreground);
+  --color-text-muted: #5c6b60;
 
   /* Radix UI Overrides for Custom Grass (Dark Green) Palette */
   --grass-1: #f8faf8;
@@ -77,6 +81,9 @@
   --border-subtle: rgba(142, 110, 102, 0.24);
   --border-warm: rgba(251, 251, 249, 0.1);
   --shadow-subtle: 0 14px 34px rgba(0, 0, 0, 0.28);
+
+  /* Semantic tokens for dark mode */
+  --color-text-muted: #9fb0a4;
 
   /* Dark mode Radix overrides for grass scale (emerald/forest) */
   --grass-1: #080e0a;

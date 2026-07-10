@@ -1,0 +1,52 @@
+.emissions-chart {
+    position: relative;
+}
+
+.emissions-chart,
+.emissions-chart * {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.emissions-chart .recharts-wrapper,
+.emissions-chart .recharts-surface,
+.emissions-chart .recharts-layer,
+.emissions-chart .recharts-rectangle,
+.emissions-chart .recharts-responsive-container,
+.emissions-chart svg {
+    outline: none;
+}
+
+.emissions-chart .recharts-wrapper:focus,
+.emissions-chart .recharts-wrapper:focus-visible,
+.emissions-chart .recharts-surface:focus,
+.emissions-chart .recharts-surface:focus-visible,
+.emissions-chart .recharts-layer:focus,
+.emissions-chart .recharts-layer:focus-visible,
+.emissions-chart .recharts-rectangle:focus,
+.emissions-chart .recharts-rectangle:focus-visible,
+.emissions-chart .recharts-responsive-container:focus,
+.emissions-chart .recharts-responsive-container:focus-visible,
+.emissions-chart svg:focus,
+.emissions-chart svg:focus-visible,
+.emissions-chart *:focus,
+.emissions-chart *:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.emissions-chart .recharts-tooltip-cursor {
+    display: none !important;
+}
+
+.emissions-chart .recharts-cartesian-grid line {
+    stroke-linecap: round;
+}
+
+.emissions-chart .recharts-bar-rectangle {
+    cursor: pointer;
+}
+
+.emissions-chart .recharts-bar-rectangle:focus,
+.emissions-chart .recharts-bar-rectangle:focus-visible {
+    outline: none !important;
+}
