@@ -1,17 +1,23 @@
 "use client";
 
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import { Heading, Text, IconButton } from "@radix-ui/themes";
 import { Cross1Icon } from "@radix-ui/react-icons";
 import { COLORS } from "@/app/color.const";
 import { useTheme } from "@/app/theme-provider";
-import energyData from "@/data/energy-mix.json";
+import energyDataRaw from "@/public/data/emissions-par-pays-owid.json";
 import { FeatureCollection, Geometry } from "geojson";
+
+const energyData = energyDataRaw.countries;
 
 const SVG_WIDTH = 800;
 const SVG_HEIGHT = 600;
 const CLIP_HEIGHT = 550;
+
+interface EnergyMapProps {
+  theme?: "dark" | "light";
+}
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(false);
@@ -27,7 +33,7 @@ function useIsMobile(breakpoint = 768) {
   return isMobile;
 }
 
-export function EnergyMap() {
+export function EnergyMap({ theme }: EnergyMapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const [selectedCountry, setSelectedCountry] = useState(energyData[0]);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -35,7 +41,9 @@ export function EnergyMap() {
   const isMobile = useIsMobile();
   const { useDarkMode } = useTheme();
 
-  const ui = useDarkMode
+  const isDark = theme === "dark" || useDarkMode;
+
+  const ui = isDark
     ? {
         bg: COLORS.oled.black,
         surface: COLORS.oled.gray,
@@ -59,7 +67,7 @@ export function EnergyMap() {
         close: COLORS.brown.light,
       };
 
-  const intensityColors = useDarkMode
+  const intensityColors = isDark
     ? {
         low: COLORS.dark.grass[7],
         moderate: COLORS.dark.brown[7],
@@ -76,6 +84,7 @@ export function EnergyMap() {
       .then((res) => res.json())
       .then((data) => setGeoData(data));
   }, []);
+
   useEffect(() => {
     if (!geoData || !svgRef.current) return;
 
@@ -99,7 +108,8 @@ export function EnergyMap() {
       .append("path")
       .attr("d", pathGenerator as any)
       .attr("fill", (d) => {
-        const countryData = energyData.find((c) => c.id === d.id);
+        // Changement ici : on utilise isoCode au lieu de id
+        const countryData = energyData.find((c) => c.isoCode === d.id);
         if (!countryData) return ui.noData;
 
         if (countryData.carbonIntensity < 100) return intensityColors.low;
@@ -108,17 +118,18 @@ export function EnergyMap() {
       })
       .attr("stroke", ui.stroke)
       .attr("stroke-width", 0.5)
-      .style("cursor", (d) => energyData.find((c) => c.id === d.id) ? "pointer" : "default")
+      // Changement ici : isoCode au lieu de id
+      .style("cursor", (d) => energyData.find((c) => c.isoCode === d.id) ? "pointer" : "default")
       .on("click", (event, d) => {
         event.stopPropagation();
-        const countryData = energyData.find((c) => c.id === d.id);
+        const countryData = energyData.find((c) => c.isoCode === d.id);
         if (countryData) {
           setSelectedCountry(countryData);
           setIsDrawerOpen(true);
         }
       })
       .on("mouseover", function(event, d) {
-        if(energyData.find((c) => c.id === d.id)) {
+        if(energyData.find((c) => c.isoCode === d.id)) {
           d3.select(this).attr("opacity", 0.85);
         }
       })
@@ -126,14 +137,32 @@ export function EnergyMap() {
         d3.select(this).attr("opacity", 1);
       });
 
-    // Redessine la carte quand les données ou le thème changent.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [geoData, useDarkMode]);
+  }, [geoData, isDark, ui.noData, ui.stroke, intensityColors]);
 
+  // Agrégation des nouvelles données détaillées
+  const mix = selectedCountry.mix;
   const pieData = [
-    { name: "Renouvelable", value: selectedCountry.mix.renewable, color: COLORS.green.accent },
-    { name: "Nucléaire", value: selectedCountry.mix.nuclear, color: COLORS.green.light },
-    { name: "Fossile", value: selectedCountry.mix.fossil, color: COLORS.brown.dark },
+    { 
+      name: "Renouvelable", 
+      value: Number((mix.hydraulique + mix.eolien + mix.solaire).toFixed(1)), 
+      color: COLORS.green.accent 
+    },
+    { 
+      name: "Nucléaire", 
+      value: mix.nucleaire, 
+      color: COLORS.green.light 
+    },
+    { 
+      name: "Fossile", 
+      value: Number((mix.charbon + mix.gaz).toFixed(1)), 
+      color: COLORS.brown.dark 
+    },
+    {
+      name: "Autres",
+      value: mix.autres,
+      // Fallback color si "Autres" existe, on utilise la couleur de bordure ou de texte
+      color: ui.border 
+    }
   ].filter(d => d.value > 0);
 
   const getIntensityLabel = (intensity: number) => {
@@ -156,70 +185,20 @@ export function EnergyMap() {
     }
   };
 
-  // Styles du tiroir : panneau latéral sur desktop, bottom sheet sur mobile.
-  const drawerStyle: CSSProperties = isMobile
-    ? {
-        position: "absolute",
-        left: 0,
-        right: 0,
-        bottom: 0,
-        maxHeight: "65%",
-        backgroundColor: ui.bg,
-        borderTop: `1px solid ${ui.border}`,
-        borderTopLeftRadius: "16px",
-        borderTopRightRadius: "16px",
-        transform: isDrawerOpen ? "translateY(0)" : "translateY(100%)",
-        opacity: isDrawerOpen ? 1 : 0,
-        pointerEvents: isDrawerOpen ? "auto" : "none",
-        display: "flex",
-        flexDirection: "column",
-        transition: "all 300ms ease-in-out",
-        overflowY: "auto",
-        zIndex: 10,
-      }
-    : {
-        backgroundColor: ui.bg,
-        borderLeft: `1px solid ${ui.border}`,
-        width: isDrawerOpen ? "350px" : "0px",
-        opacity: isDrawerOpen ? 1 : 0,
-        pointerEvents: isDrawerOpen ? "auto" : "none",
-        display: "flex",
-        flexDirection: "column",
-        transition: "all 300ms ease-in-out",
-        overflowY: "auto",
-      };
-
   return (
     <div
       onClick={handleMapClick}
-      style={{
-        backgroundColor: ui.bg,
-        height: isMobile ? "70vh" : "100vh",
-        width: "100%",
-        overflow: "hidden",
-        display: "flex",
-        position: "relative",
-      }}
+      className={`relative flex w-full overflow-hidden ${isMobile ? "h-[70vh]" : "h-screen"}`}
+      style={{ backgroundColor: ui.bg }}
     >
       {/* Map Section */}
-      <div
-        style={{
-          flex: 1,
-          overflow: "hidden",
-          position: "relative"
-        }}
-      >
+      <div className="relative flex-1 overflow-hidden">
         <svg
           ref={svgRef}
           viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
           preserveAspectRatio="xMidYMid meet"
-          style={{
-            width: "100%",
-            height: "100%",
-            backgroundColor: ui.bg,
-            display: "block",
-            overflow: "hidden"
-          }}
+          className="block w-full h-full overflow-hidden"
+          style={{ backgroundColor: ui.bg }}
         >
           <defs>
             <clipPath id="mapClip">
@@ -230,67 +209,76 @@ export function EnergyMap() {
         </svg>
       </div>
 
-      {/* Info Drawer - panneau latéral (desktop) / bottom sheet (mobile) */}
+      {/* Info Drawer */}
       <div
         onClick={(e) => e.stopPropagation()}
-        style={drawerStyle}
+        className={`
+          flex flex-col overflow-y-auto transition-all duration-300 ease-in-out z-10
+          ${isMobile 
+            ? "absolute left-0 right-0 bottom-0 max-h-[65%] rounded-t-2xl border-t" 
+            : "border-l"
+          }
+        `}
+        style={{
+          backgroundColor: ui.bg,
+          borderColor: ui.border,
+          transform: isMobile ? (isDrawerOpen ? "translateY(0)" : "translateY(100%)") : "none",
+          width: !isMobile ? (isDrawerOpen ? "350px" : "0px") : "auto",
+          opacity: isDrawerOpen ? 1 : 0,
+          pointerEvents: isDrawerOpen ? "auto" : "none",
+        }}
       >
-        <div style={{ padding: "24px", flex: 1, display: "flex", flexDirection: "column", minHeight: 0 }}>
+        <div className="flex flex-col flex-1 p-6 min-h-0">
+          
           {/* Header */}
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
+          <div className="flex items-center justify-between mb-5">
             <Heading
               size="5"
               weight="bold"
-              style={{
-                color: ui.strong,
-                flex: 1,
-              }}
+              className="flex-1"
+              style={{ color: ui.strong }}
             >
-              {selectedCountry.name}
+              {/* Changement ici : utilisation de "country" au lieu de "name" */}
+              {selectedCountry.country}
             </Heading>
             <IconButton
               variant="ghost"
               onClick={() => setIsDrawerOpen(false)}
-              style={{ color: ui.close, width: "32px", height: "32px" }}
+              className="w-8 h-8 cursor-pointer"
+              style={{ color: ui.close }}
             >
               <Cross1Icon width="18" height="18" />
             </IconButton>
           </div>
 
           {/* Intensité Carbone */}
-          <div style={{ marginBottom: "24px" }}>
+          <div className="mb-6">
             <Text
               size="1"
               weight="bold"
-              style={{
-                color: ui.label,
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
-                marginBottom: "0.75rem",
-                display: "block",
-                fontSize: "0.75rem"
-              }}
+              className="block mb-3 uppercase tracking-wider text-xs"
+              style={{ color: ui.label }}
             >
               Intensité carbone
             </Text>
             <Heading
               size="4"
-              style={{
-                color: getIntensityColor(selectedCountry.carbonIntensity),
-                marginBottom: "0.5rem"
-              }}
+              className="mb-2"
+              style={{ color: getIntensityColor(selectedCountry.carbonIntensity) }}
             >
               {selectedCountry.carbonIntensity}
             </Heading>
             <Text
               size="1"
-              style={{ color: ui.text, fontSize: "0.875rem" }}
+              className="text-sm"
+              style={{ color: ui.text }}
             >
               gCO₂e/kWh
             </Text>
             <Text
               size="1"
-              style={{ color: ui.label, marginTop: "0.5rem" }}
+              className="block mt-2"
+              style={{ color: ui.label }}
             >
               {getIntensityLabel(selectedCountry.carbonIntensity)}
             </Text>
@@ -301,52 +289,42 @@ export function EnergyMap() {
             <Text
               size="1"
               weight="bold"
-              style={{
-                color: ui.label,
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
-                marginBottom: "1.25rem",
-                display: "block",
-                fontSize: "0.75rem"
-              }}
+              className="block mb-5 uppercase tracking-wider text-xs"
+              style={{ color: ui.label }}
             >
               Mix énergétique
             </Text>
 
             {/* Barres */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+            <div className="flex flex-col gap-3">
               {pieData.map((item, i) => (
                 <div key={i}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
+                  <div className="flex items-center justify-between mb-1.5">
                     <Text
                       size="1"
-                      style={{ color: ui.text, fontSize: "0.875rem" }}
+                      className="text-sm"
+                      style={{ color: ui.text }}
                     >
                       {item.name}
                     </Text>
                     <Text
                       size="1"
                       weight="bold"
-                      style={{ color: ui.strong, fontSize: "0.875rem" }}
+                      className="text-sm"
+                      style={{ color: ui.strong }}
                     >
                       {item.value}%
                     </Text>
                   </div>
                   <div
-                    style={{
-                      height: "5px",
-                      backgroundColor: ui.surface,
-                      borderRadius: "2.5px",
-                      overflow: "hidden"
-                    }}
+                    className="h-[5px] rounded-full overflow-hidden"
+                    style={{ backgroundColor: ui.surface }}
                   >
                     <div
+                      className="h-full opacity-90 transition-all duration-300 ease-out"
                       style={{
-                        height: "100%",
                         width: `${item.value}%`,
                         backgroundColor: item.color,
-                        opacity: 0.9,
-                        transition: "width 0.3s ease"
                       }}
                     />
                   </div>
@@ -354,6 +332,7 @@ export function EnergyMap() {
               ))}
             </div>
           </div>
+
         </div>
       </div>
     </div>
