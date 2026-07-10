@@ -69,6 +69,9 @@ export function Header() {
                   <DropdownMenu.Item className="cursor-pointer" asChild>
                     <Link href="/emissions_par_pays">Émissions par Pays</Link>
                   </DropdownMenu.Item>
+                  <DropdownMenu.Item className="cursor-pointer" asChild>
+                    <Link href="/consommation-energie-secteur">Énergie par Secteur</Link>
+                  </DropdownMenu.Item>
                 </DropdownMenu.Content>
               </DropdownMenu.Root>
             </Box>
@@ -142,6 +145,9 @@ export function Header() {
                   </DropdownMenu.Item>
                   <DropdownMenu.Item className="cursor-pointer" asChild>
                     <Link href="/emissions_par_pays">Émissions par Pays</Link>
+                  </DropdownMenu.Item>
+                  <DropdownMenu.Item className="cursor-pointer" asChild>
+                    <Link href="/consommation-energie-secteur">Énergie par Secteur</Link>
                   </DropdownMenu.Item>
                 </DropdownMenu.Content>
               </DropdownMenu.Root>

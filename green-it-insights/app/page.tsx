@@ -97,6 +97,14 @@ const ARTICLES = [
     description: "Analyse comparée des sources de production d'électricité : charbon, gaz, nucléaire, hydraulique, solaire et éolien. Quel est l'impact réel de chaque type d'énergie sur les émissions mondiales.",
     link: "/energie/production",
   },
+  {
+    category: "Secteurs",
+    badgeColor: "orange" as const,
+    type: "Dossier",
+    title: "Consommation d'énergie par secteur",
+    description: "Analyse comparée de la consommation énergétique mondiale du secteur numérique face aux autres grands secteurs économiques (transports, industrie, bâtiment).",
+    link: "/consommation-energie-secteur",
+  },
 ];
 
 export default function HomePage() {
