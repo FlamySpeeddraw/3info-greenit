@@ -4,7 +4,7 @@ import { TransportCarbonChart } from "@/components/transport/TransportCarbonChar
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata = {
-  title: "Transport des matériels IT — Green IT Insights. ",
+  title: "Transport des matériels IT — Green IT Insights",
   description:
     "Localisation des centres de production mondiaux et comparaison du coût carbone par mode de transport des équipements numériques.",
 };
@@ -63,7 +63,7 @@ export default function TransportPage() {
         {/* FOOTER SOURCE */}
         <Box className="pt-8 border-t border-brown-dark/10 dark:border-eco-white/5">
           <Text size="1" color="gray">
-            Sources : ADEME Base Carbone, Our World in Data — Données transport de fret 2023. By Ouzammad Mohamed
+            Sources : ADEME Base Carbone, Our World in Data — Données transport de fret 2023.
           </Text>
         </Box>
 
