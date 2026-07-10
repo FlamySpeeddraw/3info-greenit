@@ -1,4 +1,5 @@
 import { Producer } from "@/public/data/producers";
+import { Badge, Flex, Heading, Text } from "@radix-ui/themes";
 
 type ProducerDetailsProps = {
     producer: Producer | null;
@@ -8,50 +9,47 @@ export function ProducerDetails({ producer }: ProducerDetailsProps) {
     if (!producer) {
         return (
             <>
-                <h2 className="m-0">Survolez un pays</h2>
-                <p className="mt-4">
+                <Heading size="6" className="font-sans text-green-dark dark:text-eco-white">
+                    Survolez un pays
+                </Heading>
+                <Text size="2" color="gray">
                     Les pays en vert sont des producteurs importants.
-                </p>
+                </Text>
             </>
         );
     }
 
     return (
         <>
-            <p className="text-sm uppercase tracking-[0.18em] font-semibold">
+            <Text size="1" color="gray" className="uppercase tracking-wider font-bold block mb-1">
                 Pays producteur
-            </p>
+            </Text>
 
-            <h2 className="m-0 mt-2">{producer.label}</h2>
+            <Heading size="6" className="font-sans text-green-dark dark:text-eco-white">
+                {producer.label}
+            </Heading>
 
-            <span
-                className="mt-4 inline-flex rounded-full px-3 py-1 text-sm font-medium"
-                style={{
-                    backgroundColor: "var(--grass-3)",
-                    color: "var(--grass-11)",
-                    border: "1px solid var(--grass-5)",
-                }}
-            >
-                {producer.category}
-            </span>
+            <Badge color="grass">{producer.category}</Badge>
 
-            <p className="mt-6">
-                <strong>Ressource :</strong>
-                <br />
-                {producer.resource}
-            </p>
+            <Flex direction={'column'}>
+                <Text size="2" color="gray" className="mt-10">
+                    <strong>Ressource :</strong>
+                    <br />
+                    {producer.resource}
+                </Text>
 
-            <p>
-                <strong>Production :</strong>
-                <br />
-                {producer.productionLabel}
-            </p>
+                <Text size="2" color="gray" className="mt-10">
+                    <strong>Production :</strong>
+                    <br />
+                    {producer.productionLabel}
+                </Text>
 
-            <p>
-                <strong>Utilisation IT :</strong>
-                <br />
-                {producer.usage}
-            </p>
+                <Text size="2" color="gray" className="mt-10">
+                    <strong>Utilisation IT :</strong>
+                    <br />
+                    {producer.usage}
+                </Text>
+            </Flex>
         </>
     );
 }
