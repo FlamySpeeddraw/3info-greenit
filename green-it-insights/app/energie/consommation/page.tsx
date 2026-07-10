@@ -1,6 +1,6 @@
-import { Badge, Box, Card, Flex, Grid, Heading, Link, Section, Text } from "@radix-ui/themes";
+import { Badge, Box, Card, Container, Flex, Grid, Heading, Link, Section, Text } from "@radix-ui/themes";
 import EnergyBarChart from "@/components/energy/EnergyBarChart";
-import { energyConsumptionData } from "@/data/energie";
+import { energyConsumptionData } from "@/app/energie/consommation/energie";
 
 export default async function EnergyConsumptionPage() {
   const top15 = [...energyConsumptionData]
@@ -9,27 +9,49 @@ export default async function EnergyConsumptionPage() {
 
   return (
     <Section size="3">
-      <Flex direction="column" gap="6">
+      <Container size="4" className="px-4 py-12 sm:py-20">
+        <Flex direction="column" gap="6">
         <Box>
           <Flex direction="column" gap="3">
-            <Badge color="green" variant="soft" size="2">
-              Énergie mondiale
-            </Badge>
+            <Flex align="center" gap="4">
+              <Badge color="green" variant="soft" size="2">
+                Énergie mondiale
+              </Badge>
 
-            <Heading as="h1" size="8">
-              Consommation globale d&apos;énergie par pays
-            </Heading>
+              <Heading as="h1" size="8" style={{ margin: 0 }}>
+                Consommation globale d'énergie par pays
+              </Heading>
+            </Flex>
 
             <Text size="3" color="gray" style={{ maxWidth: 820 }}>
-              Cette page présente une lecture visuelle de la consommation primaire
-              d&apos;énergie par pays afin de mettre en évidence les écarts entre
-              territoires et leur lien avec l&apos;impact environnemental du numérique.
+              En tant que visiteur du site, je veux consulter une infographie sur la
+              consommation globale d'énergie par pays, afin de comprendre les
+              disparités énergétiques mondiales et leur lien avec l'impact
+              environnemental du numérique.
             </Text>
           </Flex>
         </Box>
 
-        <Grid columns={{ initial: "1", lg: "2" }} gap="6">
+        <Grid columns={{ initial: "1" }} gap="6">
+          
+
           <Card size="3">
+            <Flex direction="column" gap="4">
+              <Box>
+                <Heading as="h2" size="5">
+                  Top 15 des pays
+                </Heading>
+                <Text as="p" size="2" color="gray">
+                  Classement décroissant en consommation totale par pays (TWh/an).
+                </Text>
+              </Box>
+
+              <EnergyBarChart data={top15} showGrid={false} />
+            </Flex>
+          </Card>
+        </Grid>
+
+        <Card size="3">
             <Flex direction="column" gap="4">
               <Box>
                 <Heading as="h2" size="5">
@@ -54,27 +76,11 @@ export default async function EnergyConsumptionPage() {
                 }}
               >
                 <Text size="2" color="gray">
-                  Carte choroplèthe à intégrer ici selon ton composant cartographique final.
+                  Carte choroplèthe à intégrer ici quand elle sera faite.
                 </Text>
               </Box>
             </Flex>
           </Card>
-
-          <Card size="3">
-            <Flex direction="column" gap="4">
-              <Box>
-                <Heading as="h2" size="5">
-                  Top 15 des pays
-                </Heading>
-                <Text as="p" size="2" color="gray">
-                  Classement décroissant en TWh/an.
-                </Text>
-              </Box>
-
-              <EnergyBarChart data={top15} />
-            </Flex>
-          </Card>
-        </Grid>
 
         <Card size="3">
           <Flex direction="column" gap="3">
@@ -98,7 +104,8 @@ export default async function EnergyConsumptionPage() {
             </Link>
           </Text>
         </Box>
-      </Flex>
+        </Flex>
+      </Container>
     </Section>
   );
 }

@@ -1,0 +1,997 @@
+[
+  {
+    "country": "Afghanistan",
+    "year": "2021",
+    "energyPerCapita_kWh": 676.696
+  },
+  {
+    "country": "Albania",
+    "year": "2021",
+    "energyPerCapita_kWh": 14100.432
+  },
+  {
+    "country": "Algeria",
+    "year": "2021",
+    "energyPerCapita_kWh": 16017.653
+  },
+  {
+    "country": "Angola",
+    "year": "2021",
+    "energyPerCapita_kWh": 2791.332
+  },
+  {
+    "country": "Antigua and Barbuda",
+    "year": "2021",
+    "energyPerCapita_kWh": 29464.332
+  },
+  {
+    "country": "Argentina",
+    "year": "2021",
+    "energyPerCapita_kWh": 21168.963
+  },
+  {
+    "country": "Armenia",
+    "year": "2021",
+    "energyPerCapita_kWh": 17684.547
+  },
+  {
+    "country": "Aruba",
+    "year": "2021",
+    "energyPerCapita_kWh": 46090.324
+  },
+  {
+    "country": "Australia",
+    "year": "2021",
+    "energyPerCapita_kWh": 61304.32
+  },
+  {
+    "country": "Austria",
+    "year": "2021",
+    "energyPerCapita_kWh": 45508.77
+  },
+  {
+    "country": "Azerbaijan",
+    "year": "2021",
+    "energyPerCapita_kWh": 19155.395
+  },
+  {
+    "country": "Bahamas, The",
+    "year": "2021",
+    "energyPerCapita_kWh": 35447.574
+  },
+  {
+    "country": "Bahrain",
+    "year": "2021",
+    "energyPerCapita_kWh": 161111.203
+  },
+  {
+    "country": "Bangladesh",
+    "year": "2021",
+    "energyPerCapita_kWh": 2907.366
+  },
+  {
+    "country": "Barbados",
+    "year": "2021",
+    "energyPerCapita_kWh": 23025.998
+  },
+  {
+    "country": "Belarus",
+    "year": "2021",
+    "energyPerCapita_kWh": 31953.428
+  },
+  {
+    "country": "Belgium",
+    "year": "2021",
+    "energyPerCapita_kWh": 63587.875
+  },
+  {
+    "country": "Belize",
+    "year": "2021",
+    "energyPerCapita_kWh": 7437.571
+  },
+  {
+    "country": "Benin",
+    "year": "2021",
+    "energyPerCapita_kWh": 2484.818
+  },
+  {
+    "country": "Bermuda",
+    "year": "2021",
+    "energyPerCapita_kWh": 46490.223
+  },
+  {
+    "country": "Bhutan",
+    "year": "2021",
+    "energyPerCapita_kWh": 27785.357
+  },
+  {
+    "country": "Bolivia",
+    "year": "2021",
+    "energyPerCapita_kWh": 7062.148
+  },
+  {
+    "country": "Bosnia and Herzegovina",
+    "year": "2021",
+    "energyPerCapita_kWh": 23013.498
+  },
+  {
+    "country": "Botswana",
+    "year": "2021",
+    "energyPerCapita_kWh": 9385.398
+  },
+  {
+    "country": "Brazil",
+    "year": "2021",
+    "energyPerCapita_kWh": 16659.977
+  },
+  {
+    "country": "British Virgin Islands",
+    "year": "2021",
+    "energyPerCapita_kWh": 20316.449
+  },
+  {
+    "country": "Brunei Darussalam",
+    "year": "2021",
+    "energyPerCapita_kWh": 103268.102
+  },
+  {
+    "country": "Bulgaria",
+    "year": "2021",
+    "energyPerCapita_kWh": 32224.797
+  },
+  {
+    "country": "Burkina Faso",
+    "year": "2021",
+    "energyPerCapita_kWh": 904.726
+  },
+  {
+    "country": "Burundi",
+    "year": "2021",
+    "energyPerCapita_kWh": 293.889
+  },
+  {
+    "country": "Cambodia",
+    "year": "2021",
+    "energyPerCapita_kWh": 4035.081
+  },
+  {
+    "country": "Cameroon",
+    "year": "2021",
+    "energyPerCapita_kWh": 1593.62
+  },
+  {
+    "country": "Canada",
+    "year": "2021",
+    "energyPerCapita_kWh": 101349.102
+  },
+  {
+    "country": "Cabo Verde",
+    "year": "2021",
+    "energyPerCapita_kWh": 7249.497
+  },
+  {
+    "country": "Central African Republic",
+    "year": "2021",
+    "energyPerCapita_kWh": 286.132
+  },
+  {
+    "country": "Chad",
+    "year": "2021",
+    "energyPerCapita_kWh": 361.161
+  },
+  {
+    "country": "Chile",
+    "year": "2021",
+    "energyPerCapita_kWh": 24462.756
+  },
+  {
+    "country": "China",
+    "year": "2021",
+    "energyPerCapita_kWh": 30750.547
+  },
+  {
+    "country": "Colombia",
+    "year": "2021",
+    "energyPerCapita_kWh": 11156.515
+  },
+  {
+    "country": "Comoros",
+    "year": "2021",
+    "energyPerCapita_kWh": 1633.784
+  },
+  {
+    "country": "Congo, Rep.",
+    "year": "2021",
+    "energyPerCapita_kWh": 2348.011
+  },
+  {
+    "country": "Costa Rica",
+    "year": "2021",
+    "energyPerCapita_kWh": 11957.598
+  },
+  {
+    "country": "Cote d'Ivoire",
+    "year": "2021",
+    "energyPerCapita_kWh": 2370.596
+  },
+  {
+    "country": "Croatia",
+    "year": "2021",
+    "energyPerCapita_kWh": 24213.969
+  },
+  {
+    "country": "Cuba",
+    "year": "2021",
+    "energyPerCapita_kWh": 9229.538
+  },
+  {
+    "country": "Cyprus",
+    "year": "2021",
+    "energyPerCapita_kWh": 23985.012
+  },
+  {
+    "country": "Czechia",
+    "year": "2021",
+    "energyPerCapita_kWh": 44374.195
+  },
+  {
+    "country": "Congo, Dem. Rep.",
+    "year": "2021",
+    "energyPerCapita_kWh": 410.887
+  },
+  {
+    "country": "Denmark",
+    "year": "2021",
+    "energyPerCapita_kWh": 32358.58
+  },
+  {
+    "country": "Djibouti",
+    "year": "2021",
+    "energyPerCapita_kWh": 2785.072
+  },
+  {
+    "country": "Dominica",
+    "year": "2021",
+    "energyPerCapita_kWh": 10547.773
+  },
+  {
+    "country": "Dominican Republic",
+    "year": "2021",
+    "energyPerCapita_kWh": 9987.583
+  },
+  {
+    "country": "Timor-Leste",
+    "year": "2021",
+    "energyPerCapita_kWh": 1615.498
+  },
+  {
+    "country": "Ecuador",
+    "year": "2021",
+    "energyPerCapita_kWh": 11945.164
+  },
+  {
+    "country": "Egypt, Arab Rep.",
+    "year": "2021",
+    "energyPerCapita_kWh": 9689.934
+  },
+  {
+    "country": "El Salvador",
+    "year": "2021",
+    "energyPerCapita_kWh": 7076.433
+  },
+  {
+    "country": "Equatorial Guinea",
+    "year": "2021",
+    "energyPerCapita_kWh": 12399.339
+  },
+  {
+    "country": "Eritrea",
+    "year": "2021",
+    "energyPerCapita_kWh": 914.495
+  },
+  {
+    "country": "Estonia",
+    "year": "2021",
+    "energyPerCapita_kWh": 46211.348
+  },
+  {
+    "country": "Eswatini",
+    "year": "2021",
+    "energyPerCapita_kWh": 5981.112
+  },
+  {
+    "country": "Ethiopia",
+    "year": "2021",
+    "energyPerCapita_kWh": 871.584
+  },
+  {
+    "country": "Faroe Islands",
+    "year": "2021",
+    "energyPerCapita_kWh": 70956.359
+  },
+  {
+    "country": "Fiji",
+    "year": "2021",
+    "energyPerCapita_kWh": 9222.848
+  },
+  {
+    "country": "Finland",
+    "year": "2021",
+    "energyPerCapita_kWh": 57919.223
+  },
+  {
+    "country": "France",
+    "year": "2021",
+    "energyPerCapita_kWh": 40191.641
+  },
+  {
+    "country": "French Polynesia",
+    "year": "2021",
+    "energyPerCapita_kWh": 15242.301
+  },
+  {
+    "country": "Gabon",
+    "year": "2021",
+    "energyPerCapita_kWh": 8009.644
+  },
+  {
+    "country": "Gambia, The",
+    "year": "2021",
+    "energyPerCapita_kWh": 931.273
+  },
+  {
+    "country": "Georgia",
+    "year": "2021",
+    "energyPerCapita_kWh": 20834.768
+  },
+  {
+    "country": "Germany",
+    "year": "2021",
+    "energyPerCapita_kWh": 42496.609
+  },
+  {
+    "country": "Ghana",
+    "year": "2021",
+    "energyPerCapita_kWh": 3483.363
+  },
+  {
+    "country": "Greece",
+    "year": "2021",
+    "energyPerCapita_kWh": 28963.67
+  },
+  {
+    "country": "Greenland",
+    "year": "2021",
+    "energyPerCapita_kWh": 63520.266
+  },
+  {
+    "country": "Grenada",
+    "year": "2021",
+    "energyPerCapita_kWh": 9432.062
+  },
+  {
+    "country": "Guatemala",
+    "year": "2021",
+    "energyPerCapita_kWh": 5712.118
+  },
+  {
+    "country": "Guinea",
+    "year": "2021",
+    "energyPerCapita_kWh": 1281.525
+  },
+  {
+    "country": "Guinea-Bissau",
+    "year": "2021",
+    "energyPerCapita_kWh": 677.328
+  },
+  {
+    "country": "Guyana",
+    "year": "2021",
+    "energyPerCapita_kWh": 13690.034
+  },
+  {
+    "country": "Haiti",
+    "year": "2021",
+    "energyPerCapita_kWh": 1030.881
+  },
+  {
+    "country": "Honduras",
+    "year": "2021",
+    "energyPerCapita_kWh": 5086.934
+  },
+  {
+    "country": "Hong Kong SAR, China",
+    "year": "2021",
+    "energyPerCapita_kWh": 32504.035
+  },
+  {
+    "country": "Hungary",
+    "year": "2021",
+    "energyPerCapita_kWh": 29244.559
+  },
+  {
+    "country": "Iceland",
+    "year": "2021",
+    "energyPerCapita_kWh": 163754.672
+  },
+  {
+    "country": "India",
+    "year": "2021",
+    "energyPerCapita_kWh": 6809.693
+  },
+  {
+    "country": "Indonesia",
+    "year": "2021",
+    "energyPerCapita_kWh": 8087.771
+  },
+  {
+    "country": "Iran, Islamic Rep.",
+    "year": "2021",
+    "energyPerCapita_kWh": 37783.531
+  },
+  {
+    "country": "Iraq",
+    "year": "2021",
+    "energyPerCapita_kWh": 13615.412
+  },
+  {
+    "country": "Ireland",
+    "year": "2021",
+    "energyPerCapita_kWh": 35986.184
+  },
+  {
+    "country": "Israel",
+    "year": "2021",
+    "energyPerCapita_kWh": 32813.754
+  },
+  {
+    "country": "Italy",
+    "year": "2021",
+    "energyPerCapita_kWh": 29854.949
+  },
+  {
+    "country": "Jamaica",
+    "year": "2021",
+    "energyPerCapita_kWh": 12235.784
+  },
+  {
+    "country": "Japan",
+    "year": "2021",
+    "energyPerCapita_kWh": 40425.16
+  },
+  {
+    "country": "Jordan",
+    "year": "2021",
+    "energyPerCapita_kWh": 9183.148
+  },
+  {
+    "country": "Kazakhstan",
+    "year": "2021",
+    "energyPerCapita_kWh": 42831.074
+  },
+  {
+    "country": "Kenya",
+    "year": "2021",
+    "energyPerCapita_kWh": 1952.694
+  },
+  {
+    "country": "Kiribati",
+    "year": "2021",
+    "energyPerCapita_kWh": 2446.698
+  },
+  {
+    "country": "Kosovo",
+    "year": "2021",
+    "energyPerCapita_kWh": 16776.646
+  },
+  {
+    "country": "Kuwait",
+    "year": "2021",
+    "energyPerCapita_kWh": 99797.43
+  },
+  {
+    "country": "Kyrgyz Republic",
+    "year": "2021",
+    "energyPerCapita_kWh": 9274.61
+  },
+  {
+    "country": "Lao PDR",
+    "year": "2021",
+    "energyPerCapita_kWh": 18847.086
+  },
+  {
+    "country": "Latvia",
+    "year": "2021",
+    "energyPerCapita_kWh": 22746.469
+  },
+  {
+    "country": "Lebanon",
+    "year": "2021",
+    "energyPerCapita_kWh": 18831.662
+  },
+  {
+    "country": "Lesotho",
+    "year": "2021",
+    "energyPerCapita_kWh": 2132.814
+  },
+  {
+    "country": "Liberia",
+    "year": "2021",
+    "energyPerCapita_kWh": 1064.616
+  },
+  {
+    "country": "Libya",
+    "year": "2021",
+    "energyPerCapita_kWh": 28270.334
+  },
+  {
+    "country": "Lithuania",
+    "year": "2021",
+    "energyPerCapita_kWh": 25173.395
+  },
+  {
+    "country": "Luxembourg",
+    "year": "2021",
+    "energyPerCapita_kWh": 67594.57
+  },
+  {
+    "country": "Macao SAR, China",
+    "year": "2021",
+    "energyPerCapita_kWh": 21399.566
+  },
+  {
+    "country": "Madagascar",
+    "year": "2021",
+    "energyPerCapita_kWh": 507.644
+  },
+  {
+    "country": "Malawi",
+    "year": "2021",
+    "energyPerCapita_kWh": 464.983
+  },
+  {
+    "country": "Malaysia",
+    "year": "2021",
+    "energyPerCapita_kWh": 37131.539
+  },
+  {
+    "country": "Maldives",
+    "year": "2021",
+    "energyPerCapita_kWh": 17669.365
+  },
+  {
+    "country": "Mali",
+    "year": "2021",
+    "energyPerCapita_kWh": 1168.567
+  },
+  {
+    "country": "Malta",
+    "year": "2021",
+    "energyPerCapita_kWh": 74324.461
+  },
+  {
+    "country": "Mauritania",
+    "year": "2021",
+    "energyPerCapita_kWh": 3988.532
+  },
+  {
+    "country": "Mauritius",
+    "year": "2021",
+    "energyPerCapita_kWh": 19724.719
+  },
+  {
+    "country": "Mexico",
+    "year": "2021",
+    "energyPerCapita_kWh": 17172.896
+  },
+  {
+    "country": "Moldova",
+    "year": "2021",
+    "energyPerCapita_kWh": 16006.373
+  },
+  {
+    "country": "Mongolia",
+    "year": "2021",
+    "energyPerCapita_kWh": 22407.674
+  },
+  {
+    "country": "Montenegro",
+    "year": "2021",
+    "energyPerCapita_kWh": 18940.291
+  },
+  {
+    "country": "Morocco",
+    "year": "2021",
+    "energyPerCapita_kWh": 7256.722
+  },
+  {
+    "country": "Mozambique",
+    "year": "2021",
+    "energyPerCapita_kWh": 2241.226
+  },
+  {
+    "country": "Myanmar",
+    "year": "2021",
+    "energyPerCapita_kWh": 3064.848
+  },
+  {
+    "country": "Namibia",
+    "year": "2021",
+    "energyPerCapita_kWh": 8748.273
+  },
+  {
+    "country": "Nauru",
+    "year": "2021",
+    "energyPerCapita_kWh": 21609.617
+  },
+  {
+    "country": "Nepal",
+    "year": "2021",
+    "energyPerCapita_kWh": 1607.635
+  },
+  {
+    "country": "Netherlands",
+    "year": "2021",
+    "energyPerCapita_kWh": 57972.379
+  },
+  {
+    "country": "New Caledonia",
+    "year": "2021",
+    "energyPerCapita_kWh": 70000.125
+  },
+  {
+    "country": "New Zealand",
+    "year": "2021",
+    "energyPerCapita_kWh": 45918.477
+  },
+  {
+    "country": "Nicaragua",
+    "year": "2021",
+    "energyPerCapita_kWh": 4265.271
+  },
+  {
+    "country": "Niger",
+    "year": "2021",
+    "energyPerCapita_kWh": 409.757
+  },
+  {
+    "country": "Nigeria",
+    "year": "2021",
+    "energyPerCapita_kWh": 2547.954
+  },
+  {
+    "country": "Korea, Dem. People's Rep.",
+    "year": "2021",
+    "energyPerCapita_kWh": 3833.954
+  },
+  {
+    "country": "North Macedonia",
+    "year": "2021",
+    "energyPerCapita_kWh": 13786.646
+  },
+  {
+    "country": "Norway",
+    "year": "2021",
+    "energyPerCapita_kWh": 105215.008
+  },
+  {
+    "country": "Oman",
+    "year": "2021",
+    "energyPerCapita_kWh": 87023.781
+  },
+  {
+    "country": "Pakistan",
+    "year": "2021",
+    "energyPerCapita_kWh": 4683.584
+  },
+  {
+    "country": "West Bank and Gaza",
+    "year": "2021",
+    "energyPerCapita_kWh": 3999.195
+  },
+  {
+    "country": "Panama",
+    "year": "2021",
+    "energyPerCapita_kWh": 27067.068
+  },
+  {
+    "country": "Papua New Guinea",
+    "year": "2021",
+    "energyPerCapita_kWh": 2123.498
+  },
+  {
+    "country": "Paraguay",
+    "year": "2021",
+    "energyPerCapita_kWh": 15782.273
+  },
+  {
+    "country": "Peru",
+    "year": "2021",
+    "energyPerCapita_kWh": 9710.914
+  },
+  {
+    "country": "Philippines",
+    "year": "2021",
+    "energyPerCapita_kWh": 4790.206
+  },
+  {
+    "country": "Poland",
+    "year": "2021",
+    "energyPerCapita_kWh": 31971.576
+  },
+  {
+    "country": "Portugal",
+    "year": "2021",
+    "energyPerCapita_kWh": 25897.682
+  },
+  {
+    "country": "Qatar",
+    "year": "2021",
+    "energyPerCapita_kWh": 201562.766
+  },
+  {
+    "country": "Romania",
+    "year": "2021",
+    "energyPerCapita_kWh": 20177.553
+  },
+  {
+    "country": "Russian Federation",
+    "year": "2021",
+    "energyPerCapita_kWh": 57444.508
+  },
+  {
+    "country": "Rwanda",
+    "year": "2021",
+    "energyPerCapita_kWh": 471.355
+  },
+  {
+    "country": "St. Kitts and Nevis",
+    "year": "2021",
+    "energyPerCapita_kWh": 20900.703
+  },
+  {
+    "country": "St. Lucia",
+    "year": "2021",
+    "energyPerCapita_kWh": 13599.725
+  },
+  {
+    "country": "St. Vincent and the Grenadines",
+    "year": "2021",
+    "energyPerCapita_kWh": 8245.438
+  },
+  {
+    "country": "Samoa",
+    "year": "2021",
+    "energyPerCapita_kWh": 7302.089
+  },
+  {
+    "country": "Sao Tome and Principe",
+    "year": "2021",
+    "energyPerCapita_kWh": 3310.244
+  },
+  {
+    "country": "Saudi Arabia",
+    "year": "2021",
+    "energyPerCapita_kWh": 82945.312
+  },
+  {
+    "country": "Senegal",
+    "year": "2021",
+    "energyPerCapita_kWh": 2505.209
+  },
+  {
+    "country": "Serbia",
+    "year": "2021",
+    "energyPerCapita_kWh": 27640.852
+  },
+  {
+    "country": "Seychelles",
+    "year": "2021",
+    "energyPerCapita_kWh": 45933.664
+  },
+  {
+    "country": "Sierra Leone",
+    "year": "2021",
+    "energyPerCapita_kWh": 492.598
+  },
+  {
+    "country": "Singapore",
+    "year": "2021",
+    "energyPerCapita_kWh": 153291.406
+  },
+  {
+    "country": "Slovak Republic",
+    "year": "2021",
+    "energyPerCapita_kWh": 35836.406
+  },
+  {
+    "country": "Slovenia",
+    "year": "2021",
+    "energyPerCapita_kWh": 36133.637
+  },
+  {
+    "country": "Solomon Islands",
+    "year": "2021",
+    "energyPerCapita_kWh": 1892.131
+  },
+  {
+    "country": "Somalia",
+    "year": "2021",
+    "energyPerCapita_kWh": 217.41
+  },
+  {
+    "country": "South Africa",
+    "year": "2021",
+    "energyPerCapita_kWh": 23674.678
+  },
+  {
+    "country": "Korea, Rep.",
+    "year": "2021",
+    "energyPerCapita_kWh": 67653.844
+  },
+  {
+    "country": "South Sudan",
+    "year": "2021",
+    "energyPerCapita_kWh": 731.989
+  },
+  {
+    "country": "Spain",
+    "year": "2021",
+    "energyPerCapita_kWh": 32225.066
+  },
+  {
+    "country": "Sri Lanka",
+    "year": "2021",
+    "energyPerCapita_kWh": 5035.38
+  },
+  {
+    "country": "Sudan",
+    "year": "2021",
+    "energyPerCapita_kWh": 2317.393
+  },
+  {
+    "country": "Suriname",
+    "year": "2021",
+    "energyPerCapita_kWh": 20284.996
+  },
+  {
+    "country": "Sweden",
+    "year": "2021",
+    "energyPerCapita_kWh": 60540.156
+  },
+  {
+    "country": "Switzerland",
+    "year": "2021",
+    "energyPerCapita_kWh": 34296.211
+  },
+  {
+    "country": "Syrian Arab Republic",
+    "year": "2021",
+    "energyPerCapita_kWh": 5507.217
+  },
+  {
+    "country": "Taiwan, China",
+    "year": "2021",
+    "energyPerCapita_kWh": 57541.781
+  },
+  {
+    "country": "Tajikistan",
+    "year": "2021",
+    "energyPerCapita_kWh": 7674.914
+  },
+  {
+    "country": "Tanzania",
+    "year": "2021",
+    "energyPerCapita_kWh": 907.404
+  },
+  {
+    "country": "Thailand",
+    "year": "2021",
+    "energyPerCapita_kWh": 19368.557
+  },
+  {
+    "country": "Togo",
+    "year": "2021",
+    "energyPerCapita_kWh": 1115.704
+  },
+  {
+    "country": "Tonga",
+    "year": "2021",
+    "energyPerCapita_kWh": 6698.594
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "year": "2021",
+    "energyPerCapita_kWh": 113474.203
+  },
+  {
+    "country": "Tunisia",
+    "year": "2021",
+    "energyPerCapita_kWh": 9524.104
+  },
+  {
+    "country": "Turkiye",
+    "year": "2021",
+    "energyPerCapita_kWh": 23015.531
+  },
+  {
+    "country": "Turkmenistan",
+    "year": "2021",
+    "energyPerCapita_kWh": 69868.859
+  },
+  {
+    "country": "Turks and Caicos Islands",
+    "year": "2021",
+    "energyPerCapita_kWh": 19615.283
+  },
+  {
+    "country": "Tuvalu",
+    "year": "2021",
+    "energyPerCapita_kWh": 0
+  },
+  {
+    "country": "Uganda",
+    "year": "2021",
+    "energyPerCapita_kWh": 766.846
+  },
+  {
+    "country": "Ukraine",
+    "year": "2021",
+    "energyPerCapita_kWh": 21472.234
+  },
+  {
+    "country": "United Arab Emirates",
+    "year": "2021",
+    "energyPerCapita_kWh": 133080.094
+  },
+  {
+    "country": "United Kingdom",
+    "year": "2021",
+    "energyPerCapita_kWh": 29591.666
+  },
+  {
+    "country": "United States",
+    "year": "2021",
+    "energyPerCapita_kWh": 77023.773
+  },
+  {
+    "country": "Uruguay",
+    "year": "2021",
+    "energyPerCapita_kWh": 18316.926
+  },
+  {
+    "country": "Uzbekistan",
+    "year": "2021",
+    "energyPerCapita_kWh": 16600.65
+  },
+  {
+    "country": "Vanuatu",
+    "year": "2021",
+    "energyPerCapita_kWh": 2957.444
+  },
+  {
+    "country": "Venezuela, RB",
+    "year": "2021",
+    "energyPerCapita_kWh": 21421.594
+  },
+  {
+    "country": "Viet Nam",
+    "year": "2021",
+    "energyPerCapita_kWh": 12399.49
+  },
+  {
+    "country": "Yemen, Rep.",
+    "year": "2021",
+    "energyPerCapita_kWh": 1080.039
+  },
+  {
+    "country": "Zambia",
+    "year": "2021",
+    "energyPerCapita_kWh": 3418.863
+  },
+  {
+    "country": "Zimbabwe",
+    "year": "2021",
+    "energyPerCapita_kWh": 2635.154
+  }
+]

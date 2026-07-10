@@ -52,6 +52,8 @@
   --grass-10: #224D35; /* Hover Green */
   --grass-11: #112F1F;
   --grass-12: #08170F;
+  --accent-red: #dc2626;
+  --accent-red-light: #fca5a5;
 
   /* Radix UI Overrides for Custom Brown Palette */
   --brown-1: #faf9f9;

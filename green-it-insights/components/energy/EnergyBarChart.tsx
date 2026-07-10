@@ -5,6 +5,7 @@ import {
   Bar,
   BarChart,
   CartesianGrid,
+  Cell,
   LabelList,
   ResponsiveContainer,
   Tooltip,
@@ -19,30 +20,53 @@ export interface EnergyCountryData {
   perCapitaMWh: number;
 }
 
+const BAR_COLORS = ["var(--grass-9)", "var(--accent-red)"];
+const LABEL_COLORS = ["var(--grass-8)", "var(--accent-red)"];
+
 export default function EnergyBarChart({
   data,
+  showGrid,
 }: {
   data: EnergyCountryData[];
+  showGrid?: boolean;
 }) {
+  const showGridValue = showGrid ?? true;
   return (
     <Box style={{ width: "100%", height: 520 }}>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={data}
           layout="vertical"
-          margin={{ top: 8, right: 24, left: 12, bottom: 8 }}
+          margin={{ top: 8, right: 80, left: 12, bottom: 32 }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
+          {showGrid && <CartesianGrid strokeDasharray="3 3" />}
           <XAxis
             type="number"
+            label={{ value: "Consommation totale (TWh/an)", position: "bottom", offset: 16 }}
             tickFormatter={(value) => `${Number(value).toLocaleString("fr-FR")}`}
           />
           <YAxis
             type="category"
             dataKey="country"
-            width={120}
+            width={160}
             tickLine={false}
             axisLine={false}
+            tick={({ x, y, payload, index }) => {
+              const xValue = Number(x ?? 0);
+              const yValue = Number(y ?? 0);
+
+              return (
+                <text
+                  x={xValue - 10}
+                  y={yValue + 4}
+                  textAnchor="end"
+                  fill={LABEL_COLORS[index % LABEL_COLORS.length]}
+                  style={{ fontSize: 12 }}
+                >
+                  {payload.value}
+                </text>
+              );
+            }}
           />
           <Tooltip
             content={({ active, payload, label }) => {
@@ -73,11 +97,20 @@ export default function EnergyBarChart({
               );
             }}
           />
-          <Bar dataKey="energyTWh" radius={[0, 8, 8, 0]} fill="var(--green-9)">
+          <Bar dataKey="energyTWh" radius={[0, 8, 8, 0]} fill="var(--grass-9)">
+            {data.map((entry, index) => (
+              <Cell key={`cell-${entry.iso3}-${index}`} fill={BAR_COLORS[index % BAR_COLORS.length]} />
+            ))}
             <LabelList
               dataKey="energyTWh"
               position="right"
-              formatter={(value: number) => value.toLocaleString("fr-FR")}
+              formatter={(value: any) => {
+                if (typeof value === "number") {
+                  return value.toLocaleString("fr-FR");
+                }
+
+                return String(value ?? "");
+              }}
             />
           </Bar>
         </BarChart>
