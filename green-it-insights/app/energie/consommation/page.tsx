@@ -1,5 +1,6 @@
 import { Badge, Box, Card, Container, Flex, Grid, Heading, Link, Section, Text } from "@radix-ui/themes";
 import EnergyBarChart from "@/components/energy/EnergyBarChart";
+import ChoroplethMap from "@/app/energie/consommation/ChoroplethMap";
 import { energyConsumptionData } from "@/app/energie/consommation/energie";
 
 export default async function EnergyConsumptionPage() {
@@ -62,23 +63,7 @@ export default async function EnergyConsumptionPage() {
                 </Text>
               </Box>
 
-              <Box
-                style={{
-                  minHeight: 420,
-                  borderRadius: 12,
-                  background:
-                    "linear-gradient(180deg, var(--gray-2) 0%, var(--gray-1) 100%)",
-                  border: "1px solid var(--gray-6)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: 24,
-                }}
-              >
-                <Text size="2" color="gray">
-                  Carte choroplèthe à intégrer ici quand elle sera faite.
-                </Text>
-              </Box>
+              <ChoroplethMap data={energyConsumptionData} />
             </Flex>
           </Card>
 
