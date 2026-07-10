@@ -10,7 +10,7 @@ export default function ConsommationEnergiePage() {
       <main>
 
         <Heading size="8" mt="4">
-          Consommation globale d'energie par secteur activité
+          Consommation globale d&apos;energie par secteur activité
         </Heading>
 
         <Box mt="8">

@@ -53,7 +53,7 @@ export default function SecteurExplications() {
     <Box mt="8">
 
       <Heading size="6">
-        Pourquoi chaque secteur consomme de l'énergie ?
+        Pourquoi chaque secteur consomme de l&apos;énergie ?
       </Heading>
 
 

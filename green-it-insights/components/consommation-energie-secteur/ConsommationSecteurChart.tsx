@@ -42,11 +42,11 @@ export default function ConsommationSecteurChart() {
       <Box p="4">
 
         <Heading size="6">
-          Répartition mondiale de la consommation d'énergie
+          Répartition mondiale de la consommation d&apos;énergie
         </Heading>
 
         <Text size="2">
-          Répartition estimée par secteur d'activité.
+          Répartition estimée par secteur d&apos;activité.
         </Text>
 
 
