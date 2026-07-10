@@ -1,7 +1,8 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import { Container, Box, Heading, Text, Flex, Grid, Badge, Button } from "@radix-ui/themes";
 import { BarChartIcon } from "@radix-ui/react-icons";
-import { Header } from "@/components/Header";
 import { MetricCard } from "@/components/MetricCard";
 import { ArticleCard } from "@/components/ArticleCard";
 import { DeviceSimulator } from "@/components/DeviceSimulator";
@@ -81,6 +82,14 @@ const ARTICLES = [
     link: "/materiels/fin-de-vie",
   },
   {
+    category: "Émissions",
+    badgeColor: "blue" as const,
+    type: "Dossier",
+    title: "Émissions par pays",
+    description: "Calculez l'impact du mix électrique national d'hébergement sur vos serveurs cloud. Comparez les émissions carbone de vos serveurs selon leur localisation géographique.",
+    link: "/emissions_par_pays",
+  },
+  {
     category: "Production d'Énergie",
     badgeColor: "amber" as const,
     type: "Dossier",
@@ -91,13 +100,18 @@ const ARTICLES = [
 ];
 
 export default function HomePage() {
+  const [displayedArticles, setDisplayedArticles] = useState<typeof ARTICLES>([]);
+
+  useEffect(() => {
+    // Shuffle the array and take the first 3
+    const shuffled = [...ARTICLES].sort(() => 0.5 - Math.random());
+    setDisplayedArticles(shuffled.slice(0, 3));
+  }, []);
+
   return (
     <div 
       className="flex-1 min-h-screen bg-eco-white dark:bg-oled-black text-green-dark dark:text-eco-white transition-colors duration-500 overflow-x-hidden"
     >
-      {/* Client Header component with dynamic Theme Toggle */}
-      <Header />
-
       <Container size="4" className="px-4 py-12 sm:py-20">
         {/* HERO SECTION */}
         <section className="mb-20 text-center sm:text-left">
@@ -182,8 +196,8 @@ export default function HomePage() {
             </Text>
           </ScrollReveal>
 
-          <Grid columns={{ initial: "1", sm: "2", md: "3", lg: "4" }} gap="6">
-            {ARTICLES.map((article) => (
+          <Grid columns={{ initial: "1", sm: "2", md: "3" }} gap="6">
+            {displayedArticles.map((article) => (
               <ArticleCard 
                 key={article.title}
                 category={article.category}
@@ -216,13 +230,6 @@ export default function HomePage() {
 
         {/* NEWSLETTER SECTION (Client component form) */}
         <NewsletterSection />
-
-        {/* Footer */}
-        <footer className="pt-8 border-t text-center border-brown-dark/10 dark:border-eco-white/5">
-          <Text size="1" color="gray">
-            Green IT Insights &copy; {new Date().getFullYear()} — Média éco-conçu. Moins de 0,1g CO2 par visite en mode sombre OLED.
-          </Text>
-        </footer>
       </Container>
     </div>
   );
