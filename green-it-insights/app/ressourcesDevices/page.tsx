@@ -1,7 +1,20 @@
+import type { Metadata } from 'next';
 import SectionCarte from './components/SectionCarte';
 import { Container } from '@radix-ui/themes';
 import Title from './components/Title';
 import Sources from './components/Sources';
+
+export const metadata: Metadata = {
+    title: 'Production IT : ressources et matériaux',
+    description:
+        "D'où viennent les métaux et matériaux des équipements numériques ? Carte des pays producteurs et enjeux d'approvisionnement de la fabrication IT.",
+    openGraph: {
+        title: 'Production IT : ressources et matériaux',
+        description:
+            "D'où viennent les métaux et matériaux des équipements numériques : carte des pays producteurs.",
+        type: 'article',
+    },
+};
 
 const page = () => {
     return (

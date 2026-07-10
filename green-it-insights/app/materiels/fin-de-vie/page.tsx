@@ -11,7 +11,7 @@ import { CompareBars } from "@/components/viz/CompareBars";
 import { keyFigures, sources } from "./data";
 
 const PAGE_TITLE =
-  "Fin de vie & recyclage des produits IT | Green IT Insights";
+  "Fin de vie & recyclage des produits IT";
 const PAGE_DESCRIPTION =
   "Combien de déchets électroniques produit-on, et quelle part est réellement recyclée ? Volume mondial, trajectoire 2030, disparités régionales et métaux gaspillés.";
 

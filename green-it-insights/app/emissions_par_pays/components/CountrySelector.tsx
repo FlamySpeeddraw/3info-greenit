@@ -41,7 +41,7 @@ export function CountrySelector({
           color="brown"
           className="form-label"
         >
-          Pays selectionne
+          Pays sélectionné
         </Text>
         <TextField.Root
           id="country-search"
@@ -98,7 +98,7 @@ export function CountrySelector({
 
         <Box className="muted-card metric-panel">
           <Text as="p" size="2" color="brown">
-            Intensite carbone
+            Intensité carbone
           </Text>
           <Flex align="baseline" gap="2" className="metric-row">
             <Text size="8" weight="bold">

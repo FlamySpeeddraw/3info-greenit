@@ -37,10 +37,10 @@ export function EmissionsSimulator({
           <div className="simulator-layout">
           <Box>
             <Heading as="h2" size="7" className="simulator-title">
-              Simulation des emissions
+              Simulation des émissions
             </Heading>
             <Text as="p" size="2" className="simulator-copy">
-              Saisis une consommation electrique pour estimer les emissions
+              Saisis une consommation électrique pour estimer les émissions
               selon le pays choisi.
             </Text>
           </Box>
@@ -68,7 +68,7 @@ export function EmissionsSimulator({
 
             <Box className="simulator-result">
               <Text as="p" size="2" className="simulator-label">
-                Emissions estimees
+                Émissions estimées
               </Text>
               <Flex align="baseline" gap="2" className="metric-row">
                 <Text size="8" weight="bold" className="simulator-title">
@@ -91,15 +91,15 @@ export function EmissionsSimulator({
         >
           {selectedCountry.country === "France" ? (
             <>
-              Pour une meme consommation electrique, heberger ce service en
-              Pologne genere environ {polandFranceRatio.toFixed(0)} fois plus de
+              Pour une même consommation électrique, héberger ce service en
+              Pologne génère environ {polandFranceRatio.toFixed(0)} fois plus de
               CO2 qu&apos;en France.
             </>
           ) : (
             <>
-              Pour une meme consommation electrique, heberger ce service en{" "}
-              {selectedCountry.country} genere environ {franceRatio.toFixed(1)}{" "}
-              fois les emissions mesurees en France.
+              Pour une même consommation électrique, héberger ce service en{" "}
+              {selectedCountry.country} génère environ {franceRatio.toFixed(1)}{" "}
+              fois les émissions mesurées en France.
             </>
           )}
         </Text>

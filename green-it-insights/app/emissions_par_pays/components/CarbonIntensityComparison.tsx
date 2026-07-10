@@ -73,10 +73,10 @@ export function CarbonIntensityComparison({
         >
           <Box>
             <Heading as="h2" size="7">
-              Intensite carbone de l&apos;electricite
+              Intensité carbone de l&apos;électricité
             </Heading>
             <Text as="p" size="2" color="brown" className="comparison-copy">
-              Choisis librement les pays a comparer. Valeurs issues de la colonne
+              Choisis librement les pays à comparer. Valeurs issues de la colonne
               OWID <Code color="brown">carbon_intensity_elec</Code>.
             </Text>
           </Box>
@@ -147,7 +147,7 @@ export function CarbonIntensityComparison({
               size="3"
               className="action-button-lg"
             >
-              Ajouter le pays selectionne
+              Ajouter le pays sélectionné
             </Button>
             <Button
               type="button"
@@ -157,7 +157,7 @@ export function CarbonIntensityComparison({
               size="3"
               className="action-button-sm"
             >
-              Reperes
+              Repères
             </Button>
           </Flex>
         </Box>
@@ -198,7 +198,7 @@ export function CarbonIntensityComparison({
               />
               <Tooltip
                 cursor={{ fill: CHART_CURSOR_COLOR }}
-                formatter={(value) => [`${value} gCO2/kWh`, "Intensite"]}
+                formatter={(value) => [`${value} gCO2/kWh`, "Intensité"]}
               />
               <Bar dataKey="carbonIntensity" radius={[0, 6, 6, 0]}>
                 {comparisonCountries.map((country) => (

@@ -14,8 +14,39 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const SITE_NAME = "Green IT Insights";
+const SITE_DESCRIPTION =
+  "Comprendre l'empreinte environnementale du numérique : consommation d'énergie, émissions de gaz à effet de serre, cycle de vie du matériel et sobriété numérique, en chiffres et en visualisations.";
+
 export const metadata: Metadata = {
-  title: "Green IT Insights",
+  title: {
+    default: `${SITE_NAME} — L'empreinte environnementale du numérique`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  keywords: [
+    "Green IT",
+    "numérique responsable",
+    "sobriété numérique",
+    "empreinte carbone",
+    "consommation énergie",
+    "émissions CO2",
+    "cycle de vie matériel",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} — L'empreinte environnementale du numérique`,
+    description: SITE_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({

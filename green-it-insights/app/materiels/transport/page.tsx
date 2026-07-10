@@ -4,7 +4,7 @@ import { TransportCarbonChart } from "@/components/transport/TransportCarbonChar
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata = {
-  title: "Transport des matériels IT — Green IT Insights",
+  title: "Transport des matériels IT",
   description:
     "Localisation des centres de production mondiaux et comparaison du coût carbone par mode de transport des équipements numériques.",
 };

@@ -10,7 +10,7 @@ import { CompareBars } from "@/components/viz/CompareBars";
 import { keyFigures, sources } from "./data";
 
 const PAGE_TITLE =
-  "Durée d'utilisation & mutualisation des matériels IT | Green IT Insights";
+  "Durée d'utilisation & mutualisation des matériels IT";
 const PAGE_DESCRIPTION =
   "Combien de temps garde-t-on réellement nos matériels IT, et pourquoi un serveur dédié tourne à vide ? Durées de vie, gain de l'allongement, self-hosted vs mutualisé.";
 

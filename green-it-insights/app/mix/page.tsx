@@ -1,12 +1,20 @@
-"use client";
-
+import type { Metadata } from "next";
 import { EnergyMap } from "@/components/EnergyMap";
 import { Container, Heading, Text } from "@radix-ui/themes";
-import { useTheme } from "@/app/theme-provider"; 
+
+export const metadata: Metadata = {
+  title: "Mix énergétique & intensité carbone",
+  description:
+    "L'intensité carbone de l'énergie dans le monde : quels pays produisent l'électricité la plus décarbonée, et ce que cela change pour l'empreinte du numérique.",
+  openGraph: {
+    title: "Mix énergétique & intensité carbone",
+    description:
+      "L'intensité carbone de l'électricité dans le monde et son impact sur le numérique.",
+    type: "article",
+  },
+};
 
 export default function MixPage() {
-  const { useDarkMode } = useTheme();
-
   return (
     <main className="min-h-screen py-12 bg-background">
       <Container>
@@ -39,7 +47,7 @@ export default function MixPage() {
           </Text>
         </div>
 
-        <EnergyMap theme={useDarkMode ? "dark" : "light"} />
+        <EnergyMap />
       </Container>
     </main>
   );
