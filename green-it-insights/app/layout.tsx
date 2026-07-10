@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Theme } from "@radix-ui/themes";
+import "@radix-ui/themes/styles.css";
 import "./globals.css";
+import { ThemeProvider } from "./theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,29 +15,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Green IT Insights",
-  description: "Analyse de l'impact environnemental du numérique",
+  title: "Green IT Insights"
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+                                     children,
+                                   }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="fr"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        <Theme
-          accentColor="grass"
-          grayColor="sand"
-          radius="large"
-        >
-          {children}
-        </Theme>
+      <html
+          lang="fr"
+          className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+          style={{ colorScheme: "light dark" }}
+          suppressHydrationWarning
+      >
+      <body className="min-h-full flex flex-col bg-(--background) text-(--foreground)" suppressHydrationWarning>
+      <ThemeProvider>
+        {children}
+      </ThemeProvider>
       </body>
-    </html>
+      </html>
   );
 }
