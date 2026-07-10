@@ -14,7 +14,7 @@ import { ENERGY_DATA } from "./energyData";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata = {
-    title: "Types de production d'énergie et impact sur les GES | Green IT Insights",
+    title: "Types de production d'énergie et impact sur les GES",
     description:
         "Infographie comparative des facteurs d'émission (gCO₂e/kWh) par filière de production d'énergie — données ADEME Base Carbone®.",
 };

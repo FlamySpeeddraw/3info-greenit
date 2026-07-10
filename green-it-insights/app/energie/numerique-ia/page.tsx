@@ -18,7 +18,7 @@ import { CompareBars } from "@/components/viz/CompareBars";
 import { keyFigures, sources } from "./data";
 
 const PAGE_TITLE =
-  "Le numérique & l'IA dans la consommation mondiale | Green IT Insights";
+  "Le numérique & l'IA dans la consommation mondiale";
 const PAGE_DESCRIPTION =
   "Quelle place le numérique et l'intelligence artificielle occupent-ils dans la consommation mondiale d'énergie ? Chiffres clés, data centers, impact de l'IA et sources.";
 

@@ -6,10 +6,23 @@ import {
   Section,
   Text,
 } from "@radix-ui/themes";
+import type { Metadata } from "next";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { EmissionsParPaysClient } from "./EmissionsParPaysClient";
 import { countries } from "./data";
 import { getDataYearLabel } from "./country-utils";
+
+export const metadata: Metadata = {
+  title: "Émissions de CO₂ par pays",
+  description:
+    "Comparer les émissions de CO₂ et l'intensité carbone de l'électricité entre pays, et simuler l'empreinte selon le lieu d'hébergement.",
+  openGraph: {
+    title: "Émissions de CO₂ par pays",
+    description:
+      "Comparer les émissions de CO₂ et l'intensité carbone de l'électricité entre pays.",
+    type: "article",
+  },
+};
 
 export default function EmissionsParPaysPage() {
   const dataYearLabel = getDataYearLabel(countries);
@@ -35,7 +48,7 @@ export default function EmissionsParPaysPage() {
                   size="8"
                   className="hero-title"
                 >
-                  Mix energetique et emissions carbone par pays
+                  Mix énergétique et émissions carbone par pays
                 </Heading>
                 <Text
                   as="p"
@@ -43,10 +56,10 @@ export default function EmissionsParPaysPage() {
                   color="brown"
                   className="hero-lead"
                 >
-                  Le pays qui heberge un service numerique influence
-                  directement son empreinte carbone. Une meme consommation
-                  electrique ne genere pas le meme volume de CO2 selon le mix
-                  utilise pour produire l&apos;electricite.
+                  Le pays qui héberge un service numérique influence
+                  directement son empreinte carbone. Une même consommation
+                  électrique ne génère pas le même volume de CO2 selon le mix
+                  utilisé pour produire l&apos;électricité.
                 </Text>
                 <Text
                   as="p"
@@ -54,8 +67,8 @@ export default function EmissionsParPaysPage() {
                   color="brown"
                   className="hero-meta"
                 >
-                  Donnees locales issues du dataset Energy d&apos;Our World in
-                  Data: {countries.length} pays disponibles, derniere annee
+                  Données locales issues du dataset Energy d&apos;Our World in
+                  Data: {countries.length} pays disponibles, dernière année
                   disponible: {dataYearLabel}.
                 </Text>
               </header>
@@ -73,7 +86,7 @@ export default function EmissionsParPaysPage() {
                     Comprendre l&apos;indicateur
                   </Badge>
                   <Heading as="h2" size="7">
-                    Qu&apos;est-ce que l&apos;intensite energetique ?
+                    Qu&apos;est-ce que l&apos;intensité énergétique ?
                   </Heading>
                   <Text
                     as="p"
@@ -81,18 +94,18 @@ export default function EmissionsParPaysPage() {
                     color="brown"
                     className="indicator-description"
                   >
-                    L&apos;intensite energetique mesure la quantite d&apos;energie
-                    necessaire pour produire un resultat donne: une page servie,
-                    une heure de calcul, un service heberge ou une unite de
+                    L&apos;intensité énergétique mesure la quantité d&apos;énergie
+                    nécessaire pour produire un résultat donné: une page servie,
+                    une heure de calcul, un service hébergé ou une unité de
                     richesse produite. Plus elle est faible, plus le service
-                    est efficace energetiquement.
+                    est efficace énergétiquement.
                   </Text>
                 </Box>
 
                 <div className="indicator-grid">
                   <Box className="muted-card indicator-item">
                     <Text as="p" weight="bold" color="grass">
-                      Son role
+                      Son rôle
                     </Text>
                     <Text
                       as="p"
@@ -100,15 +113,15 @@ export default function EmissionsParPaysPage() {
                       color="brown"
                       className="indicator-item-text"
                     >
-                      Elle aide a comparer des usages tres differents avec une
-                      base commune: combien de kWh sont necessaires pour rendre
-                      le meme service numerique.
+                      Elle aide à comparer des usages très différents avec une
+                      base commune: combien de kWh sont nécessaires pour rendre
+                      le même service numérique.
                     </Text>
                   </Box>
 
                   <Box className="muted-card indicator-item">
                     <Text as="p" weight="bold" color="grass">
-                      Son interet
+                      Son intérêt
                     </Text>
                     <Text
                       as="p"
@@ -117,8 +130,8 @@ export default function EmissionsParPaysPage() {
                       className="indicator-item-text"
                     >
                       Elle permet d&apos;identifier les leviers d&apos;optimisation:
-                      sobriete fonctionnelle, code plus leger, serveurs mieux
-                      dimensionnes et limitation des traitements inutiles.
+                      sobriété fonctionnelle, code plus léger, serveurs mieux
+                      dimensionnés et limitation des traitements inutiles.
                     </Text>
                   </Box>
 
@@ -132,9 +145,9 @@ export default function EmissionsParPaysPage() {
                       color="brown"
                       className="indicator-item-text"
                     >
-                      Un site rapide qui transfere peu de donnees, une API qui
-                      evite les calculs redondants ou un serveur mutualise ont
-                      generalement une intensite energetique plus faible.
+                      Un site rapide qui transfère peu de données, une API qui
+                      évite les calculs redondants ou un serveur mutualisé ont
+                      généralement une intensité énergétique plus faible.
                     </Text>
                   </Box>
                 </div>
@@ -145,10 +158,10 @@ export default function EmissionsParPaysPage() {
                   color="brown"
                   className="indicator-note"
                 >
-                  Dans cette page, cette notion est completee par l&apos;intensite
-                  carbone de l&apos;electricite: une fois la consommation en kWh
-                  connue, le pays d&apos;hebergement determine la quantite de CO2
-                  associee a cette energie.
+                  Dans cette page, cette notion est complétée par l&apos;intensité
+                  carbone de l&apos;électricité: une fois la consommation en kWh
+                  connue, le pays d&apos;hébergement détermine la quantité de CO2
+                  associée à cette énergie.
                 </Text>
               </section>
             </ScrollReveal>

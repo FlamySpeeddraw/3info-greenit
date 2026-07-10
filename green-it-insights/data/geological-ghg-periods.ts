@@ -217,7 +217,7 @@ export const geologicalPeriods = [
 ] satisfies GeologicalPeriod[];
 
 export const co2DataNote =
-  "CO2 atmospherique uniquement, pas CO2 equivalent. Valeurs geologiques indicatives et simplifiees pour la narration visuelle, exprimees en ppm.";
+  "CO2 atmosphérique uniquement, pas CO2 équivalent. Valeurs géologiques indicatives et simplifiées pour la narration visuelle, exprimées en ppm.";
 
 export const co2HealthThresholds = [
   {
@@ -225,7 +225,7 @@ export const co2HealthThresholds = [
     ppm: 1000,
     label: "1 000 ppm",
     description:
-      "Gene possible chez les personnes sensibles: asthme, maux de tete, fatigue, irritation oculaire ou syndrome des batiments malsains.",
+      "Gêne possible chez les personnes sensibles: asthme, maux de tête, fatigue, irritation oculaire ou syndrome des bâtiments malsains.",
     severity: "sensitive",
   },
   {
@@ -242,7 +242,7 @@ export const co2HealthThresholds = [
     rangeEndPpm: 30000,
     label: "10 000-30 000 ppm",
     description:
-      "Valeurs limites d'exposition a court terme, sur 10 minutes, adoptees dans plusieurs pays.",
+      "Valeurs limites d'exposition à court terme, sur 10 minutes, adoptées dans plusieurs pays.",
     severity: "short-term",
   },
   {
@@ -250,7 +250,7 @@ export const co2HealthThresholds = [
     ppm: 40000,
     label: "40 000 ppm",
     description:
-      "Seuil d'effets irreversibles sur la sante: evacuation immediate des locaux.",
+      "Seuil d'effets irréversibles sur la santé: évacuation immédiate des locaux.",
     severity: "evacuation",
   },
   {
@@ -258,10 +258,10 @@ export const co2HealthThresholds = [
     ppm: 100000,
     label: "100 000 ppm",
     description:
-      "A partir de 10% et au-dela de 10 minutes d'exposition, risque mortel sans reanimation medicale.",
+      "À partir de 10% et au-delà de 10 minutes d'exposition, risque mortel sans réanimation médicale.",
     severity: "lethal",
   },
 ] satisfies Co2HealthThreshold[];
 
 export const co2DangerExplanation =
-  "Le graphique montre le CO2 atmospherique. Pour la sante humaine en air interieur, le CO2 devient genant des 1 000 ppm pour certaines personnes, la VLEP francaise est de 5 000 ppm sur 8h, et les niveaux tres eleves imposent une evacuation. Pour le climat, le danger actuel vient surtout de la hausse rapide du CO2, qui renforce l'effet de serre et accélère les extrêmes climatiques.";
+  "Le graphique montre le CO2 atmosphérique. Pour la santé humaine en air intérieur, le CO2 devient gênant dès 1 000 ppm pour certaines personnes, la VLEP française est de 5 000 ppm sur 8h, et les niveaux très élevés imposent une évacuation. Pour le climat, le danger actuel vient surtout de la hausse rapide du CO2, qui renforce l'effet de serre et accélère les extrêmes climatiques.";
