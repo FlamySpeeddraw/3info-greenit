@@ -1,21 +1,17 @@
 import Link from "next/link";
-import styles from "./geological-ghg.module.css";
+import { Button, Text } from "@radix-ui/themes";
 
-type GeologicalFinalCtaProps = {
-  isVisible: boolean;
-};
-
-export function GeologicalFinalCta({ isVisible }: GeologicalFinalCtaProps) {
+export function GeologicalFinalCta() {
   return (
-    <aside
-      aria-hidden={!isVisible}
-      className={styles.finalCta}
-      data-visible={isVisible}
-    >
-      <p className={styles.finalCtaLabel}>Fin du voyage geologique</p>
-      <Link className={styles.finalCtaLink} href="/">
-        Continuer l&apos;exploration
-      </Link>
+    <aside className="mt-3 flex flex-col items-stretch gap-2 rounded-lg border border-green-dark/15 bg-eco-white/95 p-4 md:mt-5 md:flex-row md:items-center md:justify-between md:gap-4 dark:border-eco-white/10 dark:bg-oled-gray/80">
+      <Text as="p" className="uppercase" color="brown" size="1" weight="bold">
+        Fin du voyage geologique
+      </Text>
+      <Button asChild color="grass" size="3">
+        <Link className="no-underline" href="/">
+          Continuer l&apos;exploration
+        </Link>
+      </Button>
     </aside>
   );
 }

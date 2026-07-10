@@ -2,6 +2,7 @@
 
 import { useMemo } from "react";
 import * as d3 from "d3";
+import { Text } from "@radix-ui/themes";
 import type {
   Co2DataPoint,
   Co2HealthThreshold,
@@ -23,11 +24,11 @@ type ChartPoint = Co2DataPoint & {
 };
 
 const WIDTH = 760;
-const HEIGHT = 230;
+const HEIGHT = 320;
 const MARGIN = {
-  top: 18,
+  top: 20,
   right: 26,
-  bottom: 42,
+  bottom: 44,
   left: 58,
 };
 
@@ -123,17 +124,40 @@ export function Co2EvolutionChart({
     };
   }, [activePeriodId, data, healthThresholds, progress]);
 
+  const lastVisiblePoint = chart.visiblePoints[chart.visiblePoints.length - 1];
+  const currentPpm = lastVisiblePoint?.co2Ppm ?? data[0]?.co2Ppm ?? 0;
+
   return (
-    <figure className={styles.chartSurface}>
-      <figcaption className={styles.chartCaption}>
-        <span>CO₂ atmosphérique</span>
-        <small>{note}</small>
+    <figure className="m-0 grid gap-1 rounded-lg border border-green-dark/15 bg-eco-white/85 p-3 md:gap-2 md:p-4 dark:border-eco-white/10 dark:bg-oled-gray/80">
+      <figcaption className="flex min-w-0 items-start justify-between gap-3">
+        <div className="grid min-w-0 gap-0.5">
+          <Text as="span" size="2" weight="bold">
+            CO₂ atmosphérique
+          </Text>
+          <Text
+            as="span"
+            className="hidden leading-tight md:block"
+            color="brown"
+            size="1"
+          >
+            {note}
+          </Text>
+        </div>
+        <Text
+          aria-live="polite"
+          as="p"
+          className="shrink-0 text-right tabular-nums"
+          color="grass"
+          size={{ initial: "6", md: "8" }}
+          weight="bold"
+        >
+          {Math.round(currentPpm).toLocaleString("fr-FR")}&nbsp;ppm
+        </Text>
       </figcaption>
-      <p className={styles.chartWarning}>{dangerExplanation}</p>
 
       <svg
         aria-label="Courbe synchronisée de concentration de dioxyde de carbone atmosphérique"
-        className={styles.co2Chart}
+        className="block max-h-[150px] w-full overflow-visible md:max-h-[52vh]"
         focusable="false"
         role="img"
         viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
@@ -208,12 +232,10 @@ export function Co2EvolutionChart({
 
         {chart.visiblePoints.map((point) => (
           <circle
-            className={[
-              styles.chartPoint,
-              point.isIndustrialRise ? styles.chartPointIndustrial : "",
-            ].join(" ")}
+            className={styles.chartPoint}
             cx={chart.xScale(point.visualPosition)}
             cy={chart.yScale(point.co2Ppm)}
+            data-industrial={point.isIndustrialRise ? "true" : undefined}
             key={point.id}
             r={point.isInterpolated ? 3.4 : 4.2}
           />
@@ -226,15 +248,17 @@ export function Co2EvolutionChart({
               cy={chart.yScale(chart.activePoint.co2Ppm)}
               r="9"
             />
-            <text
-              x={chart.xScale(chart.activePoint.visualPosition)}
-              y={chart.yScale(chart.activePoint.co2Ppm) - 14}
-            >
-              {Math.round(chart.activePoint.co2Ppm).toLocaleString("fr-FR")} ppm
-            </text>
           </g>
         ) : null}
       </svg>
+
+      <Text
+        as="p"
+        className="hidden max-w-[980px] leading-snug opacity-80 md:block"
+        size="1"
+      >
+        {dangerExplanation}
+      </Text>
     </figure>
   );
 }

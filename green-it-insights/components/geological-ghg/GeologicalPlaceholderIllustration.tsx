@@ -6,6 +6,7 @@ type GeologicalPlaceholderIllustrationProps = {
   tone: GeologicalIllustrationTone;
 };
 
+/* Chaque classe de tonalité compose la base .placeholderIllustration (cf. module CSS). */
 const toneClassNames: Record<GeologicalIllustrationTone, string> = {
   volcanic: styles.placeholderVolcanic,
   oceanic: styles.placeholderOceanic,
@@ -20,11 +21,7 @@ export function GeologicalPlaceholderIllustration({
   tone,
 }: GeologicalPlaceholderIllustrationProps) {
   return (
-    <div
-      aria-label={alt}
-      className={`${styles.placeholderIllustration} ${toneClassNames[tone]}`}
-      role="img"
-    >
+    <div aria-label={alt} className={toneClassNames[tone]} role="img">
       <span className={styles.placeholderSky} aria-hidden="true" />
       <span className={styles.placeholderSun} aria-hidden="true" />
       <span className={styles.placeholderHorizon} aria-hidden="true" />
