@@ -14,10 +14,6 @@ export default function MixPage() {
     }}>
 
       <Container>
-                      <Header />
-
-
-
         <div style={{ marginBottom: "48px" }}>
           <Heading
             size={{ initial: "7", sm: "9" }}
